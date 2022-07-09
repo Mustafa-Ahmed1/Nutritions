@@ -3,6 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/ic_athlete.xml" value="0.1475" />
+        <entry key="app/src/main/res/drawable/ic_back_arrow.xml" value="0.1475" />
+        <entry key="app/src/main/res/drawable/ic_blood_pressure_device.xml" value="0.1475" />
+        <entry key="app/src/main/res/drawable/ic_diabetes_device.xml" value="0.1475" />
+        <entry key="app/src/main/res/drawable/ic_down_arrow.xml" value="0.1475" />
+        <entry key="app/src/main/res/drawable/ic_gym.xml" value="0.1475" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1475" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1475" />
       </map>
