@@ -140,7 +140,7 @@
             android:id="@+id/blood_pressure"
             android:layout_width="156dp"
             android:layout_height="156dp"
-            android:backgroundTint="#56B1EC"
+            android:backgroundTint="#F2CF60"
             app:cardCornerRadius="16dp">
 
 
