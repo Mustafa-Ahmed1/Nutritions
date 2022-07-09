@@ -3,7 +3,18 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Kotlin_Corse/NutritionApp/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
+        <entry key="app/src/main/res/drawable/ic_athlete_svgrepo_com_1.xml" value="0.1475" />
+        <entry key="app/src/main/res/drawable/ic_baseline_arrow_back_24.xml" value="0.1475" />
+        <entry key="app/src/main/res/drawable/ic_baseline_search_24.xml" value="0.1475" />
+        <entry key="app/src/main/res/drawable/ic_bench_gym_svgrepo_com_1.xml" value="0.1475" />
+        <entry key="app/src/main/res/drawable/ic_double_arrow.xml" value="0.1475" />
+        <entry key="app/src/main/res/drawable/ic_glucosemeter_svgrepo_com_1.xml" value="0.1475" />
+        <entry key="app/src/main/res/drawable/ic_outline_filter_alt_24.xml" value="0.1475" />
+        <entry key="app/src/main/res/drawable/ic_round_arrow_back_24.xml" value="0.1475" />
+        <entry key="app/src/main/res/drawable/ic_round_keyboard_arrow_down_24.xml" value="0.1475" />
+        <entry key="app/src/main/res/drawable/ic_sphygmomanometer_blood_pressure_gauge_svgrepo_com_1.xml" value="0.1475" />
+        <entry key="app/src/main/res/font/font.xml" value="0.10104166666666667" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.1118659420289855" />
       </map>
     </option>
   </component>
