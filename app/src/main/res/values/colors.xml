@@ -8,9 +8,8 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
-    <color name="red_ard">#FC826D</color>
+    <color name="red_card">#FC826D</color>
     <color name="blue_card">#56B1EC</color>
     <color name="purple_card">#D375FF</color>
     <color name="yellow_card">#F2CF60</color>
-
 </resources>

@@ -1,10 +1,8 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.NutritionApp" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
-
+    <style name="Theme.NutritionApp" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">@color/primary_color</item>
-        <!-- Customize your theme here. -->
     </style>
 
     <style name="DefaultTextStyle" parent="@android:style/TextAppearance.Widget.TextView">
@@ -28,6 +26,4 @@
     <style name="CaptionTextStyle" parent="PrimaryTextStyle">
         <item name="android:textSize">@dimen/font_size_caption</item>
     </style>
-
-
 </resources>
