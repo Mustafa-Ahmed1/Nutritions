@@ -4,6 +4,7 @@
     <color name="background_color">#F1F1F6</color>
 
     <color name="gray">#D9D9D9</color>
+    <color name="red">#C23939</color>
 
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>

@@ -47,9 +47,14 @@
     <style name="CaptionTextStyle.Black">
         <item name="android:textColor">@color/black</item>
     </style>
+    <style name="CaptionTextStyle.Red">
+        <item name="android:textColor">@color/red</item>
+    </style>
 
     <style name="CardRadius">
         <item name="cornerFamily">rounded</item>
         <item name="android:radius">16dp</item>
     </style>
+
+
 </resources>
