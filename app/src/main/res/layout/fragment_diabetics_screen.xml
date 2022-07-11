@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color">
+
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button_back"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="16dp"
+            android:background="@drawable/ic_back_arrow"
+            app:layout_constraintBottom_toBottomOf="@+id/best_diabetes_meals"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/best_diabetes_meals" />
+
+        <TextView
+            android:id="@+id/best_diabetes_meals"
+            style="@style/SecondaryTextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="32dp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/best_diabetes_meals_"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toEndOf="@id/button_back"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/spacing_medium"
+            android:background="@drawable/rectangle1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/best_diabetes_meals">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_medium"
+                android:layout_margin="@dimen/spacing_medium"
+                style="@style/CaptionTextStyle"
+                android:text="@string/here_are_the_best_100_meals_for_diabetics_it_based_on_specific_calculations_witch_contains_bla_bla_bla_and_then_write_some_some_text"
+                android:textColor="@color/white"
+                 />
+        </LinearLayout>
+
+    //french_fries
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_french_fries"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/spacing_medium"
+        android:layout_marginTop="@dimen/spacing_medium"
+        android:background="@drawable/rectangle2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/linearLayout">
+
+        <TextView
+            android:id="@+id/french_fries"
+            style="@style/PrimaryTextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/spacing_medium"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/french_fries"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="@id/layout_french_fries"
+            app:layout_constraintStart_toStartOf="@id/layout_french_fries"
+            app:layout_constraintTop_toTopOf="@id/layout_french_fries" />
+
+        <TextView
+            android:id="@+id/cal_french_fries"
+            style="@style/CaptionTextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/spacing_medium"
+            android:text="@string/cal"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="@+id/textView_100_french_fries"
+            app:layout_constraintEnd_toEndOf="@id/layout_french_fries"
+            app:layout_constraintTop_toTopOf="@+id/textView_100_french_fries" />
+
+        <TextView
+            android:id="@+id/textView_100_french_fries"
+            style="@style/PrimaryTextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_medium"
+            android:layout_marginEnd="@dimen/spacing_too_small"
+            android:layout_marginBottom="@dimen/spacing_medium"
+            android:fontFamily="@font/poppins_medium"
+            android:text="@string/_100"
+            android:textColor="@color/primary_color"
+            app:layout_constraintBottom_toBottomOf="@id/layout_french_fries"
+            app:layout_constraintEnd_toStartOf="@id/cal_french_fries"
+            app:layout_constraintTop_toTopOf="@id/layout_french_fries" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    //cheese_burger
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_cheese_burger"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rectangle2"
+        android:layout_marginHorizontal="@dimen/spacing_medium"
+        android:layout_marginTop="@dimen/spacing_small"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layout_french_fries"
+        >
+
+        <TextView
+            android:id="@+id/cheese_burger"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/spacing_medium"
+            android:text="@string/cheese_burger"
+            android:textColor="@color/black"
+            android:fontFamily="@font/poppins_medium"
+            style="@style/PrimaryTextStyle"
+            app:layout_constraintBottom_toBottomOf="@id/layout_cheese_burger"
+            app:layout_constraintStart_toStartOf="@id/layout_cheese_burger"
+            app:layout_constraintTop_toTopOf="@id/layout_cheese_burger" />
+
+        <TextView
+            android:id="@+id/cal_cheese_burger"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/spacing_medium"
+            android:text="@string/cal"
+            style="@style/CaptionTextStyle"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="@+id/textView_125_cheese_burger"
+            app:layout_constraintEnd_toEndOf="@id/layout_cheese_burger"
+            app:layout_constraintTop_toTopOf="@+id/textView_125_cheese_burger" />
+
+        <TextView
+            android:id="@+id/textView_125_cheese_burger"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_medium"
+            android:layout_marginEnd="@dimen/spacing_too_small"
+            android:layout_marginBottom="@dimen/spacing_medium"
+            android:text="@string/_125"
+            android:fontFamily="@font/poppins_medium"
+            style="@style/PrimaryTextStyle"
+            android:textColor="@color/primary_color"
+            app:layout_constraintBottom_toBottomOf="@id/layout_cheese_burger"
+            app:layout_constraintEnd_toStartOf="@id/cal_cheese_burger"
+            app:layout_constraintTop_toTopOf="@id/layout_cheese_burger" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+//fried_chicken
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_fried_chicken"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rectangle2"
+        android:layout_marginHorizontal="@dimen/spacing_medium"
+        android:layout_marginTop="@dimen/spacing_small"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layout_cheese_burger"
+        >
+
+        <TextView
+            android:id="@+id/fried_chicken"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/spacing_medium"
+            android:text="@string/fried_chicken"
+            android:textColor="@color/black"
+            android:fontFamily="@font/poppins_medium"
+            style="@style/PrimaryTextStyle"
+            app:layout_constraintBottom_toBottomOf="@id/layout_fried_chicken"
+            app:layout_constraintStart_toStartOf="@id/layout_fried_chicken"
+            app:layout_constraintTop_toTopOf="@id/layout_fried_chicken" />
+
+        <TextView
+            android:id="@+id/cal_fried_chicken"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/spacing_medium"
+            android:text="@string/cal"
+            android:textColor="@color/black"
+            style="@style/CaptionTextStyle"
+            app:layout_constraintBottom_toBottomOf="@+id/textView_250_fried_chicken"
+            app:layout_constraintEnd_toEndOf="@id/layout_fried_chicken"
+            app:layout_constraintTop_toTopOf="@+id/textView_250_fried_chicken" />
+
+        <TextView
+            android:id="@+id/textView_250_fried_chicken"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_medium"
+            android:layout_marginEnd="@dimen/spacing_too_small"
+            android:layout_marginBottom="@dimen/spacing_medium"
+            android:text="@string/_250"
+            android:fontFamily="@font/poppins_medium"
+            style="@style/PrimaryTextStyle"
+            android:textColor="@color/primary_color"
+            app:layout_constraintBottom_toBottomOf="@id/layout_fried_chicken"
+            app:layout_constraintEnd_toStartOf="@id/cal_fried_chicken"
+            app:layout_constraintTop_toTopOf="@id/layout_fried_chicken" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+//Pizza Hut
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_pizza_hut"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rectangle2"
+        android:layout_marginHorizontal="@dimen/spacing_medium"
+        android:layout_marginTop="@dimen/spacing_small"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layout_fried_chicken"
+        >
+
+        <TextView
+            android:id="@+id/pizza_hut"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/spacing_medium"
+            android:text="Pizza Hut"
+            android:textColor="@color/black"
+            android:fontFamily="@font/poppins_medium"
+            style="@style/PrimaryTextStyle"
+            app:layout_constraintBottom_toBottomOf="@id/layout_pizza_hut"
+            app:layout_constraintStart_toStartOf="@id/layout_pizza_hut"
+            app:layout_constraintTop_toTopOf="@id/layout_pizza_hut" />
+
+        <TextView
+            android:id="@+id/cal_pizza_hut"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/spacing_medium"
+            android:text="@string/cal"
+            android:textColor="@color/black"
+            style="@style/CaptionTextStyle"
+            app:layout_constraintBottom_toBottomOf="@+id/textView_450_pizza_hut"
+            app:layout_constraintEnd_toEndOf="@id/layout_pizza_hut"
+            app:layout_constraintTop_toTopOf="@+id/textView_450_pizza_hut" />
+
+        <TextView
+            android:id="@+id/textView_450_pizza_hut"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_medium"
+            android:layout_marginEnd="@dimen/spacing_too_small"
+            android:layout_marginBottom="@dimen/spacing_medium"
+            android:text="@string/_450"
+            android:fontFamily="@font/poppins_medium"
+            style="@style/PrimaryTextStyle"
+            android:textColor="@color/primary_color"
+            app:layout_constraintBottom_toBottomOf="@id/layout_pizza_hut"
+            app:layout_constraintEnd_toStartOf="@id/cal_pizza_hut"
+            app:layout_constraintTop_toTopOf="@id/layout_pizza_hut" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    //Nodels
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_nodels"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rectangle2"
+        android:layout_marginHorizontal="@dimen/spacing_medium"
+        android:layout_marginTop="@dimen/spacing_small"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layout_pizza_hut"
+        >
+
+        <TextView
+            android:id="@+id/nodels"
+            style="@style/PrimaryTextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/spacing_medium"
+            android:layout_marginStart="16dp"
+            android:fontFamily="@font/poppins_medium"
+            android:text="Nodels"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="@id/layout_nodels"
+            app:layout_constraintStart_toStartOf="@id/layout_nodels"
+            app:layout_constraintTop_toTopOf="@id/layout_nodels" />
+
+        <TextView
+            android:id="@+id/cal_nodels"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/spacing_medium"
+            android:text="@string/cal"
+            android:textColor="@color/black"
+            style="@style/CaptionTextStyle"
+            app:layout_constraintBottom_toBottomOf="@+id/textView_500_nodels"
+            app:layout_constraintEnd_toEndOf="@id/layout_nodels"
+            app:layout_constraintTop_toTopOf="@+id/textView_500_nodels" />
+
+        <TextView
+            android:id="@+id/textView_500_nodels"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_medium"
+            android:layout_marginEnd="@dimen/spacing_too_small"
+            android:layout_marginBottom="@dimen/spacing_medium"
+            android:text="@string/_500"
+            android:fontFamily="@font/poppins_medium"
+            style="@style/PrimaryTextStyle"
+            android:textColor="@color/primary_color"
+            app:layout_constraintBottom_toBottomOf="@id/layout_nodels"
+            app:layout_constraintEnd_toStartOf="@id/cal_nodels"
+            app:layout_constraintTop_toTopOf="@id/layout_nodels" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
