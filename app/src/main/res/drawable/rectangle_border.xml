@@ -3,7 +3,7 @@
     <stroke
         android:color="@color/primary_color"
         android:dashGap="16dp"
-        android:width="4dp"/>
+        android:width="2dp"/>
     <solid android:color="@color/white"/>
     <corners android:radius="28dp"/>
 </shape>
