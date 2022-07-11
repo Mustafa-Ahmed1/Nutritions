@@ -26,6 +26,7 @@
         android:layout_height="156dp"
         android:layout_marginStart="@dimen/spacing_medium"
         android:layout_marginEnd="@dimen/spacing_medium"
+        android:layout_marginBottom="8dp"
         android:background="@color/red_card"
         app:layout_constraintEnd_toStartOf="@+id/card_gym"
         app:layout_constraintHorizontal_bias="0.5"
@@ -37,15 +38,20 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/ic_diabetes_device"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/diabetics"
         app:layout_constraintEnd_toEndOf="@+id/card_diabetics"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@id/card_diabetics"
         app:layout_constraintTop_toTopOf="@+id/card_diabetics" />
 
     <TextView
+        android:id="@+id/diabetics"
         style="@style/PrimaryTextStyle.White"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/diabetics"
+        android:layout_marginBottom="22dp"
+        app:layout_constraintBottom_toBottomOf="@+id/card_diabetics"
         app:layout_constraintEnd_toEndOf="@+id/imageView"
         app:layout_constraintStart_toStartOf="@+id/imageView"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
@@ -61,6 +67,30 @@
         app:layout_constraintStart_toEndOf="@+id/card_diabetics"
         app:layout_constraintTop_toBottomOf="@+id/header_title" />
 
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_gym"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/gym_player"
+        app:layout_constraintEnd_toEndOf="@+id/card_gym"
+        app:layout_constraintStart_toStartOf="@+id/card_gym"
+        app:layout_constraintTop_toTopOf="@+id/card_gym" />
+
+    <TextView
+        android:id="@+id/gym_player"
+        style="@style/PrimaryTextStyle.White"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/gym_players"
+        android:layout_marginBottom="22dp"
+        app:layout_constraintBottom_toBottomOf="@+id/card_gym"
+        app:layout_constraintEnd_toEndOf="@+id/imageView3"
+        app:layout_constraintStart_toStartOf="@+id/imageView3"
+        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+
+
     <View
         android:id="@+id/card_pressure"
         android:layout_width="0dp"
@@ -70,6 +100,29 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/card_weight_loss"
         app:layout_constraintTop_toTopOf="@+id/card_weight_loss" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:src="@drawable/ic_blood_pressure_device"
+        app:layout_constraintBottom_toBottomOf="@+id/blood_pressure"
+        app:layout_constraintEnd_toEndOf="@+id/card_pressure"
+        app:layout_constraintStart_toStartOf="@id/card_pressure"
+        app:layout_constraintTop_toTopOf="@+id/card_pressure" />
+
+    <TextView
+        android:id="@+id/blood_pressure"
+        style="@style/PrimaryTextStyle.White"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/blood_pressure"
+        android:layout_marginBottom="22dp"
+        app:layout_constraintBottom_toBottomOf="@+id/card_pressure"
+        app:layout_constraintEnd_toEndOf="@+id/imageView5"
+        app:layout_constraintStart_toStartOf="@+id/imageView5"
+        app:layout_constraintTop_toBottomOf="@+id/imageView5" />
 
     <View
         android:id="@+id/card_weight_loss"
@@ -83,6 +136,30 @@
         app:layout_constraintStart_toStartOf="@+id/card_diabetics"
         app:layout_constraintTop_toBottomOf="@+id/card_diabetics" />
 
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_athlete"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/weight_loss"
+        app:layout_constraintEnd_toEndOf="@+id/card_weight_loss"
+        app:layout_constraintStart_toStartOf="@+id/card_weight_loss"
+        app:layout_constraintTop_toTopOf="@+id/card_weight_loss" />
+
+    <TextView
+        android:id="@+id/weight_loss"
+        style="@style/PrimaryTextStyle.White"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/weight_loss"
+        android:layout_marginBottom="22dp"
+        app:layout_constraintBottom_toBottomOf="@+id/card_weight_loss"
+        app:layout_constraintEnd_toEndOf="@+id/imageView4"
+        app:layout_constraintStart_toStartOf="@+id/imageView4"
+        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+
+
     <TextView
         android:id="@+id/header_title2"
         android:layout_width="wrap_content"
@@ -90,6 +167,7 @@
         android:layout_marginStart="16dp"
         android:fontFamily="@font/poppins_semi_bold"
         android:text="@string/more_features"
+        android:layout_marginTop="32dp"
         android:textColor="@color/black"
         android:textSize="24sp"
         android:textStyle="normal"
@@ -98,12 +176,12 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/show_all"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="56dp"
-        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
         app:cardCornerRadius="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@id/header_title2"
+        app:layout_constraintEnd_toEndOf="@+id/card_pressure"
+        app:layout_constraintStart_toStartOf="@+id/header_title2"
         app:layout_constraintTop_toBottomOf="@+id/header_title2">
 
         <TextView
@@ -129,13 +207,12 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/Calories_counter"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="56dp"
-        android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
         app:cardCornerRadius="16dp"
-        app:layout_constraintStart_toStartOf="@id/show_all"
+        app:layout_constraintEnd_toEndOf="@+id/card_pressure"
+        app:layout_constraintStart_toStartOf="@+id/header_title2"
         app:layout_constraintTop_toBottomOf="@id/show_all">
 
 

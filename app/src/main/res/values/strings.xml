@@ -30,11 +30,11 @@
     <string name="total_calories">Total calories</string>
     <string name="no_data_to_calculated">No data to calculated</string>
     <string name="add_meal">Add meal</string>
-    <string name="meal_name">Meal name</string>
+    <string name="meal_name">Meal Name</string>
     <string name="grams">Grams</string>
     <string name="g">g</string>
     <string name="add">Add</string>
 
     <string name="cal">Cal</string>
-
+    <string name="head_text">Best meals</string>
 </resources>
