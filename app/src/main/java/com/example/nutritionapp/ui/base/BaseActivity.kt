@@ -1,7 +1,6 @@
 package com.example.nutritionapp.ui.base
 
 import android.os.Bundle
-import android.view.LayoutInflater
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewbinding.ViewBinding
 
