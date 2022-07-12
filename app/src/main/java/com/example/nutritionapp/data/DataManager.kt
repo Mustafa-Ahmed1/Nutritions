@@ -9,5 +9,5 @@ object DataManager {
 
     fun addMeal(meal: Meal) { meals.add(meal)}
 
-    fun getMeals(): List<Meal> = meals
+    fun getMeals(): MutableList<Meal> = meals
 }

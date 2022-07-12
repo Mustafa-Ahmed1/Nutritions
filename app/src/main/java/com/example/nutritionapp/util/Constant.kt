@@ -17,4 +17,5 @@ object Constant {
         const val SUGARS = 60
         const val CAFFEINE = 74
     }
+    const val CSV_FILE_NAME = "nutrition.csv"
 }

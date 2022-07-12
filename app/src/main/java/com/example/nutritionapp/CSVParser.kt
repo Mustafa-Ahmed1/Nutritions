@@ -3,29 +3,32 @@ package com.example.nutritionapp
 import com.example.nutritionapp.data.DataManager
 import com.example.nutritionapp.data.model.Meal
 import com.example.nutritionapp.util.Constant
+import com.example.nutritionapp.util.toPureNumber
 import java.io.File
+import java.io.InputStreamReader
+import java.nio.Buffer
 
 class CSVParser {
-    public fun getMealsFromCSV(file: File){
-        file.forEachLine {
+    public fun getMealsFromCSV(buffer: InputStreamReader){
+        buffer.forEachLine {
             val mealLineData = it.split(",")
             with(Constant.ColumnIndex) {
                  DataManager.addMeal(
                     Meal(
                         name = mealLineData[NAME],
                         calories = mealLineData[CALORIES].toDouble(),
-                        totalFat = mealLineData[TOTAL_FAT].toDouble(),
-                        sodium = mealLineData[SODIUM].toDouble(),
-                        vitaminC = mealLineData[VITAMIN_C].toDouble(),
-                        vitaminD = mealLineData[VITAMIN_D].toDouble(),
-                        calcium = mealLineData[CALCIUM].toDouble(),
-                        magnesium = mealLineData[MAGNESIUM].toDouble(),
-                        potassium = mealLineData[POTASSIUM].toDouble(),
-                        protein = mealLineData[PROTEIN].toDouble(),
-                        carbohydrate = mealLineData[CARBOHYDRATE].toDouble(),
-                        fiber = mealLineData[FIBER].toDouble(),
-                        sugars = mealLineData[SUGARS].toDouble(),
-                        caffeine = mealLineData[CAFFEINE].toDouble(),
+                        totalFat = mealLineData[TOTAL_FAT].toPureNumber(),
+                        sodium = mealLineData[SODIUM].toPureNumber(),
+                        vitaminC = mealLineData[VITAMIN_C].toPureNumber(),
+                        vitaminD = mealLineData[VITAMIN_D].toPureNumber(),
+                        calcium = mealLineData[CALCIUM].toPureNumber(),
+                        magnesium = mealLineData[MAGNESIUM].toPureNumber(),
+                        potassium = mealLineData[POTASSIUM].toPureNumber(),
+                        protein = mealLineData[PROTEIN].toPureNumber(),
+                        carbohydrate = mealLineData[CARBOHYDRATE].toPureNumber(),
+                        fiber = mealLineData[FIBER].toPureNumber(),
+                        sugars = mealLineData[SUGARS].toPureNumber(),
+                        caffeine = mealLineData[CAFFEINE].toPureNumber(),
                     )
                 )
             }
