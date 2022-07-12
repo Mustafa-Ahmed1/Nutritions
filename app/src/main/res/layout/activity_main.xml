@@ -9,7 +9,7 @@
 
     <include
         android:id="@+id/widget_app_action"
-        layout="@layout/app_action" />
+        layout="@layout/action_bar" />
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/root_fragment"

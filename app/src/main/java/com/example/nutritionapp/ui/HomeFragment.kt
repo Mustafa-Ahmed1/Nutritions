@@ -11,6 +11,7 @@ import com.example.nutritionapp.ui.base.BaseFragment
 class HomeFragment :BaseFragment<FragmentHomeBinding>() {
 
     override fun bindingInflater(): FragmentHomeBinding = FragmentHomeBinding.inflate(layoutInflater)
+
     override fun setUp() {
         (activity as HomeActivity).findViewById<Button>(R.id.button).visibility = View.GONE
         (activity as HomeActivity).findViewById<View>(R.id.widget_app_action).visibility = View.VISIBLE
