@@ -27,6 +27,22 @@
         <item name="android:textColor">@color/gray</item>
     </style>
 
+    <style name="PrimaryTextStyle.Regular" parent="DefaultTextStyle">
+        <item name="android:fontFamily">@font/poppins_regular</item>
+    </style>
+    <style name="PrimaryTextStyle.Regular.Gray">
+        <item name="android:textColor">@color/gray</item>
+    </style>
+    <style name="PrimaryTextStyle.Regular.White">
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <style name="PrimaryTextStyle.Regular.Black">
+        <item name="android:textColor">@color/black</item>
+    </style>
+    <style name="PrimaryTextStyle.Regular.PrimaryColor">
+        <item name="android:textColor">@color/primary_color</item>
+    </style>
+
     <style name="SecondaryTextStyle" parent="DefaultTextStyle">
         <item name="android:textSize">@dimen/font_size_secondary</item>
         <item name="android:fontFamily">@font/poppins_medium</item>
@@ -36,6 +52,12 @@
     </style>
     <style name="SecondaryTextStyle.Black">
         <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="ExtraTextStyle" parent="DefaultTextStyle">
+        <item name="android:textSize">@dimen/font_size_titleExtra</item>
+        <item name="android:fontFamily">@font/poppins_semi_bold</item>
+        <item name="android:textColor">@color/primary_color</item>
     </style>
 
     <style name="CaptionTextStyle" parent="PrimaryTextStyle">

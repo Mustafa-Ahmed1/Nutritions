@@ -17,4 +17,6 @@
 
     <dimen name="small_button">24dp</dimen>
     <dimen name="spacing_too_small">4dp</dimen>
+    <dimen name="total_calories_ring_size">160dp</dimen>
+    <dimen name="special_height">56dp</dimen>
 </resources>
