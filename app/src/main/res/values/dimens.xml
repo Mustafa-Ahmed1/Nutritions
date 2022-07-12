@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <dimen name="zero">0dp</dimen>
+
     <dimen name="spacing_small">8dp</dimen>
     <dimen name="spacing_medium">16dp</dimen>
     <dimen name="spacing_large">24dp</dimen>
@@ -19,4 +21,8 @@
     <dimen name="spacing_too_small">4dp</dimen>
     <dimen name="total_calories_ring_size">160dp</dimen>
     <dimen name="special_height">56dp</dimen>
+    <dimen name="height_action_bar">100dp</dimen>
+
+
+
 </resources>
