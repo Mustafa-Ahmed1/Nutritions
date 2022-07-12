@@ -9,7 +9,7 @@
 
     <include
         android:id="@+id/widget_app_action"
-        layout="@layout/app_action" />
+        layout="@layout/action_bar" />
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/root_fragment"
@@ -20,14 +20,5 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/widget_app_action" />
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Next"
-        app:layout_constraintBottom_toBottomOf="@+id/root_fragment"
-        app:layout_constraintEnd_toEndOf="@+id/root_fragment"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/root_fragment" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

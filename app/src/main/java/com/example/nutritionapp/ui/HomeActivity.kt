@@ -13,6 +13,8 @@ import java.io.InputStreamReader
 
 class HomeActivity : BaseActivity<ActivityMainBinding>() {
 
+    private val homeFragment: HomeFragment = HomeFragment()
+
     val parser = CSVParser()
     private val calculation: Calculation = Calculation()
     lateinit var mealsList: MutableList<Meal>
@@ -20,20 +22,16 @@ class HomeActivity : BaseActivity<ActivityMainBinding>() {
     override fun bindingInflater() = ActivityMainBinding.inflate(layoutInflater)
 
     override fun setUp() {
-        findViewById<View>(R.id.widget_app_action).visibility = View.GONE
-        binding.button.visibility = View.VISIBLE
-        navigate()
-
+        binding.widgetAppAction.root.visibility = View.GONE
         openFile()
         mealsList = DataManager.getMeals()
+        setDefaultMainFragment()
     }
 
-    private fun navigate() {
-        binding.button.setOnClickListener {
-            val transaction = supportFragmentManager.beginTransaction()
-            transaction.add(R.id.root_fragment, homeFragment)
-            transaction.commit()
-        }
+    private fun setDefaultMainFragment() {
+        val transaction = supportFragmentManager.beginTransaction()
+        transaction.add(R.id.root_fragment, homeFragment)
+        transaction.commit()
     }
 
     fun openFile() {
