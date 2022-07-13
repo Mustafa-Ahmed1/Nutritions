@@ -2,67 +2,68 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root_home_fragment"
     android:layout_width="match_parent"
-    android:id="@+id/sd"
     android:layout_height="match_parent"
+    android:padding="@dimen/spacing_medium"
     tools:context=".ui.HomeFragment">
 
     <TextView
         android:id="@+id/header_title"
+        android:text="@string/best_meals"
+        style="@style/TitleTextStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
-        android:fontFamily="@font/poppins_semi_bold"
-        android:text="@string/head_text"
-        android:textColor="@color/black"
-        android:textSize="24sp"
-        android:textStyle="normal"
+        android:paddingVertical="@dimen/spacing_medium"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <View
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/card_diabetics"
-        android:layout_width="0dp"
-        android:layout_height="156dp"
-        android:layout_marginStart="@dimen/spacing_medium"
+        android:layout_width="@dimen/zero"
+        android:layout_height="@dimen/height_card"
         android:layout_marginEnd="@dimen/spacing_medium"
-        android:layout_marginBottom="8dp"
-        android:background="@color/red_card"
+        android:layout_marginBottom="@dimen/spacing_small"
+        android:background="@drawable/shape_card"
+        android:backgroundTint="@color/red_card"
         app:layout_constraintEnd_toStartOf="@+id/card_gym"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/header_title" />
+        app:layout_constraintTop_toBottomOf="@+id/header_title"
+        />
 
     <ImageView
         android:id="@+id/imageView"
+        android:elevation="@dimen/elevation_element"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/ic_diabetes_device"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="@dimen/spacing_small"
         app:layout_constraintBottom_toBottomOf="@+id/diabetics"
         app:layout_constraintEnd_toEndOf="@+id/card_diabetics"
         app:layout_constraintStart_toStartOf="@id/card_diabetics"
-        app:layout_constraintTop_toTopOf="@+id/card_diabetics" />
+        app:layout_constraintTop_toTopOf="@+id/card_diabetics"
+        tools:ignore="ContentDescription" />
 
     <TextView
         android:id="@+id/diabetics"
+        android:text="@string/diabetics"
         style="@style/PrimaryTextStyle.White"
+        android:elevation="@dimen/elevation_element"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/diabetics"
-        android:layout_marginBottom="22dp"
+        android:layout_marginBottom="@dimen/spacing_specific"
         app:layout_constraintBottom_toBottomOf="@+id/card_diabetics"
         app:layout_constraintEnd_toEndOf="@+id/imageView"
         app:layout_constraintStart_toStartOf="@+id/imageView"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
-    <View
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/card_gym"
-        android:layout_width="0dp"
-        android:layout_height="156dp"
-        android:layout_marginEnd="@dimen/spacing_medium"
-        android:background="@color/blue_card"
+        android:layout_width="@dimen/zero"
+        android:layout_height="@dimen/height_card"
+        android:background="@drawable/shape_card"
+        android:backgroundTint="@color/blue_card"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/card_diabetics"
@@ -70,68 +71,76 @@
 
     <ImageView
         android:id="@+id/imageView3"
+        android:elevation="@dimen/elevation_element"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/ic_gym"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="@dimen/spacing_small"
         app:layout_constraintBottom_toBottomOf="@+id/gym_player"
         app:layout_constraintEnd_toEndOf="@+id/card_gym"
         app:layout_constraintStart_toStartOf="@+id/card_gym"
-        app:layout_constraintTop_toTopOf="@+id/card_gym" />
+        app:layout_constraintTop_toTopOf="@+id/card_gym"
+        tools:ignore="ContentDescription" />
 
     <TextView
         android:id="@+id/gym_player"
+        android:text="@string/gym_players"
         style="@style/PrimaryTextStyle.White"
+        android:elevation="@dimen/elevation_element"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/gym_players"
-        android:layout_marginBottom="22dp"
+        android:layout_marginBottom="@dimen/spacing_specific"
         app:layout_constraintBottom_toBottomOf="@+id/card_gym"
         app:layout_constraintEnd_toEndOf="@+id/imageView3"
         app:layout_constraintStart_toStartOf="@+id/imageView3"
         app:layout_constraintTop_toBottomOf="@+id/imageView3" />
 
 
-    <View
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/card_pressure"
-        android:layout_width="0dp"
-        android:layout_height="156dp"
-        android:background="@color/yellow_card"
-        app:layout_constraintEnd_toEndOf="@+id/card_gym"
+        android:layout_width="@dimen/zero"
+        android:layout_height="@dimen/height_card"
+        android:background="@drawable/shape_card"
+        android:backgroundTint="@color/yellow_card"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/card_weight_loss"
         app:layout_constraintTop_toTopOf="@+id/card_weight_loss" />
 
     <ImageView
         android:id="@+id/imageView5"
+        android:elevation="@dimen/elevation_element"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="@dimen/spacing_small"
         android:src="@drawable/ic_blood_pressure_device"
         app:layout_constraintBottom_toBottomOf="@+id/blood_pressure"
         app:layout_constraintEnd_toEndOf="@+id/card_pressure"
         app:layout_constraintStart_toStartOf="@id/card_pressure"
-        app:layout_constraintTop_toTopOf="@+id/card_pressure" />
+        app:layout_constraintTop_toTopOf="@+id/card_pressure"
+        tools:ignore="ContentDescription" />
 
     <TextView
         android:id="@+id/blood_pressure"
+        android:text="@string/blood_pressure"
         style="@style/PrimaryTextStyle.White"
+        android:elevation="@dimen/elevation_element"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/blood_pressure"
-        android:layout_marginBottom="22dp"
+        android:layout_marginBottom="@dimen/spacing_specific"
         app:layout_constraintBottom_toBottomOf="@+id/card_pressure"
         app:layout_constraintEnd_toEndOf="@+id/imageView5"
         app:layout_constraintStart_toStartOf="@+id/imageView5"
         app:layout_constraintTop_toBottomOf="@+id/imageView5" />
 
-    <View
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/card_weight_loss"
-        android:layout_width="0dp"
+        android:layout_width="@dimen/zero"
+        android:layout_height="@dimen/height_card"
         android:layout_marginTop="@dimen/spacing_medium"
-        android:layout_height="156dp"
         android:layout_marginEnd="@dimen/spacing_medium"
-        android:background="@color/purple_card"
+        android:background="@drawable/shape_card"
+        android:backgroundTint="@color/purple_card"
         app:layout_constraintEnd_toStartOf="@+id/card_pressure"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@+id/card_diabetics"
@@ -139,22 +148,25 @@
 
     <ImageView
         android:id="@+id/imageView4"
+        android:elevation="@dimen/elevation_element"
+        android:src="@drawable/ic_athlete"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/ic_athlete"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="@dimen/spacing_small"
         app:layout_constraintBottom_toBottomOf="@+id/weight_loss"
         app:layout_constraintEnd_toEndOf="@+id/card_weight_loss"
         app:layout_constraintStart_toStartOf="@+id/card_weight_loss"
-        app:layout_constraintTop_toTopOf="@+id/card_weight_loss" />
+        app:layout_constraintTop_toTopOf="@+id/card_weight_loss"
+        tools:ignore="ContentDescription" />
 
     <TextView
         android:id="@+id/weight_loss"
+        android:text="@string/weight_loss"
         style="@style/PrimaryTextStyle.White"
+        android:elevation="@dimen/elevation_element"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/weight_loss"
-        android:layout_marginBottom="22dp"
+        android:layout_marginBottom="@dimen/spacing_specific"
         app:layout_constraintBottom_toBottomOf="@+id/card_weight_loss"
         app:layout_constraintEnd_toEndOf="@+id/imageView4"
         app:layout_constraintStart_toStartOf="@+id/imageView4"
@@ -163,90 +175,72 @@
 
     <TextView
         android:id="@+id/header_title2"
+        android:text="@string/more_features"
+        style="@style/TitleTextStyle"
+        android:layout_marginTop="@dimen/spacing_extra_large"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:fontFamily="@font/poppins_semi_bold"
-        android:text="@string/more_features"
-        android:layout_marginTop="32dp"
-        android:textColor="@color/black"
-        android:textSize="24sp"
-        android:textStyle="normal"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/card_weight_loss" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/show_all"
-        android:layout_width="0dp"
-        android:layout_height="56dp"
-        android:layout_marginTop="16dp"
-        app:cardCornerRadius="16dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:layout_width="@dimen/zero"
+        android:layout_height="@dimen/height_card_view"
+        android:layout_marginTop="@dimen/spacing_medium"
+        app:cardCornerRadius="@dimen/radius_medium"
+        android:foreground="?android:attr/selectableItemBackgroundBorderless"
         app:layout_constraintEnd_toEndOf="@+id/card_pressure"
         app:layout_constraintStart_toStartOf="@+id/header_title2"
         app:layout_constraintTop_toBottomOf="@+id/header_title2">
 
         <TextView
+            android:text="@string/show_all_meals_with_details"
+            style="@style/PrimaryTextStyle"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_margin="16dp"
-            android:fontFamily="@font/poppins_medium"
-            android:text="@string/show_all_meals_with_details"
-            android:textColor="@color/black"
-            android:textSize="16sp"
-            android:textStyle="normal" />
+            android:layout_margin="@dimen/spacing_medium"/>
 
         <ImageView
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:layout_gravity="end"
-            android:layout_margin="16dp"
             android:src="@drawable/ic_double_arrow"
+            android:layout_gravity="end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/spacing_medium"
             tools:ignore="ContentDescription" />
-
 
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
         android:id="@+id/Calories_counter"
-        android:layout_width="0dp"
-        android:layout_height="56dp"
-        android:layout_marginTop="16dp"
-        app:cardCornerRadius="16dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:layout_width="@dimen/zero"
+        android:layout_height="@dimen/height_card_view"
+        android:layout_marginTop="@dimen/spacing_medium"
+        app:cardCornerRadius="@dimen/radius_medium"
+        android:foreground="?android:attr/selectableItemBackgroundBorderless"
         app:layout_constraintEnd_toEndOf="@+id/card_pressure"
         app:layout_constraintStart_toStartOf="@+id/header_title2"
         app:layout_constraintTop_toBottomOf="@id/show_all">
 
-
         <TextView
+            android:text="@string/calories_counter"
+            style="@style/PrimaryTextStyle"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_margin="16dp"
-            android:fontFamily="@font/poppins_medium"
-            android:text="@string/calories_counter"
-            android:textColor="@color/black"
-            android:textSize="16sp"
-            android:textStyle="normal" />
+            android:layout_margin="@dimen/spacing_medium" />
 
         <ImageView
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:layout_gravity="end"
-            android:layout_margin="16dp"
             android:src="@drawable/ic_double_arrow"
+            android:layout_gravity="end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/spacing_medium"
             tools:ignore="ContentDescription" />
 
-
     </androidx.cardview.widget.CardView>
-
-    <Button
-        android:id="@+id/buttonTo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Button"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/show_all" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

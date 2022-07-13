@@ -52,7 +52,7 @@ abstract class BaseFragment<VB : ViewBinding> : Fragment() {
     }
 
     protected fun backNavigation(to: Fragment){
-        changeNavigation(StateNavigation.replace,rootFragmentApp, to)
+        changeNavigation(StateNavigation.remove,rootFragmentApp, to)
     }
 
 }
