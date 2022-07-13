@@ -5,11 +5,12 @@ import com.example.nutritionapp.ui.base.BaseFragment
 
 class FragmentDiabeticsScreen : BaseFragment<FragmentDiabeticsScreenBinding>() {
 
-    override fun bindingInflater(): FragmentDiabeticsScreenBinding = FragmentDiabeticsScreenBinding.inflate(layoutInflater)
+    override fun bindingInflater(): FragmentDiabeticsScreenBinding =
+        FragmentDiabeticsScreenBinding.inflate(layoutInflater)
 
     override fun setUp() {
-         val _homeFragment: HomeFragment = HomeFragment()
-        binding.buttonBack.setOnClickListener{
+        val _homeFragment = HomeFragment()
+        binding.buttonBack.setOnClickListener {
             backNavigation(_homeFragment)
         }
     }

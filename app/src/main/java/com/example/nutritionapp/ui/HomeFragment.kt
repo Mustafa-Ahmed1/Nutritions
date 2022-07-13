@@ -1,25 +1,38 @@
 package com.example.nutritionapp.ui
 
-import android.view.View
-import android.widget.Button
-import android.widget.TextView
-import com.example.nutritionapp.R
 import com.example.nutritionapp.databinding.FragmentHomeBinding
 import com.example.nutritionapp.ui.base.BaseFragment
 
 
-class HomeFragment :BaseFragment<FragmentHomeBinding>() {
-    private val diabeticsScreenFragment: FragmentDiabeticsScreen = FragmentDiabeticsScreen()
+class HomeFragment : BaseFragment<FragmentHomeBinding>() {
+    private val diabeticsScreenFragment = FragmentDiabeticsScreen()
+    private val mealsSearchFragment = MealsSearchFragment()
+    private val caloriesCounterFragment = CaloriesCounterFragment()
 
-    override fun bindingInflater(): FragmentHomeBinding = FragmentHomeBinding.inflate(layoutInflater)
+    override fun bindingInflater(): FragmentHomeBinding =
+        FragmentHomeBinding.inflate(layoutInflater)
 
     override fun setUp() {
         buttonCardDiabetics()
+        buttonShowAll()
+        buttonCaloriesCounter()
     }
 
     private fun buttonCardDiabetics() {
-        binding.cardDiabetics.setOnClickListener{
+        binding.cardDiabetics.setOnClickListener {
             navigationTo(diabeticsScreenFragment)
+        }
+    }
+
+    private fun buttonShowAll() {
+        binding.showAll.setOnClickListener {
+            navigationTo(mealsSearchFragment)
+        }
+    }
+
+    private fun buttonCaloriesCounter() {
+        binding.caloriesCounter.setOnClickListener {
+            navigationTo(caloriesCounterFragment)
         }
     }
 

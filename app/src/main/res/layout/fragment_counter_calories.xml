@@ -7,7 +7,7 @@
     android:background="@color/background_color">
 
     <ImageView
-        android:id="@+id/image_back_arrow"
+        android:id="@+id/button_back_search_screen"
         android:layout_width="@dimen/small_button"
         android:layout_height="@dimen/small_button"
         android:layout_marginStart="@dimen/spacing_medium"
@@ -24,7 +24,7 @@
         android:layout_marginStart="@dimen/spacing_small"
         android:layout_marginTop="@dimen/spacing_extra_large"
         android:text="@string/total_calories"
-        app:layout_constraintStart_toEndOf="@+id/image_back_arrow"
+        app:layout_constraintStart_toEndOf="@+id/button_back_search_screen"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
