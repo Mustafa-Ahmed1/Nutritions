@@ -13,6 +13,11 @@ class MealsSearchFragment : BaseFragment<FragmentSearchMealsBinding>() {
     override fun bindingInflater(): FragmentSearchMealsBinding =
         FragmentSearchMealsBinding.inflate(layoutInflater)
 
-    override fun setUp() {}
+    override fun setUp() {
+        val homeFragment = HomeFragment()
+        binding.buttonBackSearchScreen.setOnClickListener {
+            backNavigation(homeFragment)
+        }
+    }
 
 }
