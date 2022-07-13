@@ -5,6 +5,7 @@ import com.example.nutritionapp.ui.base.BaseFragment
 
 
 class HomeFragment : BaseFragment<FragmentHomeBinding>() {
+
     private val diabeticsScreenFragment = FragmentDiabeticsScreen()
     private val mealsSearchFragment = MealsSearchFragment()
     private val caloriesCounterFragment = CaloriesCounterFragment()
@@ -35,6 +36,5 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
             navigationTo(caloriesCounterFragment)
         }
     }
-
 
 }
