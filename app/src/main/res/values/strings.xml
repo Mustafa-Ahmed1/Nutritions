@@ -37,7 +37,7 @@
 
     <string name="head_text">Best meals</string>
 
-    <string name="here_are_the_best_100_meals_for_diabetics_it_based_on_specific_calculations_witch_contains_bla_bla_bla_and_then_write_some_some_text">Here are the best 100 meals for diabetics. it based on specific calculations, witch contains bla bla bla, [and then write some some text].</string>
+    <string name="diabetics_cards_title_1">Here are the best 100 meals for diabetics. it based on specific calculations, witch contains bla bla bla, [and then write some some text].</string>
     <string name="best_diabetes_meals_">Best diabetes meals</string>
     <string name="french_fries">French Fries</string>
     <string name="_100">100</string>

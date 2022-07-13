@@ -46,7 +46,7 @@
                 android:fontFamily="@font/poppins_medium"
                 android:layout_margin="@dimen/spacing_medium"
                 style="@style/CaptionTextStyle"
-                android:text="@string/here_are_the_best_100_meals_for_diabetics_it_based_on_specific_calculations_witch_contains_bla_bla_bla_and_then_write_some_some_text"
+                android:text="@string/diabetics_cards_title_1"
                 android:textColor="@color/white"
                  />
         </LinearLayout>

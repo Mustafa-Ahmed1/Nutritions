@@ -26,6 +26,7 @@ class HomeActivity : BaseActivity<ActivityMainBinding>() {
         openFile()
         mealsList = DataManager.getMeals()
         setDefaultMainFragment()
+        val rr=Calculation().mealTop5(mealsList,5)
     }
 
     private fun setDefaultMainFragment() {
