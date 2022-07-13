@@ -14,6 +14,7 @@ import java.io.InputStreamReader
 class HomeActivity : BaseActivity<ActivityMainBinding>() {
 
     private val homeFragment: HomeFragment = HomeFragment()
+    private val mealsSearchFragment: MealsSearchFragment = MealsSearchFragment()
 
     val parser = CSVParser()
     private val calculation: Calculation = Calculation()

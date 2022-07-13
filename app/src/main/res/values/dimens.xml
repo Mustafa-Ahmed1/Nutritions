@@ -22,7 +22,7 @@
     <dimen name="total_calories_ring_size">160dp</dimen>
     <dimen name="special_height">56dp</dimen>
     <dimen name="height_action_bar">100dp</dimen>
-
+    <dimen name="large_image">350dp</dimen>
 
 
 </resources>
