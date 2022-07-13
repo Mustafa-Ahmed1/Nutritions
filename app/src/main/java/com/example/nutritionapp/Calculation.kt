@@ -1,7 +1,7 @@
 package com.example.nutritionapp
 
 class Calculation {
-    fun calculateCustomGramsCalories(caloriesOf100g: Double, mealGrams: Double) = (mealGrams / 100.0) * caloriesOf100g
+    fun calculateCustomGramsCalories(caloriesOf100g: Double, mealGrams: Double) =
+        if (mealGrams <= 0 || caloriesOf100g <= 0) 0.0 else (mealGrams / 100.0) * caloriesOf100g
+    //  var cal = calculation.calculateCustomGramsCalories(mealsList[0].calories, 250.0)
 }
-
-//  var cal = calculation.calculateCustomGramsCalories(mealsList[0].calories, 250.0)
