@@ -1,7 +1,7 @@
 import androidx.fragment.app.Fragment
 
 interface CustomActionBar {
-    var statesCustomActionBar:Boolean
+    var visibilityCustomActionBar:Boolean
     fun title() : String?
     fun back(): Fragment?
 }

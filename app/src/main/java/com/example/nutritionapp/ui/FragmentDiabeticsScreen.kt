@@ -8,7 +8,7 @@ class FragmentDiabeticsScreen :BaseFragment<FragmentDiabeticsScreenBinding>(){
 
     override fun bindingInflater(): FragmentDiabeticsScreenBinding = FragmentDiabeticsScreenBinding.inflate(layoutInflater)
 
-    override var statesCustomActionBar: Boolean= true
+    override var visibilityCustomActionBar: Boolean= true
     override fun title(): String = "Top 5 diabetes meals"
     override fun back(): Fragment = HomeFragment()
 

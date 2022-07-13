@@ -10,7 +10,7 @@ class HomeFragment() :BaseFragment<FragmentHomeBinding>() {
 
     override fun bindingInflater(): FragmentHomeBinding = FragmentHomeBinding.inflate(layoutInflater)
 
-    override var statesCustomActionBar: Boolean = false
+    override var visibilityCustomActionBar: Boolean = false
     override fun title(): String? = null
     override fun back(): Fragment? = null
 

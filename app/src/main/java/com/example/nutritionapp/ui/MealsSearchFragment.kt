@@ -6,7 +6,7 @@ import com.example.nutritionapp.ui.base.BaseFragment
 
 class MealsSearchFragment : BaseFragment<FragmentSearchMealsBinding>() {
 
-    override var statesCustomActionBar: Boolean= true
+    override var visibilityCustomActionBar: Boolean= true
     override fun title(): String = "Search for all meals"
     override fun back(): Fragment = HomeFragment()
 

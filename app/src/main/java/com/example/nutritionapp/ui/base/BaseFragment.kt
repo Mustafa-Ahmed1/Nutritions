@@ -33,7 +33,7 @@ abstract class BaseFragment<VB : ViewBinding> : Fragment(), CustomActionBar{
         _binding = bindingInflater()
         setUp()
 
-        (activity as HomeActivity).setUpCustomActionBar(statesCustomActionBar,title(),back())
+        (activity as HomeActivity).setUpCustomActionBar(visibilityCustomActionBar,title(),back())
 
         return requireNotNull(_binding).root
     }
