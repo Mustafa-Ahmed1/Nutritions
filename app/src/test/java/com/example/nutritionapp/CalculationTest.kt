@@ -2,7 +2,7 @@ package com.example.nutritionapp
 
 import org.junit.Test
 import org.junit.Before
-import kotlin.test.assertEquals
+import junit.framework.TestCase.assertEquals
 
 internal class CalculationTest {
 
