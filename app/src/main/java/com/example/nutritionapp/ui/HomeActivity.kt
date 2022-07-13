@@ -1,5 +1,6 @@
 package com.example.nutritionapp.ui
 
+import android.util.Log
 import android.view.View
 import com.example.nutritionapp.CSVParser
 import com.example.nutritionapp.Calculation
@@ -27,6 +28,7 @@ class HomeActivity : BaseActivity<ActivityMainBinding>() {
         mealsList = DataManager.getMeals()
         setDefaultMainFragment()
         val rr=Calculation().mealTop5(mealsList,5)
+//        Log.v("AMEER", "${rr[3].name}")
     }
 
     private fun setDefaultMainFragment() {
