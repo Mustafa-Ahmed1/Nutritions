@@ -95,7 +95,7 @@
 
     <EditText
         android:id="@+id/edit_text_grams"
-        android:layout_width="0dp"
+        android:layout_width="@dimen/zero"
         android:layout_height="@dimen/special_height"
         android:layout_margin="@dimen/spacing_medium"
         android:background="@drawable/rectangle_border"
@@ -156,7 +156,7 @@
         android:layout_marginHorizontal="@dimen/spacing_medium"
         android:layout_marginTop="@dimen/spacing_extra_large"
         app:cardCornerRadius="@dimen/spacing_medium"
-        app:cardElevation="0dp"
+        app:cardElevation="@dimen/zero"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button_add">

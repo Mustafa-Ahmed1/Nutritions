@@ -13,9 +13,6 @@ import java.io.InputStreamReader
 
 class HomeActivity : BaseActivity<ActivityMainBinding>() {
 
-    private val homeFragment: HomeFragment = HomeFragment()
-    private val mealsSearchFragment: MealsSearchFragment = MealsSearchFragment()
-
     val parser = CSVParser()
     private val calculation: Calculation = Calculation()
     lateinit var mealsList: MutableList<Meal>
@@ -31,7 +28,7 @@ class HomeActivity : BaseActivity<ActivityMainBinding>() {
 
     private fun setDefaultMainFragment() {
         val transaction = supportFragmentManager.beginTransaction()
-        transaction.add(R.id.root_fragment, homeFragment)
+        transaction.add(R.id.root_fragment, HomeFragment())
         transaction.commit()
     }
 
