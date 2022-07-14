@@ -7,27 +7,6 @@
     android:background="@color/background_color"
     tools:context=".ui.TestFragment">
 
-    <ImageView
-        android:id="@+id/button_back_search_screen"
-        android:layout_width="@dimen/small_button"
-        android:layout_height="@dimen/small_button"
-        android:layout_marginStart="@dimen/spacing_medium"
-        android:src="@drawable/ic_back_arrow"
-        app:layout_constraintBottom_toBottomOf="@+id/text_title"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/text_title" />
-
-    <TextView
-        android:id="@+id/text_title"
-        style="@style/SecondaryTextStyle.Black"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/spacing_small"
-        android:layout_marginTop="@dimen/spacing_extra_large"
-        android:text="@string/search_in_all_meals"
-        app:layout_constraintStart_toEndOf="@+id/button_back_search_screen"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <TextView
         android:id="@+id/calories_value"
         style="@style/SecondaryTextStyle.Black"
@@ -35,11 +14,10 @@
         android:layout_height="wrap_content"
         android:text="0"
         android:textColor="@color/red"
-        app:layout_constraintBottom_toTopOf="@+id/sugars_value"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/test_calories"
-        app:layout_constraintTop_toBottomOf="@+id/text_title"
+        app:layout_constraintTop_toTopOf="@+id/test_calories"
         app:layout_constraintVertical_bias="0.325" />
 
     <TextView

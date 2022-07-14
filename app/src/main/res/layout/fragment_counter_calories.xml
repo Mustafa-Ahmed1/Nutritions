@@ -7,35 +7,14 @@
     android:background="@color/background_color">
 
     <ImageView
-        android:id="@+id/button_back_search_screen"
-        android:layout_width="@dimen/small_button"
-        android:layout_height="@dimen/small_button"
-        android:layout_marginStart="@dimen/spacing_medium"
-        android:src="@drawable/ic_back_arrow"
-        app:layout_constraintBottom_toBottomOf="@+id/text_title"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/text_title" />
-
-    <TextView
-        android:id="@+id/text_title"
-        style="@style/SecondaryTextStyle.Black"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/spacing_small"
-        android:layout_marginTop="@dimen/spacing_extra_large"
-        android:text="@string/total_calories"
-        app:layout_constraintStart_toEndOf="@+id/button_back_search_screen"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
         android:id="@+id/image_total_calories_ring"
         android:layout_width="@dimen/total_calories_ring_size"
         android:layout_height="@dimen/total_calories_ring_size"
-        android:layout_marginTop="@dimen/spacing_extra_large"
         android:src="@drawable/ring"
+        android:layout_marginTop="94dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_title" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/text_total_calories_value"
@@ -75,7 +54,7 @@
         app:endIconMode="none"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/image_total_calories_ring"
+        app:layout_constraintTop_toBottomOf="@+id/daily_range_text"
         app:layout_constraintVertical_chainStyle="packed">
 
         <AutoCompleteTextView
@@ -116,14 +95,18 @@
         app:layout_constraintEnd_toEndOf="@+id/edit_text_grams"
         app:layout_constraintTop_toTopOf="@+id/edit_text_grams" />
 
-<!--    <TextView-->
-<!--        style="@style/CaptionTextStyle.Red"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="You're out of normal daily range"-->
-<!--        app:layout_constraintEnd_toEndOf="@+id/editText"-->
-<!--        app:layout_constraintStart_toStartOf="@+id/editText"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/editText" />-->
+    <TextView
+        android:id="@+id/daily_range_text"
+        android:layout_marginTop="@dimen/spacing_small"
+        style="@style/CaptionTextStyle.Red"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/spacing_large"
+        android:text="You're out of normal daily range"
+        app:layout_constraintBottom_toTopOf="@+id/textInputLayout0"
+        app:layout_constraintEnd_toEndOf="@+id/image_total_calories_ring"
+        app:layout_constraintStart_toStartOf="@+id/image_total_calories_ring"
+        app:layout_constraintTop_toBottomOf="@+id/image_total_calories_ring" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/button_add"
