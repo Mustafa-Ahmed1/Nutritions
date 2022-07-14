@@ -22,10 +22,31 @@ class HomeFragment() :BaseFragment<FragmentHomeBinding>() {
         buttonCardDiabetics()
         buttonShowAll()
         buttonCaloriesCounter()
+        buttonBodyBuilding()
+        buttonWeightLoss()
+        buttonBloodPressure()
     }
 
     private fun buttonCardDiabetics() {
         binding.cardDiabetics.setOnClickListener {
+            navigationTo(diabeticsScreenFragment)
+        }
+    }
+
+    private fun buttonBodyBuilding() {
+        binding.cardGym.setOnClickListener {
+            navigationTo(diabeticsScreenFragment)
+        }
+    }
+
+    private fun buttonWeightLoss() {
+        binding.cardWeightLoss.setOnClickListener {
+            navigationTo(diabeticsScreenFragment)
+        }
+    }
+
+    private fun buttonBloodPressure() {
+        binding.cardPressure.setOnClickListener {
             navigationTo(diabeticsScreenFragment)
         }
     }

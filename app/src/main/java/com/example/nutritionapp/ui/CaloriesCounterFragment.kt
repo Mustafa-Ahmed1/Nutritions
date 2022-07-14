@@ -14,10 +14,6 @@ class CaloriesCounterFragment : BaseFragment<FragmentCounterCaloriesBinding>() {
     override fun back(): Fragment = HomeFragment()
 
     override fun setUp() {
-        val homeFragment = HomeFragment()
-        binding.buttonBackSearchScreen.setOnClickListener {
-            backNavigation(homeFragment)
-        }
     }
 
 

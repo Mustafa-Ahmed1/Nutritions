@@ -21,6 +21,7 @@ class HomeActivity : BaseActivity<ActivityMainBinding>() {
     lateinit var mealsList: MutableList<Meal>
 
     override fun bindingInflater() = ActivityMainBinding.inflate(layoutInflater)
+
     fun setUpCustomActionBar(visible: Boolean,title: String?, back: Fragment?){
         if (visible){
             binding.widgetAppAction.appActionTitle.text = title

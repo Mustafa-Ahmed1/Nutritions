@@ -29,10 +29,6 @@ class MealsSearchFragment : BaseFragment<FragmentSearchMealsBinding>() {
         val homeFragment = HomeFragment()
         mealsList = DataManager.getMeals()
 
-        binding.buttonBackSearchScreen.setOnClickListener {
-            backNavigation(homeFragment)
-        }
-
         val buffer = openFile(Constant.CSV_FILE_NAME)
         CSVParser().getMealsFromCSV(buffer)
 
