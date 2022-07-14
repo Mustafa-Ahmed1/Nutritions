@@ -6,7 +6,7 @@
     android:background="@color/background_color">
 
     <ImageView
-        android:id="@+id/image_back_arrow"
+        android:id="@+id/button_back_search_screen"
         android:layout_width="@dimen/small_button"
         android:layout_height="@dimen/small_button"
         android:layout_marginStart="@dimen/spacing_medium"
@@ -23,7 +23,7 @@
         android:layout_marginStart="@dimen/spacing_small"
         android:layout_marginTop="@dimen/spacing_extra_large"
         android:text="@string/search_in_all_meals"
-        app:layout_constraintStart_toEndOf="@+id/image_back_arrow"
+        app:layout_constraintStart_toEndOf="@+id/button_back_search_screen"
         app:layout_constraintTop_toTopOf="parent" />
 
 
@@ -37,10 +37,10 @@
         app:boxStrokeWidth="0dp"
         app:boxStrokeWidthFocused="0dp"
         app:endIconMode="none"
-        app:layout_constraintBottom_toTopOf="@+id/imageView"
+        android:layout_marginTop="@dimen/spacing_extra_large"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_title"
         app:layout_constraintVertical_chainStyle="packed">
 
         <AutoCompleteTextView
@@ -61,7 +61,6 @@
         android:id="@+id/imageView"
         android:layout_width="@dimen/large_image"
         android:layout_height="@dimen/large_image"
-        android:layout_marginTop="@dimen/spacing_extra_large"
         android:src="@drawable/search_image"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
