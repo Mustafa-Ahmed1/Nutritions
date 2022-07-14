@@ -54,65 +54,56 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/spacing_too_small"
-        style="@style/PrimaryTextStyle.Regular.Black"
+        style="@style/PrimaryTextStyle.Black"
         android:text="@string/total_calories"
         app:layout_constraintBottom_toBottomOf="@+id/image_total_calories_ring"
         app:layout_constraintEnd_toEndOf="@+id/image_total_calories_ring"
         app:layout_constraintStart_toStartOf="@+id/image_total_calories_ring"
         app:layout_constraintTop_toBottomOf="@+id/text_total_calories_value" />
 
-    <Spinner
-        android:id="@+id/spinner_meal"
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout0"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
         android:layout_width="match_parent"
         android:layout_height="@dimen/special_height"
         android:layout_marginHorizontal="@dimen/spacing_medium"
+        android:background="@drawable/meal_input_background"
+        app:boxStrokeWidth="0dp"
         android:layout_marginTop="@dimen/spacing_extra_large"
-        android:background="@drawable/rectangle_border"
+        app:boxStrokeWidthFocused="0dp"
+        app:endIconMode="none"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/image_total_calories_ring" />
+        app:layout_constraintTop_toBottomOf="@+id/image_total_calories_ring"
+        app:layout_constraintVertical_chainStyle="packed">
 
-    <ImageView
-        android:id="@+id/image_spinner_arrow"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="@dimen/spacing_medium"
-        android:src="@drawable/ic_down_arrow"
-        app:layout_constraintBottom_toBottomOf="@+id/spinner_meal"
-        app:layout_constraintEnd_toEndOf="@+id/spinner_meal"
-        app:layout_constraintTop_toTopOf="@+id/spinner_meal" />
-
-    <TextView
-        android:id="@+id/text_meal_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/spacing_medium"
-        style="@style/PrimaryTextStyle.Regular.Gray"
-        android:text="@string/meal_name"
-        app:layout_constraintBottom_toBottomOf="@+id/spinner_meal"
-        app:layout_constraintStart_toStartOf="@+id/spinner_meal"
-        app:layout_constraintTop_toTopOf="@+id/spinner_meal" />
+        <AutoCompleteTextView
+            android:id="@+id/all_meals"
+            style="@style/PrimaryTextStyle.Black"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:drawablePadding="@dimen/spacing_medium"
+            android:inputType="text"
+            android:paddingTop="@dimen/spacing_small"
+            android:paddingBottom="@dimen/spacing_small"
+            android:textCursorDrawable="@drawable/cursor" />
+    </com.google.android.material.textfield.TextInputLayout>
 
     <EditText
         android:id="@+id/edit_text_grams"
         android:layout_width="@dimen/zero"
+        style="@style/PrimaryTextStyle.Black"
         android:layout_height="@dimen/special_height"
         android:layout_margin="@dimen/spacing_medium"
+        android:inputType="number"
+        android:paddingStart="@dimen/spacing_medium"
         android:background="@drawable/rectangle_border"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner_meal" />
-
-    <TextView
-        android:id="@+id/text_grams"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/spacing_medium"
-        style="@style/PrimaryTextStyle.Regular.Gray"
-        android:text="@string/grams"
-        app:layout_constraintBottom_toBottomOf="@+id/edit_text_grams"
-        app:layout_constraintStart_toStartOf="@+id/edit_text_grams"
-        app:layout_constraintTop_toTopOf="@+id/edit_text_grams" />
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout0"
+        android:hint="@string/grams"/>
 
     <TextView
         android:id="@+id/text_g"
@@ -148,28 +139,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edit_text_grams" />
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/card_meals"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="@dimen/spacing_medium"
-        android:layout_marginTop="@dimen/spacing_extra_large"
-        app:cardCornerRadius="@dimen/spacing_medium"
-        app:cardElevation="@dimen/zero"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_add">
-
-        <TextView
-            android:id="@+id/text_meals_list"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/spacing_medium"
-            style="@style/PrimaryTextStyle.Black"
-            android:text="@string/nothing_to_show" />
-
-    </androidx.cardview.widget.CardView>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/button_reset"

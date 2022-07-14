@@ -4,30 +4,15 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Kotlin_Corse/NutritionApp/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/Mustafa Ahmed/AndroidStudioProjects/NutritionApp/app/src/main/res/drawable-v24/card_background_blue.xml" value="0.1355" />
-        <entry key="..\:/Users/Mustafa Ahmed/AndroidStudioProjects/NutritionApp/app/src/main/res/drawable-v24/card_background_purple.xml" value="0.1355" />
-        <entry key="..\:/Users/Mustafa Ahmed/AndroidStudioProjects/NutritionApp/app/src/main/res/drawable-v24/card_background_red.xml" value="0.1355" />
-        <entry key="..\:/Users/Mustafa Ahmed/AndroidStudioProjects/NutritionApp/app/src/main/res/drawable-v24/card_background_yellow.xml" value="0.1355" />
-        <entry key="..\:/Users/Mustafa Ahmed/AndroidStudioProjects/NutritionApp/app/src/main/res/drawable-v24/ic_search.xml" value="0.1355" />
+        <entry key="..\:/Users/Mustafa Ahmed/AndroidStudioProjects/NutritionApp/app/src/main/res/drawable-v24/meal_input_background.xml" value="0.1355" />
         <entry key="..\:/Users/Mustafa Ahmed/AndroidStudioProjects/NutritionApp/app/src/main/res/drawable-v24/search_input_background.xml" value="0.1355" />
-        <entry key="..\:/Users/Mustafa Ahmed/AndroidStudioProjects/NutritionApp/app/src/main/res/drawable-v24/text_background.xml" value="0.1355" />
-        <entry key="..\:/Users/Mustafa Ahmed/AndroidStudioProjects/NutritionApp/app/src/main/res/drawable/border.xml" value="0.1355" />
-        <entry key="..\:/Users/Mustafa Ahmed/AndroidStudioProjects/NutritionApp/app/src/main/res/drawable/cursir.xml" value="0.1355" />
-        <entry key="..\:/Users/Mustafa Ahmed/AndroidStudioProjects/NutritionApp/app/src/main/res/drawable/ic_search.xml" value="0.1355" />
-        <entry key="..\:/Users/Mustafa Ahmed/AndroidStudioProjects/NutritionApp/app/src/main/res/drawable/rectangle1.xml" value="0.1355" />
-        <entry key="..\:/Users/Mustafa Ahmed/AndroidStudioProjects/NutritionApp/app/src/main/res/drawable/rectangle2.xml" value="0.1355" />
-        <entry key="..\:/Users/Mustafa Ahmed/AndroidStudioProjects/NutritionApp/app/src/main/res/drawable/rectangle_border.xml" value="0.1355" />
-        <entry key="..\:/Users/Mustafa Ahmed/AndroidStudioProjects/NutritionApp/app/src/main/res/font/poppins.xml" value="0.25092592592592594" />
-        <entry key="..\:/Users/Mustafa Ahmed/AndroidStudioProjects/NutritionApp/app/src/main/res/layout/action_bar.xml" value="0.25" />
         <entry key="..\:/Users/Mustafa Ahmed/AndroidStudioProjects/NutritionApp/app/src/main/res/layout/activity_main.xml" value="0.10989583333333333" />
         <entry key="..\:/Users/Mustafa Ahmed/AndroidStudioProjects/NutritionApp/app/src/main/res/layout/app_action.xml" value="0.10989583333333333" />
-        <entry key="..\:/Users/Mustafa Ahmed/AndroidStudioProjects/NutritionApp/app/src/main/res/layout/drop_down_list_item.xml" value="0.25" />
         <entry key="..\:/Users/Mustafa Ahmed/AndroidStudioProjects/NutritionApp/app/src/main/res/layout/fragment_calculate_calories.xml" value="0.264" />
-        <entry key="..\:/Users/Mustafa Ahmed/AndroidStudioProjects/NutritionApp/app/src/main/res/layout/fragment_counter_calories.xml" value="0.25" />
-        <entry key="..\:/Users/Mustafa Ahmed/AndroidStudioProjects/NutritionApp/app/src/main/res/layout/fragment_diabetics_screen.xml" value="0.264" />
-        <entry key="..\:/Users/Mustafa Ahmed/AndroidStudioProjects/NutritionApp/app/src/main/res/layout/fragment_home.xml" value="0.264" />
-        <entry key="..\:/Users/Mustafa Ahmed/AndroidStudioProjects/NutritionApp/app/src/main/res/layout/fragment_search_meals.xml" value="0.264" />
-        <entry key="..\:/Users/Mustafa Ahmed/AndroidStudioProjects/NutritionApp/app/src/main/res/layout/fragment_test.xml" value="0.25" />
+        <entry key="..\:/Users/Mustafa Ahmed/AndroidStudioProjects/NutritionApp/app/src/main/res/layout/fragment_counter_calories.xml" value="0.264" />
+        <entry key="..\:/Users/Mustafa Ahmed/AndroidStudioProjects/NutritionApp/app/src/main/res/layout/fragment_diabetics_screen.xml" value="0.10190217391304347" />
+        <entry key="..\:/Users/Mustafa Ahmed/AndroidStudioProjects/NutritionApp/app/src/main/res/layout/fragment_home.xml" value="0.25" />
+        <entry key="..\:/Users/Mustafa Ahmed/AndroidStudioProjects/NutritionApp/app/src/main/res/layout/fragment_search_meals.xml" value="0.25" />
         <entry key="..\:/Users/tofym/AndroidStudioProjects/NutritionApp/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.147" />
         <entry key="..\:/Users/tofym/AndroidStudioProjects/NutritionApp/app/src/main/res/drawable/ic_athlete.xml" value="0.147" />
         <entry key="..\:/Users/tofym/AndroidStudioProjects/NutritionApp/app/src/main/res/drawable/ic_back_arrow.xml" value="0.147" />
@@ -46,6 +31,7 @@
         <entry key="..\:/Users/tofym/AndroidStudioProjects/NutritionApp/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Users/tofym/AndroidStudioProjects/NutritionApp/app/src/main/res/layout/fragment_blank.xml" value="0.2" />
         <entry key="..\:/Users/tofym/AndroidStudioProjects/NutritionApp/app/src/main/res/layout/fragment_home.xml" value="0.16666666666666666" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.10054347826086957" />
       </map>
     </option>
   </component>
