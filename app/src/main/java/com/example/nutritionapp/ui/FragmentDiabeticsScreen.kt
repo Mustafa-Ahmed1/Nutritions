@@ -6,7 +6,8 @@ import com.example.nutritionapp.ui.base.BaseFragment
 
 class FragmentDiabeticsScreen :BaseFragment<FragmentDiabeticsScreenBinding>(){
 
-    override fun bindingInflater(): FragmentDiabeticsScreenBinding = FragmentDiabeticsScreenBinding.inflate(layoutInflater)
+    override fun bindingInflater(): FragmentDiabeticsScreenBinding =
+        FragmentDiabeticsScreenBinding.inflate(layoutInflater)
 
     override var visibilityCustomActionBar: Boolean= true
     override fun title(): String = "Top 5 diabetes meals"
@@ -14,9 +15,10 @@ class FragmentDiabeticsScreen :BaseFragment<FragmentDiabeticsScreenBinding>(){
 
     override fun setUp() {
 
+        val _homeFragment = HomeFragment()
+        binding.buttonBack.setOnClickListener {
+            backNavigation(_homeFragment)
+        }
     }
-
-
-
 
 }

@@ -11,6 +11,7 @@ internal class CalculationTest {
     @Before
     fun setup() {
         calculation = Calculation()
+        val x = 5
     }
 
     // region test functions for calculateCustomGramsCalories function
