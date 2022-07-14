@@ -49,12 +49,12 @@
         android:layout_marginHorizontal="@dimen/spacing_medium"
         android:background="@drawable/meal_input_background"
         app:boxStrokeWidth="0dp"
-        android:layout_marginTop="@dimen/spacing_extra_large"
         app:boxStrokeWidthFocused="0dp"
         app:endIconMode="none"
+        android:layout_marginTop="32dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/daily_range_text"
+        app:layout_constraintTop_toBottomOf="@+id/image_total_calories_ring"
         app:layout_constraintVertical_chainStyle="packed">
 
         <AutoCompleteTextView
@@ -94,19 +94,6 @@
         app:layout_constraintBottom_toBottomOf="@+id/edit_text_grams"
         app:layout_constraintEnd_toEndOf="@+id/edit_text_grams"
         app:layout_constraintTop_toTopOf="@+id/edit_text_grams" />
-
-    <TextView
-        android:id="@+id/daily_range_text"
-        android:layout_marginTop="@dimen/spacing_small"
-        style="@style/CaptionTextStyle.Red"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/spacing_large"
-        android:text="You're out of normal daily range"
-        app:layout_constraintBottom_toTopOf="@+id/textInputLayout0"
-        app:layout_constraintEnd_toEndOf="@+id/image_total_calories_ring"
-        app:layout_constraintStart_toStartOf="@+id/image_total_calories_ring"
-        app:layout_constraintTop_toBottomOf="@+id/image_total_calories_ring" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/button_add"
