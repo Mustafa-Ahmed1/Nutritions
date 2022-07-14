@@ -15,10 +15,10 @@ class FragmentDiabeticsScreen :BaseFragment<FragmentDiabeticsScreenBinding>(){
 
     override fun setUp() {
 
-        val _homeFragment = HomeFragment()
-        binding.buttonBack.setOnClickListener {
-            backNavigation(_homeFragment)
-        }
+//        val _homeFragment = HomeFragment()
+//        binding.buttonBack.setOnClickListener {
+//            backNavigation(_homeFragment)
+//        }
     }
 
 }
