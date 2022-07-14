@@ -4,7 +4,16 @@ import android.util.Log
 import com.example.nutritionapp.data.model.Meal
 
 class Calculation {
-    fun calculateCustomGramsCalories(caloriesOf100g: Double, mealGrams: Double) = (mealGrams / 100.0) * caloriesOf100g
+    fun calculateCustomGramsCalories(caloriesOf100g: Double, mealGrams: Double) =
+        if (mealGrams <= 0 || caloriesOf100g <= 0) 0.0 else (mealGrams / 100.0) * caloriesOf100g
+    //  var cal = calculation.calculateCustomGramsCalories(mealsList[0].calories, 250.0)
+
+    fun getListByMealName(mealName: String, mealList: List<Meal>): Meal? {
+        mealList.forEach {
+            if (it.name == mealName) return it
+        }
+        return null
+    }
 
     fun mealTop5(list:MutableList<Meal>,top:Int):List<Meal>{
 //        list.sortByDescending { (it.sugars*-1)+(it.potassium)+(it.carbohydrate*0.7)+(it.fiber*0.5)}
@@ -56,4 +65,3 @@ class Calculation {
 //var x=rr.mealTop5(mealsList,5)
 //
 //Log.v("AMEER", "${x[0].name}")
-
