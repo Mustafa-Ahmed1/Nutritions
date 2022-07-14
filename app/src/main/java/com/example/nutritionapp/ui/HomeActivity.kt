@@ -37,6 +37,8 @@ class HomeActivity : BaseActivity<ActivityMainBinding>() {
     override fun setUp() {
         openFile()
         mealsList = DataManager.getMeals()
+        val calculation = Calculation()
+        calculation.bloodPressureBest5Meals(mealsList)
         setDefaultMainFragment()
         val rr=Calculation().mealTop5(mealsList,5)
 //        Log.v("AMEER", "${rr[3].name}")
