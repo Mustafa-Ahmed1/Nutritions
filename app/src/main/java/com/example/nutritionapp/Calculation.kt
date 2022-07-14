@@ -25,11 +25,10 @@ class Calculation {
         return quicksort (mealsList, "bodyBuilding").take(top)
     }
     fun cuttingBestFifeMeals(mealsList:MutableList<Meal>,top:Int):List<Meal>{
-        mealsList.sortByDescending { (it.protein*0.5) + (it.totalFat*0.2) + (it.carbohydrate*0.3)}
-        Log.v("cutting1", "${mealsList[0].name}")
+//        mealsList.sortByDescending { (it.protein*0.5) + (it.totalFat*0.2) + (it.carbohydrate*0.3)}
         return quicksort (mealsList, "cutting").take(top)
     }
-//    mealsList.sortByDescending { (it.protein*0.4) + (it.totalFat*0.15) + (it.carbohydrate*0.45)}
+
     // Take Left (first) Index of the array and Right (last) Index of the array
     fun quicksort(list:MutableList<Meal>, diseaseName:String):List<Meal>{
         if (list.size < 2){

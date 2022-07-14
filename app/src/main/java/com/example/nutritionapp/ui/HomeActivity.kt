@@ -39,14 +39,14 @@ class HomeActivity : BaseActivity<ActivityMainBinding>() {
         mealsList = DataManager.getMeals()
         val calculation = Calculation()
         val bloodPressureList= calculation.bloodPressureBestFifeMeals(mealsList, 5)
-//        Log.v("NOFUL", "${bloodPressureList[0].name}")
+//        Log.v("bloodPressure", "${bloodPressureList[0].name}")
         setDefaultMainFragment()
         val diabeticsList=Calculation().diabeticsBestFifeMeals(mealsList,5)
-//        Log.v("AMEER", "${diabeticsList[0].name}")
+//        Log.v("diabetics", "${diabeticsList[0].name}")
         val bodyBuildingList=Calculation().bodyBuildingBestFifeMeals(mealsList,5)
 //        Log.v("bodyBuilding", "${bodyBuildingList[0].name}")
         val cuttingList=Calculation().cuttingBestFifeMeals(mealsList,5)
-        Log.v("cutting", "${cuttingList[0].name}")
+//        Log.v("cutting", "${cuttingList[0].name}")
 
     }
 
