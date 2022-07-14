@@ -24,7 +24,7 @@ class HomeActivity : BaseActivity<ActivityMainBinding>() {
 
     fun setUpCustomActionBar(visible: Boolean,title: String?, back: Fragment?){
         if (visible){
-            binding.widgetAppAction.appActionTitle.text = title
+            binding.widgetAppAction.appActionTitle.text = title.toString()
             binding.widgetAppAction.buttonBack.setOnClickListener{
                 val transaction = supportFragmentManager.beginTransaction()
                 transaction.replace(R.id.root_fragment, back!!)
