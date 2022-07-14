@@ -23,6 +23,8 @@ class HomeActivity : BaseActivity<ActivityMainBinding>() {
         binding.widgetAppAction.root.visibility = View.GONE
         openFile()
         mealsList = DataManager.getMeals()
+        val calculation = Calculation()
+        calculation.bloodPressureBest5Meals(mealsList)
         setDefaultMainFragment()
     }
 
