@@ -27,7 +27,6 @@
             android:textColor="@color/white" />
     </LinearLayout>
 
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/layout_french_fries"
         android:layout_width="match_parent"
