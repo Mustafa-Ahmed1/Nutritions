@@ -15,4 +15,5 @@ class FragmentDiabeticsScreen :BaseFragment<FragmentDiabeticsScreenBinding>(){
 
     override fun setUp() {}
 
+
 }
