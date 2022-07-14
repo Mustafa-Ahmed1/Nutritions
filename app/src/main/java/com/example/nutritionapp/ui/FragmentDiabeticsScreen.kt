@@ -13,12 +13,7 @@ class FragmentDiabeticsScreen :BaseFragment<FragmentDiabeticsScreenBinding>(){
     override fun title(): String = "Top 5 diabetes meals"
     override fun back(): Fragment = HomeFragment()
 
-    override fun setUp() {
+    override fun setUp() {}
 
-//        val _homeFragment = HomeFragment()
-//        binding.buttonBack.setOnClickListener {
-//            backNavigation(_homeFragment)
-//        }
-    }
 
 }

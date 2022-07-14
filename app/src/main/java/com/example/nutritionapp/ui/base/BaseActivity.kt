@@ -3,6 +3,7 @@ package com.example.nutritionapp.ui.base
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewbinding.ViewBinding
+import com.example.nutritionapp.R
 
 abstract class BaseActivity<VB: ViewBinding> : AppCompatActivity() {
 
@@ -15,9 +16,9 @@ abstract class BaseActivity<VB: ViewBinding> : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
+        setUp()
         _binding = bindingInflater()
         setContentView(requireNotNull(_binding).root)
 
-        setUp()
     }
 }
