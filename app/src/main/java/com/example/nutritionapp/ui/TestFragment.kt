@@ -10,40 +10,36 @@ class TestFragment : BaseFragment<FragmentTestBinding>() {
     override fun bindingInflater(): FragmentTestBinding =
         FragmentTestBinding.inflate(layoutInflater)
 
+    override var visibilityCustomActionBar: Boolean = true
+    override fun title(): String = arguments?.getString(Constant.KeyValues.MEAL_NAME).toString()
+    override fun back(): Fragment = MealsSearchFragment()
+
     override fun setUp() {
         val mealsSearchFragment = MealsSearchFragment()
-        binding.buttonBackSearchScreen.setOnClickListener {
-            backNavigation(mealsSearchFragment)
-        }
     }
 
     override fun onStart() {
         super.onStart()
 
-        arguments?.let {
-            with(Constant.KeyValues) {
-                val name = it.getString(MEAL_NAME)
-                val cal = it.getString(CAL_NUMBER)
-                val sugar = it.getString(SUGAR_NUMBER)
-                val protein = it.getString(PROTEIN_NUMBER)
-                val fiber = it.getString(FIBER_NUMBER)
-
-                with(binding) {
-                    textTitle.text = name
-                    caloriesValue.text = cal
-                    sugarsValue.text = sugar
-                    proteinsValue.text = protein
-                    fibersValue.text = fiber
-                }
-            }
-        }
+//        arguments?.let {
+//            with(Constant.KeyValues) {
+//                val name = it.getString(MEAL_NAME)
+//                val cal = it.getString(CAL_NUMBER)
+//                val sugar = it.getString(SUGAR_NUMBER)
+//                val protein = it.getString(PROTEIN_NUMBER)
+//                val fiber = it.getString(FIBER_NUMBER)
+//
+//                with(binding) {
+//                    textTitle.text = name
+//                    caloriesValue.text = cal
+//                    sugarsValue.text = sugar
+//                    proteinsValue.text = protein
+//                    fibersValue.text = fiber
+//                }
+//            }
+//        }
     }
 
-    override var visibilityCustomActionBar: Boolean = true
-
-    override fun title(): String = arguments?.getString(Constant.KeyValues.MEAL_NAME).toString()
-
-    override fun back(): Fragment = MealsSearchFragment()
 
 
 }
