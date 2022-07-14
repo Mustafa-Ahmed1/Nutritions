@@ -21,7 +21,6 @@ class HomeActivity : BaseActivity<ActivityMainBinding>() {
     lateinit var mealsList: MutableList<Meal>
 
     override fun bindingInflater() = ActivityMainBinding.inflate(layoutInflater)
-
     fun setUpCustomActionBar(visible: Boolean,title: String?, back: Fragment?){
         if (visible){
             binding.widgetAppAction.appActionTitle.text = title
@@ -33,8 +32,8 @@ class HomeActivity : BaseActivity<ActivityMainBinding>() {
         }
         binding.widgetAppAction.root.visibility = istVisible(visible)
     }
-
     override fun setUp() {
+        setTheme(R.style.Theme_NutritionApp)
         openFile()
         mealsList = DataManager.getMeals()
         val calculation = Calculation()
