@@ -25,7 +25,7 @@ abstract class BaseFragment<VB : ViewBinding> : Fragment(), CustomActionBar{
 
     abstract fun setUp()
 
-    override fun onCreateView(
+     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
