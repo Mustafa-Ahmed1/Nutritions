@@ -1,7 +1,6 @@
 package com.example.nutritionapp.ui.base
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -18,7 +17,7 @@ abstract class BaseFragment<VB : ViewBinding> : Fragment() {
 
     abstract fun setUp()
 
-    protected var  rootFragmentApp =  R.id.root_fragment
+    protected var rootFragmentApp = R.id.root_fragment
         get() = field
         set(value) {
             field = value
@@ -35,24 +34,24 @@ abstract class BaseFragment<VB : ViewBinding> : Fragment() {
         return requireNotNull(_binding).root
     }
 
-    private fun changeNavigation(state: StateNavigation, from: Int?, to: Fragment){
-        val transaction =requireActivity().supportFragmentManager.beginTransaction()
+    private fun changeNavigation(state: StateNavigation, from: Int?, to: Fragment) {
+        val transaction = requireActivity().supportFragmentManager.beginTransaction()
 
-        when(state){
-            StateNavigation.add -> transaction.add(from!!,to)
-            StateNavigation.remove ->transaction.remove(to)
-            StateNavigation.replace ->transaction.replace(from!!, to)
+        when (state) {
+            StateNavigation.add -> transaction.add(from!!, to)
+            StateNavigation.remove -> transaction.remove(to)
+            StateNavigation.replace -> transaction.replace(from!!, to)
         }
 
         transaction.commit()
     }
 
-    protected fun navigationTo(to: Fragment){
+    protected fun navigationTo(to: Fragment) {
         changeNavigation(StateNavigation.add, rootFragmentApp, to)
     }
 
-    protected fun backNavigation(to: Fragment){
-        changeNavigation(StateNavigation.replace,rootFragmentApp, to)
+    protected fun backNavigation(to: Fragment) {
+        changeNavigation(StateNavigation.replace, rootFragmentApp, to)
     }
 
 }
