@@ -14,32 +14,22 @@ class Calculation {
         return null
     }
     
-    fun bloodPressureBest5Meals(mealsList: MutableList<Meal>){
-        var resultMap: MutableMap<Int,Double> = mutableMapOf()
-        mealsList.forEachIndexed { index, meal ->
-            val result = (meal.sodium * -1) + (meal.totalFat * -1) + (meal.calcium) + (meal.fiber * 0.7)
-            resultMap.put(index, result)
-        }
-        val sortedResultMap = resultMap.toList().sortedByDescending { (_, value) -> value}.toMap()
-        val best5Meals = sortedResultMap.keys.toList().subList(0,5)
-        Log.v("ABC", best5Meals.toString())
+    fun bloodPressureBestFifeMeals(mealsList: MutableList<Meal>, top:Int):List<Meal>{
+        return quicksort (mealsList, "bloodPressure").take(top)
     }
 
-    fun mealTop5(list:MutableList<Meal>,top:Int):List<Meal>{
-//        list.sortByDescending { (it.sugars*-1)+(it.potassium)+(it.carbohydrate*0.7)+(it.fiber*0.5)}
-//        bloodPressure‏
-        var l = quicksort (list, "diabetics")
-        Log.v("AMEER", "${l[0].name}")
-        Log.v("AMEER", "${l[1].name}")
-        Log.v("AMEER", "${l[2].name}")
-        Log.v("AMEER", "${l[3].name}")
-        Log.v("AMEER", "${l[4].name}")
-        Log.v("AMEER", "${l[5].name}")
-
-
-        return list.take(top)
+    fun diabeticsBestFifeMeals(mealsList:MutableList<Meal>,top:Int):List<Meal>{
+        return quicksort (mealsList, "diabetics").take(top)
     }
-
+    fun bodyBuildingBestFifeMeals(mealsList:MutableList<Meal>,top:Int):List<Meal>{
+        return quicksort (mealsList, "bodyBuilding").take(top)
+    }
+    fun cuttingBestFifeMeals(mealsList:MutableList<Meal>,top:Int):List<Meal>{
+        mealsList.sortByDescending { (it.protein*0.5) + (it.totalFat*0.2) + (it.carbohydrate*0.3)}
+        Log.v("cutting1", "${mealsList[0].name}")
+        return quicksort (mealsList, "cutting").take(top)
+    }
+//    mealsList.sortByDescending { (it.protein*0.4) + (it.totalFat*0.15) + (it.carbohydrate*0.45)}
     // Take Left (first) Index of the array and Right (last) Index of the array
     fun quicksort(list:MutableList<Meal>, diseaseName:String):List<Meal>{
         if (list.size < 2){
@@ -58,11 +48,28 @@ class Calculation {
 //      filter elements which are greater than the pivot and store it in a list called greater
             greater = list.filter { ((it.sugars*-1) + (it.potassium) + (it.carbohydrate*0.7) + (it.fiber*0.5)) < ((list[pivot].sugars*-1) + (list[pivot].potassium) + (list[pivot].carbohydrate*0.7) + (list[pivot].fiber*0.5)) }
         }
+        else if(diseaseName == "bloodPressure" ){
+            equal = list.filter { ((it.sodium*-1) + (it.totalFat*-1) + (it.calcium) + (it.fiber*0.7)) == ((list[pivot].sodium*-1) + (list[pivot].totalFat * -1) + (list[pivot].calcium) + (list[pivot].fiber*0.7))  }
+            less = list.filter { ((it.sodium*-1) + (it.totalFat*-1) + (it.calcium) + (it.fiber*0.7)) > ((list[pivot].sodium*-1) + (list[pivot].totalFat * -1) + (list[pivot].calcium) + (list[pivot].fiber*0.7)) }
+            greater = list.filter { ((it.sodium*-1) + (it.totalFat*-1) + (it.calcium) + (it.fiber*0.7)) < ((list[pivot].sodium*-1) + (list[pivot].totalFat * -1) + (list[pivot].calcium) + (list[pivot].fiber*0.7)) }
+        }
+        else if(diseaseName == "bodyBuilding" ){
+            equal = list.filter { ((it.protein*0.4) + (it.totalFat*0.15) + (it.carbohydrate*0.45)) == ((list[pivot].protein*0.4) + (list[pivot].totalFat * 0.15) + (list[pivot].carbohydrate*0.45))  }
+            less = list.filter { ((it.protein*0.4) + (it.totalFat*0.15) + (it.carbohydrate*0.45)) > ((list[pivot].protein*0.4) + (list[pivot].totalFat * 0.15) + (list[pivot].carbohydrate*0.45)) }
+            greater = list.filter { ((it.protein*0.4) + (it.totalFat*0.15) + (it.carbohydrate*0.45)) < ((list[pivot].protein*0.4) + (list[pivot].totalFat * 0.15) + (list[pivot].carbohydrate*0.45)) }
+        }
+        else if(diseaseName == "cutting" ){
+            equal = list.filter { ((it.protein*0.5) + (it.totalFat*0.2) + (it.carbohydrate*0.3)) == ((list[pivot].protein*0.5) + (list[pivot].totalFat * 0.2) + (list[pivot].carbohydrate*0.3))  }
+            less = list.filter { ((it.protein*0.5) + (it.totalFat*0.2) + (it.carbohydrate*0.3)) > ((list[pivot].protein*0.5) + (list[pivot].totalFat * 0.2) + (list[pivot].carbohydrate*0.3)) }
+            greater = list.filter { ((it.protein*0.5) + (it.totalFat*0.2) + (it.carbohydrate*0.3)) < ((list[pivot].protein*0.5) + (list[pivot].totalFat * 0.2) + (list[pivot].carbohydrate*0.3)) }
+        }
+
 //      call the function recursively to perform operation, but this time pass the splitted arrays.
 //      Do the same process again and again, till we left with multiple arrays with a single element and
 //      arranged in order
         return quicksort(less as MutableList<Meal>, diseaseName) + equal + quicksort(greater as MutableList<Meal>, diseaseName)
     }
+
 
 }
 
