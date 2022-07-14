@@ -7,12 +7,15 @@ import com.example.nutritionapp.ui.base.BaseFragment
 
 class HomeFragment() :BaseFragment<FragmentHomeBinding>() {
 
-    private val diabeticsScreenFragment = FragmentDiabeticsScreen()
-    private val mealsSearchFragment = MealsSearchFragment()
-    private val caloriesCounterFragment = CaloriesCounterFragment()
-
     override fun bindingInflater(): FragmentHomeBinding =
         FragmentHomeBinding.inflate(layoutInflater)
+
+    private val diabeticsScreenFragment = FragmentDiabeticsScreen()
+    private val mealsSearchFragment = MealsSearchFragment()
+    private val bodyBuildingFragment = FragmentBodyBuilding()
+    private val weightLossFragment = FragmentWeightLoss()
+    private val caloriesCounterFragment = CaloriesCounterFragment()
+    private val bloodPressureFragment = FragmentBloodPressure()
 
     override var visibilityCustomActionBar: Boolean = false
     override fun title(): String? = null
@@ -35,19 +38,19 @@ class HomeFragment() :BaseFragment<FragmentHomeBinding>() {
 
     private fun buttonBodyBuilding() {
         binding.cardGym.setOnClickListener {
-            navigationTo(diabeticsScreenFragment)
+            navigationTo(bodyBuildingFragment)
         }
     }
 
     private fun buttonWeightLoss() {
         binding.cardWeightLoss.setOnClickListener {
-            navigationTo(diabeticsScreenFragment)
+            navigationTo(weightLossFragment)
         }
     }
 
     private fun buttonBloodPressure() {
         binding.cardPressure.setOnClickListener {
-            navigationTo(diabeticsScreenFragment)
+            navigationTo(bloodPressureFragment)
         }
     }
 
