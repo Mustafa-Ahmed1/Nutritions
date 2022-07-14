@@ -9,6 +9,10 @@ class CaloriesCounterFragment : BaseFragment<FragmentCounterCaloriesBinding>() {
     override fun bindingInflater(): FragmentCounterCaloriesBinding =
         FragmentCounterCaloriesBinding.inflate(layoutInflater)
 
+    override var visibilityCustomActionBar: Boolean= true
+    override fun title(): String = "Total calories"
+    override fun back(): Fragment = HomeFragment()
+
     override fun setUp() {
         val homeFragment = HomeFragment()
         binding.buttonBackSearchScreen.setOnClickListener {
@@ -16,16 +20,6 @@ class CaloriesCounterFragment : BaseFragment<FragmentCounterCaloriesBinding>() {
         }
     }
 
-    override var visibilityCustomActionBar: Boolean
-        get() = TODO("Not yet implemented")
-        set(value) {}
 
-    override fun title(): String? {
-        TODO("Not yet implemented")
-    }
-
-    override fun back(): Fragment? {
-        TODO("Not yet implemented")
-    }
 
 }

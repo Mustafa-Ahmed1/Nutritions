@@ -18,12 +18,12 @@ class MealsSearchFragment : BaseFragment<FragmentSearchMealsBinding>() {
 
     lateinit var mealsList: MutableList<Meal>
 
+    override fun bindingInflater(): FragmentSearchMealsBinding =
+        FragmentSearchMealsBinding.inflate(layoutInflater)
+
     override var visibilityCustomActionBar: Boolean= true
     override fun title(): String = "Search for all meals"
     override fun back(): Fragment = HomeFragment()
-
-    override fun bindingInflater(): FragmentSearchMealsBinding =
-        FragmentSearchMealsBinding.inflate(layoutInflater)
 
     override fun setUp() {
         val homeFragment = HomeFragment()
