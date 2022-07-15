@@ -11,14 +11,13 @@ abstract class BaseActivity<VB: ViewBinding> : AppCompatActivity() {
     abstract fun bindingInflater(): VB
     protected val binding get() = _binding as VB
 
-    abstract fun setUp()
+    abstract fun initFragment()
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
-        setUp()
+        initFragment()
         _binding = bindingInflater()
         setContentView(requireNotNull(_binding).root)
-
     }
 }

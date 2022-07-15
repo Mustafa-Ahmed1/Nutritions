@@ -33,7 +33,7 @@ class HomeActivity : BaseActivity<ActivityMainBinding>() {
         }
         binding.widgetAppAction.root.visibility = istVisible(visible)
     }
-    override fun setUp() {
+    override fun initFragment() {
         setTheme(R.style.Theme_NutritionApp)
         setDefaultMainFragment()
 

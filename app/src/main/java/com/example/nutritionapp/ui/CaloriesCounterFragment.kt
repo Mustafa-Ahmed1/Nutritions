@@ -11,9 +11,9 @@ class CaloriesCounterFragment : BaseFragment<FragmentCounterCaloriesBinding>() {
         FragmentCounterCaloriesBinding.inflate(layoutInflater)
 
     override var visibilityCustomActionBar: Boolean= true
-    override fun title(): String = getString(R.string.action_app_title_total_calories)
-    override fun back(): Fragment = HomeFragment()
+    override fun getTitle(): String = getString(R.string.action_app_title_total_calories)
+    override fun getBack(): Fragment = HomeFragment()
 
-    override fun setUp() {}
+    override fun initFragment() {}
 
 }

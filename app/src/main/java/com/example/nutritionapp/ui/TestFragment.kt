@@ -11,10 +11,11 @@ class TestFragment : BaseFragment<FragmentTestBinding>() {
         FragmentTestBinding.inflate(layoutInflater)
 
     override var visibilityCustomActionBar: Boolean = true
-    override fun title(): String = arguments?.getString(Constant.KeyValues.MEAL_NAME).toString()
-    override fun back(): Fragment = MealsSearchFragment()
+    override fun getTitle(): String = arguments?.getString(Constant.KeyValues.MEAL_NAME).toString()
+    override fun getBack(): Fragment = MealsSearchFragment()
 
-    override fun setUp() {}
+
+    override fun initFragment() {}
 
     override fun onStart() {
         super.onStart()

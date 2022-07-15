@@ -12,10 +12,10 @@ class FragmentDiabeticsScreen :BaseFragment<FragmentTopMealBinding>(){
         FragmentTopMealBinding.inflate(layoutInflater)
 
     override var visibilityCustomActionBar: Boolean = true
-    override fun title(): String = getString(R.string.action_app_title_Top_5_diabetes_meals)
-    override fun back(): Fragment = HomeFragment()
+    override fun getTitle(): String = getString(R.string.action_app_title_Top_5_diabetes_meals)
+    override fun getBack(): Fragment = HomeFragment()
 
-    override fun setUp() {
+    override fun initFragment() {
         binding.textInfo.text = getString(R.string.info_Top_5_diabetes_meals)
     }
 

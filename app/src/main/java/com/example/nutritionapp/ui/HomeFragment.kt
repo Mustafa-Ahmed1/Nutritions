@@ -18,10 +18,10 @@ class HomeFragment() :BaseFragment<FragmentHomeBinding>() {
     private val bloodPressureFragment = FragmentBloodPressure()
 
     override var visibilityCustomActionBar: Boolean = false
-    override fun title(): String? = null
-    override fun back(): Fragment? = null
+    override fun getTitle(): String? = null
+    override fun getBack(): Fragment? = null
 
-    override fun setUp() {
+    override fun initFragment() {
         buttonCardDiabetics()
         buttonShowAll()
         buttonCaloriesCounter()

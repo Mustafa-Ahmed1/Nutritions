@@ -23,7 +23,7 @@ abstract class BaseFragment<VB : ViewBinding> : Fragment(), CustomActionBar{
             field = value
         }
 
-    abstract fun setUp()
+    abstract fun initFragment()
 
      override fun onCreateView(
         inflater: LayoutInflater,
@@ -31,9 +31,9 @@ abstract class BaseFragment<VB : ViewBinding> : Fragment(), CustomActionBar{
         savedInstanceState: Bundle?
     ): View? {
         _binding = bindingInflater()
-        setUp()
+        initFragment()
 
-        (activity as HomeActivity).setUpCustomActionBar(visibilityCustomActionBar,title(),back())
+        (activity as HomeActivity).setUpCustomActionBar(visibilityCustomActionBar,getTitle(),getBack())
 
         return requireNotNull(_binding).root
     }

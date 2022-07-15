@@ -10,7 +10,7 @@ internal class CalculationTest {
     private  lateinit var calculation: Calculation
 
     @Before
-    fun setup() {
+    fun initFragment() {
         calculation = Calculation()
         val x = 5
     }
@@ -92,14 +92,6 @@ internal class CalculationTest {
         // then should return zero value
         assertEquals(0.0, result)
     }
-    // endregion
 
-    @Test
-    fun should_R() {
-        // given negative calories and negative grams
-        // when calculate calories for custom grams
-        val result = calculation.calculateCustomGramsCalories(caloriesFor100g, mealGrams)
-        // then should return zero value
-        assertEquals(0.0, result)
-    }
+
 }
