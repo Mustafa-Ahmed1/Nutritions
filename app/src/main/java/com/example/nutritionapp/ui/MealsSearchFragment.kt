@@ -21,12 +21,11 @@ class MealsSearchFragment : BaseFragment<FragmentSearchMealsBinding>() {
     override fun bindingInflater(): FragmentSearchMealsBinding =
         FragmentSearchMealsBinding.inflate(layoutInflater)
 
-    override var visibilityCustomActionBar: Boolean= true
-    override fun title(): String = "Search for all meals"
+    override var visibilityCustomActionBar: Boolean = true
+    override fun title(): String = getString(R.string.action_app_title_search_for_all_meals)
     override fun back(): Fragment = HomeFragment()
 
     override fun setUp() {
-        val homeFragment = HomeFragment()
         mealsList = DataManager.getMeals()
 
         val buffer = openFile(Constant.CSV_FILE_NAME)
