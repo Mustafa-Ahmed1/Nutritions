@@ -35,25 +35,23 @@ class HomeActivity : BaseActivity<ActivityMainBinding>() {
     }
     override fun setUp() {
         setTheme(R.style.Theme_NutritionApp)
+        setDefaultMainFragment()
+
         openFile()
         mealsList = DataManager.getMeals()
+
         val calculation = Calculation()
         val bloodPressureList= calculation.bloodPressureBestFifeMeals(mealsList, 5)
-//        Log.v("bloodPressure", "${bloodPressureList[0].name}")
-        setDefaultMainFragment()
         val diabeticsList=Calculation().diabeticsBestFifeMeals(mealsList,5)
-//        Log.v("diabetics", "${diabeticsList[0].name}")
         val bodyBuildingList=Calculation().bodyBuildingBestFifeMeals(mealsList,5)
-//        Log.v("bodyBuilding", "${bodyBuildingList[0].name}")
         val cuttingList=Calculation().cuttingBestFifeMeals(mealsList,5)
-//        Log.v("cutting", "${cuttingList[0].name}")
 
     }
 
     private fun setDefaultMainFragment() {
         val homeFragment: HomeFragment = HomeFragment()
         val transaction = supportFragmentManager.beginTransaction()
-        transaction.add(R.id.root_fragment, HomeFragment())
+        transaction.add(R.id.root_fragment, homeFragment)
         transaction.commit()
     }
 

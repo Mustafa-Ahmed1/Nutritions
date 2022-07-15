@@ -14,9 +14,7 @@ class TestFragment : BaseFragment<FragmentTestBinding>() {
     override fun title(): String = arguments?.getString(Constant.KeyValues.MEAL_NAME).toString()
     override fun back(): Fragment = MealsSearchFragment()
 
-    override fun setUp() {
-        val mealsSearchFragment = MealsSearchFragment()
-    }
+    override fun setUp() {}
 
     override fun onStart() {
         super.onStart()

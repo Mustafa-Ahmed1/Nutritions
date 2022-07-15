@@ -14,9 +14,6 @@ class CaloriesCounterFragment : BaseFragment<FragmentCounterCaloriesBinding>() {
     override fun title(): String = getString(R.string.action_app_title_total_calories)
     override fun back(): Fragment = HomeFragment()
 
-    override fun setUp() {
-    }
-
-
+    override fun setUp() {}
 
 }
