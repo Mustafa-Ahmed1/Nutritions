@@ -1,7 +1,7 @@
 package com.example.nutritionapp.ui
 
-import android.annotation.SuppressLint
 import androidx.fragment.app.Fragment
+import com.example.nutritionapp.R
 import com.example.nutritionapp.databinding.FragmentTopMealBinding
 import com.example.nutritionapp.ui.base.BaseFragment
 
@@ -10,14 +10,12 @@ class FragmentWeightLoss :BaseFragment<FragmentTopMealBinding>(){
     override fun bindingInflater(): FragmentTopMealBinding =
         FragmentTopMealBinding.inflate(layoutInflater)
 
-    override var visibilityCustomActionBar: Boolean= true
-    override fun title(): String = "Top 5 weight losing meals"
-    override fun back(): Fragment = HomeFragment()
+    override var visibilityCustomActionBar: Boolean = true
+    override fun getTitle(): String = getString(R.string.action_app_title_Top_5_weight_losing_meals)
+    override fun getBack(): Fragment = HomeFragment()
 
-    @SuppressLint("SetTextI18n")
-    override fun setUp() {
-        binding.textInfo.text = "The most important elements that directly affect cutting: protein, total Fat, carbohydrate."
+    override fun initFragment() {
+        binding.textInfo.text = getString(R.string.info_Top_5_weight_losing_meals)
     }
-
 
 }
