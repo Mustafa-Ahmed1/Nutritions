@@ -15,7 +15,7 @@
         android:layout_marginHorizontal="@dimen/spacing_medium"
         android:background="@drawable/search_input_background"
         app:boxStrokeWidth="0dp"
-        android:layout_marginTop="94dp"
+        android:layout_marginTop="@dimen/spacing_medium"
         app:boxStrokeWidthFocused="0dp"
         app:endIconMode="none"
         app:layout_constraintEnd_toEndOf="parent"

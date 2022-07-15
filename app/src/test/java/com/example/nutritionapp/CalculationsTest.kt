@@ -1,18 +1,16 @@
 package com.example.nutritionapp
 
-import com.example.nutritionapp.data.DataManager
-import org.junit.Test
-import org.junit.Before
 import junit.framework.TestCase.assertEquals
+import org.junit.Before
+import org.junit.Test
 
-internal class CalculationTest {
+internal class CalculationsTest {
 
-    private  lateinit var calculation: Calculation
+    private lateinit var calculations: Calculations
 
     @Before
     fun setup() {
-        calculation = Calculation()
-        val x = 5
+        calculations = Calculations()
     }
 
     // region test functions for calculateCustomGramsCalories function
@@ -22,7 +20,7 @@ internal class CalculationTest {
         val caloriesFor100g = 320.0
         val mealGrams = 200.0
         // when calculate calories for custom grams
-        val result = calculation.calculateCustomGramsCalories(caloriesFor100g, mealGrams)
+        val result = calculations.calculateCustomGramsCalories(caloriesFor100g, mealGrams)
         // then should return correct calories value
         assertEquals(640.0, result)
     }
@@ -33,7 +31,7 @@ internal class CalculationTest {
         val caloriesFor100g = 320.0
         val mealGrams = 0.0
         // when calculate calories for custom grams
-        val result = calculation.calculateCustomGramsCalories(caloriesFor100g, mealGrams)
+        val result = calculations.calculateCustomGramsCalories(caloriesFor100g, mealGrams)
         // then should return zero value
         assertEquals(0.0, result)
     }
@@ -44,7 +42,7 @@ internal class CalculationTest {
         val caloriesFor100g = 0.0
         val mealGrams = 200.0
         // when calculate calories for custom grams
-        val result = calculation.calculateCustomGramsCalories(caloriesFor100g, mealGrams)
+        val result = calculations.calculateCustomGramsCalories(caloriesFor100g, mealGrams)
         // then should return zero value
         assertEquals(0.0, result)
     }
@@ -55,7 +53,7 @@ internal class CalculationTest {
         val caloriesFor100g = 0.0
         val mealGrams = 0.0
         // when calculate calories for custom grams
-        val result = calculation.calculateCustomGramsCalories(caloriesFor100g, mealGrams)
+        val result = calculations.calculateCustomGramsCalories(caloriesFor100g, mealGrams)
         // then should return zero value
         assertEquals(0.0, result)
     }
@@ -66,7 +64,7 @@ internal class CalculationTest {
         val caloriesFor100g = 320.0
         val mealGrams = -200.0
         // when calculate calories for custom grams
-        val result = calculation.calculateCustomGramsCalories(caloriesFor100g, mealGrams)
+        val result = calculations.calculateCustomGramsCalories(caloriesFor100g, mealGrams)
         // then should return zero value
         assertEquals(0.0, result)
     }
@@ -77,7 +75,7 @@ internal class CalculationTest {
         val caloriesFor100g = -320.0
         val mealGrams = 200.0
         // when calculate calories for custom grams
-        val result = calculation.calculateCustomGramsCalories(caloriesFor100g, mealGrams)
+        val result = calculations.calculateCustomGramsCalories(caloriesFor100g, mealGrams)
         // then should return zero value
         assertEquals(0.0, result)
     }
@@ -88,18 +86,10 @@ internal class CalculationTest {
         val caloriesFor100g = -320.0
         val mealGrams = -200.0
         // when calculate calories for custom grams
-        val result = calculation.calculateCustomGramsCalories(caloriesFor100g, mealGrams)
+        val result = calculations.calculateCustomGramsCalories(caloriesFor100g, mealGrams)
         // then should return zero value
         assertEquals(0.0, result)
     }
     // endregion
 
-    @Test
-    fun should_R() {
-        // given negative calories and negative grams
-        // when calculate calories for custom grams
-        val result = calculation.calculateCustomGramsCalories(caloriesFor100g, mealGrams)
-        // then should return zero value
-        assertEquals(0.0, result)
-    }
 }

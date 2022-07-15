@@ -1,21 +1,21 @@
-package com.example.nutritionapp.util
+package com.example.nutritionapp.util.extention
 
 fun String.toPureNumber(): Double {
     return when {
         this.contains(" mcg") -> {
-            this.replace(" mcg","").toDouble()
+            this.dropLast(4).toDouble()
         }
         this.contains(" mg") -> {
-            this.replace(" mg","").toDouble()
+            this.dropLast(3).toDouble()
         }
         this.contains(" IU") -> {
-            this.replace(" IU","").toDouble()
+            this.dropLast(3).toDouble()
         }
         this.contains(" g") -> {
-            this.replace(" g","").toDouble()
+            this.dropLast(2).toDouble()
         }
         this.contains("g") -> {
-            this.replace("g","").toDouble()
+            this.dropLast(1).toDouble()
         }
         else -> 0.0
     }

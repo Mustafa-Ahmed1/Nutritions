@@ -6,16 +6,20 @@
     app:popupTheme="@style/ThemeOverlay.AppCompat.Dark"
     app:theme="@style/myCustomAppBarTheme">
 
-    <RelativeLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/app_action"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="64dp">
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/button_back"
             android:layout_width="@dimen/small_button"
             android:layout_height="@dimen/small_button"
             android:layout_centerVertical="true"
-            android:background="@drawable/ic_back_arrow" />
+            android:background="@drawable/ic_back_arrow"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/app_action_title"
@@ -23,9 +27,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:layout_marginStart="@dimen/spacing_small"
             android:layout_toEndOf="@+id/button_back"
-            android:text="" />
+            android:layout_marginStart="@dimen/spacing_medium"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/button_back"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    </RelativeLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.appcompat.widget.Toolbar>

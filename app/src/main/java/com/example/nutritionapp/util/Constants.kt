@@ -1,6 +1,6 @@
 package com.example.nutritionapp.util
 
-object Constant {
+object Constants {
     object ColumnIndex {
         const val NAME = 1
         const val CALORIES = 3
@@ -18,7 +18,9 @@ object Constant {
         const val CAFFEINE = 74
     }
 
-    const val CSV_FILE_NAME = "nutrition.csv"
+    object FilePath {
+        const val NUTRITION_CSV = "nutrition.csv"
+    }
 
     object KeyValues {
         const val MEAL_NAME = "MN"

@@ -53,6 +53,10 @@
     <string name="nothing_to_show">Nothing to show</string>
     <string name="_0">0</string>
     <string name="search_in_all_meals">Search in all meals</string>
+    <string name="top_5_blood_pressure_meals">Top 5 Blood Pressure meals</string>
+    <string name="top_5_diabetics_meals">Top 100 diabetes meals</string>
+    <string name="diabetics_meals_informations">The most important elements that directly affect diabetic patients: potassium, carbohydrates, sugar, fiber.</string>
+    <string name="search_for_all_meals">Search for all meals</string>
 
 
 </resources>

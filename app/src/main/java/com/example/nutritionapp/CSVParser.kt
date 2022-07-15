@@ -2,17 +2,15 @@ package com.example.nutritionapp
 
 import com.example.nutritionapp.data.DataManager
 import com.example.nutritionapp.data.model.Meal
-import com.example.nutritionapp.util.Constant
-import com.example.nutritionapp.util.toPureNumber
-import java.io.File
+import com.example.nutritionapp.util.Constants
+import com.example.nutritionapp.util.extention.toPureNumber
 import java.io.InputStreamReader
-import java.nio.Buffer
 
 class CSVParser {
-    public fun getMealsFromCSV(buffer: InputStreamReader){
+    fun getMealsFromCSV(buffer: InputStreamReader){
         buffer.forEachLine {
             val mealLineData = it.split(",")
-            with(Constant.ColumnIndex) {
+            with(Constants.ColumnIndex) {
                  DataManager.addMeal(
                     Meal(
                         name = mealLineData[NAME],

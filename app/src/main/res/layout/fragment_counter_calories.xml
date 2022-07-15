@@ -42,6 +42,7 @@
 
 
     <com.google.android.material.textfield.TextInputLayout
+        android:layout_marginTop="@dimen/spacing_extra_large"
         android:id="@+id/textInputLayout0"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
         android:layout_width="match_parent"
@@ -49,14 +50,14 @@
         android:layout_marginHorizontal="@dimen/spacing_medium"
         android:background="@drawable/meal_input_background"
         app:boxStrokeWidth="0dp"
-        android:layout_marginTop="@dimen/spacing_extra_large"
         app:boxStrokeWidthFocused="0dp"
         app:endIconMode="none"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/daily_range_text"
+        app:layout_constraintTop_toBottomOf="@+id/image_total_calories_ring"
         app:layout_constraintVertical_chainStyle="packed">
 
+        <!-- this one needs a hint -->
         <AutoCompleteTextView
             android:id="@+id/all_meals"
             style="@style/PrimaryTextStyle.Black"
@@ -64,6 +65,7 @@
             android:layout_height="match_parent"
             android:background="@null"
             android:drawablePadding="@dimen/spacing_medium"
+            android:hint="@string/meal_name"
             android:inputType="text"
             android:paddingTop="@dimen/spacing_small"
             android:paddingBottom="@dimen/spacing_small"
@@ -94,19 +96,6 @@
         app:layout_constraintBottom_toBottomOf="@+id/edit_text_grams"
         app:layout_constraintEnd_toEndOf="@+id/edit_text_grams"
         app:layout_constraintTop_toTopOf="@+id/edit_text_grams" />
-
-    <TextView
-        android:id="@+id/daily_range_text"
-        android:layout_marginTop="@dimen/spacing_small"
-        style="@style/CaptionTextStyle.Red"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/spacing_large"
-        android:text="You're out of normal daily range"
-        app:layout_constraintBottom_toTopOf="@+id/textInputLayout0"
-        app:layout_constraintEnd_toEndOf="@+id/image_total_calories_ring"
-        app:layout_constraintStart_toStartOf="@+id/image_total_calories_ring"
-        app:layout_constraintTop_toBottomOf="@+id/image_total_calories_ring" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/button_add"

@@ -1,9 +1,9 @@
-package com.example.nutritionapp.ui
+package com.example.nutritionapp.ui.fragment
 
 import android.os.Bundle
 import android.widget.ArrayAdapter
 import com.example.nutritionapp.CSVParser
-import com.example.nutritionapp.Calculation
+import com.example.nutritionapp.Calculations
 import com.example.nutritionapp.R
 import com.example.nutritionapp.data.DataManager
 import com.example.nutritionapp.data.model.Meal
@@ -11,25 +11,24 @@ import androidx.fragment.app.Fragment
 import com.example.nutritionapp.databinding.FragmentSearchMealsBinding
 import com.example.nutritionapp.databinding.FragmentTestBinding
 import com.example.nutritionapp.ui.base.BaseFragment
-import com.example.nutritionapp.util.Constant
+import com.example.nutritionapp.util.Constants
 import java.io.InputStreamReader
 
 class MealsSearchFragment : BaseFragment<FragmentSearchMealsBinding>() {
 
-    lateinit var mealsList: MutableList<Meal>
+    private lateinit var mealsList: MutableList<Meal>
 
     override fun bindingInflater(): FragmentSearchMealsBinding =
         FragmentSearchMealsBinding.inflate(layoutInflater)
 
     override var visibilityCustomActionBar: Boolean= true
-    override fun title(): String = "Search for all meals"
+    override fun getTitle(): String = getString(R.string.search_for_all_meals)
     override fun back(): Fragment = HomeFragment()
 
     override fun setUp() {
-        val homeFragment = HomeFragment()
         mealsList = DataManager.getMeals()
 
-        val buffer = openFile(Constant.CSV_FILE_NAME)
+        val buffer = openFile(Constants.FilePath.NUTRITION_CSV)
         CSVParser().getMealsFromCSV(buffer)
 
         val mealsNamesList: MutableList<String> = mutableListOf()
@@ -60,9 +59,9 @@ class MealsSearchFragment : BaseFragment<FragmentSearchMealsBinding>() {
         binding.allMeals.setOnItemClickListener { _, _, _, _ ->
             val mealName = binding.allMeals.text.toString()
 
-            val result = Calculation().getListByMealName(mealName, mealsList)
+            val result = Calculations().getListByMealName(mealName, mealsList)
 
-            val testFragment = TestFragment()
+            val testFragment = MealDetailsFragment()
 
             bundleOfMealsDetailsScreen(result, testFragment)
 
@@ -75,7 +74,7 @@ class MealsSearchFragment : BaseFragment<FragmentSearchMealsBinding>() {
         fragment: BaseFragment<FragmentTestBinding>
     ) {
         val bundle = Bundle()
-        with(Constant.KeyValues) {
+        with(Constants.KeyValues) {
             bundle.putString(MEAL_NAME, meal?.name)
             bundle.putString(CAL_NUMBER, meal?.calories.toString())
             bundle.putString(SUGAR_NUMBER, meal?.sugars.toString())

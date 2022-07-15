@@ -1,7 +1,7 @@
 <resources>
 
     <style name="Theme.NutritionApp" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-        <item name="android:statusBarColor">@color/primary_color</item>
+        <item name="android:statusBarColor">@color/gray</item>
         <item name="android:windowBackground">@drawable/splash_screen</item>
         <item name="android:windowActivityTransitions">true</item>
     </style>
