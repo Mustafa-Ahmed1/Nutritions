@@ -51,7 +51,10 @@ class HomeFragment :BaseFragment<FragmentHomeBinding>() {
     }
 
     private fun buttonCaloriesCounter() {
+        val bundle = Bundle()
         binding.caloriesCounter.setOnClickListener {
+            bundle.putParcelable(Constants.KeyValues.DATA_MANAGER, dataManager)
+            caloriesCounterFragment.arguments = bundle
             navigationTo(caloriesCounterFragment)
         }
     }
