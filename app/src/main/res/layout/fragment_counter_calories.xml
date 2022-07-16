@@ -47,7 +47,7 @@
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintTop_toBottomOf="@id/image_total_calories_ring"
-    android:text="You’re out of normal daily range"
+    android:text="@string/error_label"
     android:textColor="@color/red"
     android:textSize="16sp"
     />
