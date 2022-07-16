@@ -1,6 +1,7 @@
 package com.example.nutritionapp.ui.fragment
 
 import android.os.Bundle
+import android.os.Parcelable
 import android.widget.ArrayAdapter
 import com.example.nutritionapp.CSVParser
 import com.example.nutritionapp.Calculations
@@ -16,6 +17,7 @@ import java.io.InputStreamReader
 
 class MealsSearchFragment : BaseFragment<FragmentSearchMealsBinding>() {
 
+    private lateinit var dataManager: Parcelable
     private lateinit var mealsList: MutableList<Meal>
 
     override fun bindingInflater(): FragmentSearchMealsBinding =
@@ -26,21 +28,17 @@ class MealsSearchFragment : BaseFragment<FragmentSearchMealsBinding>() {
     override fun back(): Fragment = HomeFragment()
 
     override fun setUp() {
-        mealsList = DataManager.getMeals()
 
-        val buffer = openFile(Constants.FilePath.NUTRITION_CSV)
-        CSVParser().getMealsFromCSV(buffer)
+    }
 
+    override fun onStart() {
+        super.onStart()
+        dataManager = requireNotNull(arguments?.getParcelable(Constants.KeyValues.DATA_MANAGER))
+        mealsList = (dataManager as DataManager).getMeals()
         val mealsNamesList: MutableList<String> = mutableListOf()
         makeListOfMealNames(mealsNamesList, mealsList)
         setListAdapter(mealsNamesList)
-
         initViews()
-    }
-
-    fun openFile(fileName: String): InputStreamReader {
-        val inputStream = requireActivity().assets.open(fileName)
-        return InputStreamReader(inputStream)
     }
 
     private fun makeListOfMealNames(mealsNamesList: MutableList<String>, mealsList: List<Meal>) {

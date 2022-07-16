@@ -7,11 +7,12 @@ import com.example.nutritionapp.util.extention.toPureNumber
 import java.io.InputStreamReader
 
 class CSVParser {
-    fun getMealsFromCSV(buffer: InputStreamReader){
+    fun getMealsFromCSV(buffer: InputStreamReader): DataManager {
+        val dataManager = DataManager()
         buffer.forEachLine {
             val mealLineData = it.split(",")
             with(Constants.ColumnIndex) {
-                 DataManager.addMeal(
+                 dataManager.addMeal(
                     Meal(
                         name = mealLineData[NAME],
                         calories = mealLineData[CALORIES].toDouble(),
@@ -31,5 +32,6 @@ class CSVParser {
                 )
             }
         }
+        return dataManager
     }
 }

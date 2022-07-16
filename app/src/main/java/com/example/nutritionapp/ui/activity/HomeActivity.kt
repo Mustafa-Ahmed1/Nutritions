@@ -1,5 +1,7 @@
 package com.example.nutritionapp.ui.activity
 
+import android.os.Bundle
+import android.os.Parcelable
 import androidx.fragment.app.Fragment
 import com.example.nutritionapp.CSVParser
 import com.example.nutritionapp.R
@@ -15,6 +17,7 @@ import java.io.InputStreamReader
 class HomeActivity : BaseActivity<ActivityMainBinding>() {
 
     val parser = CSVParser()
+    private lateinit var dataManager: Parcelable
     private lateinit var mealsList: MutableList<Meal>
 
     override fun bindingInflater() = ActivityMainBinding.inflate(layoutInflater)
@@ -35,20 +38,23 @@ class HomeActivity : BaseActivity<ActivityMainBinding>() {
     override fun setUp() {
         setTheme(R.style.Theme_NutritionApp)
         openFile()
-        mealsList = DataManager.getMeals()
-
+        mealsList = (dataManager as DataManager).getMeals()
         setDefaultMainFragment()
     }
 
     private fun setDefaultMainFragment() {
+        val homeFragment = HomeFragment()
+        val bundle = Bundle()
+        bundle.putParcelable(Constants.KeyValues.DATA_MANAGER, dataManager)
+        homeFragment.arguments = bundle
         val transaction = supportFragmentManager.beginTransaction()
-        transaction.add(R.id.root_fragment, HomeFragment())
+        transaction.add(R.id.root_fragment, homeFragment)
         transaction.commit()
     }
 
     fun openFile() {
         val inputStream = assets.open(Constants.FilePath.NUTRITION_CSV)
         val buffer = InputStreamReader(inputStream)
-        parser.getMealsFromCSV(buffer)
+        dataManager = parser.getMealsFromCSV(buffer)
     }
 }

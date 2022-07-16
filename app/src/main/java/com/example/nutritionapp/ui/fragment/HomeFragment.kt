@@ -1,11 +1,17 @@
 package com.example.nutritionapp.ui.fragment
 
+import android.os.Bundle
+import android.os.Parcelable
 import androidx.fragment.app.Fragment
+import com.example.nutritionapp.data.DataManager
 import com.example.nutritionapp.databinding.FragmentHomeBinding
 import com.example.nutritionapp.ui.base.BaseFragment
+import com.example.nutritionapp.util.Constants
 
 
 class HomeFragment :BaseFragment<FragmentHomeBinding>() {
+
+    private lateinit var dataManager: Parcelable
 
     override fun bindingInflater(): FragmentHomeBinding =
         FragmentHomeBinding.inflate(layoutInflater)
@@ -24,6 +30,11 @@ class HomeFragment :BaseFragment<FragmentHomeBinding>() {
         buttonCaloriesCounter()
     }
 
+    override fun onStart() {
+        super.onStart()
+        dataManager = requireNotNull(arguments?.getParcelable(Constants.KeyValues.DATA_MANAGER))
+    }
+
     private fun buttonCardDiabetics() {
         binding.cardDiabetics.setOnClickListener {
             navigationTo(diabeticsScreenFragment)
@@ -31,7 +42,10 @@ class HomeFragment :BaseFragment<FragmentHomeBinding>() {
     }
 
     private fun buttonShowAll() {
+        val bundle = Bundle()
         binding.showAll.setOnClickListener {
+            bundle.putParcelable(Constants.KeyValues.DATA_MANAGER, dataManager)
+            mealsSearchFragment.arguments = bundle
             navigationTo(mealsSearchFragment)
         }
     }

@@ -23,6 +23,7 @@ object Constants {
     }
 
     object KeyValues {
+        const val DATA_MANAGER = "dataManger"
         const val MEAL_NAME = "MN"
         const val CAL_NUMBER = "CN"
         const val FIBER_NUMBER = "FN"

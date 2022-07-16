@@ -13,9 +13,9 @@ import com.example.nutritionapp.util.enum.StateNavigation
 
 abstract class BaseFragment<VB : ViewBinding> : Fragment(), CustomActionBar {
 
-    private var _binding: ViewBinding? = null
+    private lateinit var _binding: VB
     abstract fun bindingInflater(): VB
-    protected val binding get() = _binding as VB
+    protected val binding get() = _binding
 
     abstract fun setUp()
 
