@@ -34,18 +34,29 @@ class CaloriesCounterFragment : BaseFragment<FragmentCounterCaloriesBinding>() {
     override fun setUp() {
         dataManager = requireNotNull(arguments?.getParcelable(Constants.KeyValues.DATA_MANAGER))
         mealsList = (dataManager as DataManager).getMeals()
+
         binding.buttonAdd.setOnClickListener{
-            var textMealName = Calculations().getListByMealName(binding.textInputLayout0.editText?.text.toString(), mealsList)
-           var textG = Calculations().calculateCustomGramsCalories(textMealName?.calories.toString().toDouble(),  binding.editTextGrams.text.toString().toDouble())
-            binding.textTotalCaloriesValue.text = (binding.textTotalCaloriesValue.text.toString().toInt() + textG.toInt()).toString()
-            if(binding.textTotalCaloriesValue.text.toString().toInt() > 2572)
+            binding.labelError.setVisibility(View.INVISIBLE)
+            if((binding.textInputLayout0.editText?.text.toString() != "")&&(binding.editTextGrams.text.toString() !=""))
             {
-                binding.textTotalCaloriesValue.setTextColor(ContextCompat.getColor(requireContext(), R.color.red))
-                binding.imageTotalCaloriesRing.setColorFilter(ContextCompat.getColor(requireContext(), R.color.red))
+                var textMealName = Calculations().getListByMealName(binding.textInputLayout0.editText?.text.toString(), mealsList)
+                var textG = Calculations().calculateCustomGramsCalories(textMealName?.calories.toString().toDouble(),  binding.editTextGrams.text.toString().toDouble())
+                binding.textTotalCaloriesValue.text = (binding.textTotalCaloriesValue.text.toString().toInt() + textG.toInt()).toString()
+                if(binding.textTotalCaloriesValue.text.toString().toInt() > 2572)
+                {
+                    binding.textTotalCaloriesValue.setTextColor(ContextCompat.getColor(requireContext(), R.color.red))
+                    binding.imageTotalCaloriesRing.setColorFilter(ContextCompat.getColor(requireContext(), R.color.red))
+                    binding.labelError.setVisibility(View.VISIBLE)
+                    binding.labelError.setText(getResources().getString(R.string.error_label))
+                }
+            }
+            else{
+                binding.labelError.setText(getResources().getString(R.string.no_data_to_calculated))
                 binding.labelError.setVisibility(View.VISIBLE)
             }
         }
         binding.buttonReset.setOnClickListener{
+            binding.textInputLayout0.editText?.text?.clear()
             binding.textTotalCaloriesValue.setText(getResources().getString(R.string._0))
             binding.editTextGrams.text.clear()
             binding.textTotalCaloriesValue.setTextColor(ContextCompat.getColor(requireContext(), R.color.primary_color))
