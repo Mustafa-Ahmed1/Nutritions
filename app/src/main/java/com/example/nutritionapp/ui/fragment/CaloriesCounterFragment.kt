@@ -1,8 +1,15 @@
 package com.example.nutritionapp.ui.fragment
 
+import android.annotation.SuppressLint
+import android.graphics.Color
 import android.os.Bundle
 import android.os.Parcelable
+import android.util.Log
+import android.view.View
+import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import androidx.core.content.ContextCompat
+import androidx.core.view.updateLayoutParams
 import androidx.fragment.app.Fragment
 import com.example.nutritionapp.Calculations
 import com.example.nutritionapp.R
@@ -23,9 +30,30 @@ class CaloriesCounterFragment : BaseFragment<FragmentCounterCaloriesBinding>() {
         override fun getTitle(): String = getString(R.string.total_calories)
         override fun back(): Fragment = HomeFragment()
 
+    @SuppressLint("ResourceType")
     override fun setUp() {
-
+        dataManager = requireNotNull(arguments?.getParcelable(Constants.KeyValues.DATA_MANAGER))
+        mealsList = (dataManager as DataManager).getMeals()
+        binding.buttonAdd.setOnClickListener{
+            var textMealName = Calculations().getListByMealName(binding.textInputLayout0.editText?.text.toString(), mealsList)
+           var textG = Calculations().calculateCustomGramsCalories(textMealName?.calories.toString().toDouble(),  binding.editTextGrams.text.toString().toDouble())
+            binding.textTotalCaloriesValue.text = (binding.textTotalCaloriesValue.text.toString().toInt() + textG.toInt()).toString()
+            if(binding.textTotalCaloriesValue.text.toString().toInt() > 2572)
+            {
+                binding.textTotalCaloriesValue.setTextColor(ContextCompat.getColor(requireContext(), R.color.red))
+                binding.imageTotalCaloriesRing.setColorFilter(ContextCompat.getColor(requireContext(), R.color.red))
+                binding.labelError.setVisibility(View.VISIBLE)
+            }
+        }
+        binding.buttonReset.setOnClickListener{
+            binding.textTotalCaloriesValue.setText(getResources().getString(R.string._0))
+            binding.editTextGrams.text.clear()
+            binding.textTotalCaloriesValue.setTextColor(ContextCompat.getColor(requireContext(), R.color.primary_color))
+            binding.imageTotalCaloriesRing.setColorFilter(ContextCompat.getColor(requireContext(), R.color.primary_color))
+            binding.labelError.setVisibility(View.INVISIBLE)
+        }
     }
+
 
     override fun onStart() {
         super.onStart()
