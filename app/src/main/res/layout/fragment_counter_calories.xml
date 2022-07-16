@@ -39,7 +39,18 @@
         app:layout_constraintEnd_toEndOf="@+id/image_total_calories_ring"
         app:layout_constraintStart_toStartOf="@+id/image_total_calories_ring"
         app:layout_constraintTop_toBottomOf="@+id/text_total_calories_value" />
-
+<TextView
+    android:id="@+id/label_error"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:visibility="gone"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/image_total_calories_ring"
+    android:text="@string/error_label"
+    android:textColor="@color/red"
+    android:textSize="16sp"
+    />
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_marginTop="@dimen/spacing_extra_large"
