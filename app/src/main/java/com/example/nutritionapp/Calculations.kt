@@ -14,28 +14,32 @@ class Calculations {
         return null
     }
 
-    fun diabeticsBestMeals(mealsList: MutableList<Meal>, top: Int): List<Meal> {
+    fun diabeticsBestMeals(mealsList: MutableList<Meal>, top: Int): List<Meal>? {
+        if (mealsList.isEmpty()|| top<0||top>mealsList.size) return null
         mealsList.sortByDescending {
             it.potassium + 0.7 * it.carbohydrate + 0.5 * it.fiber - it.sugars
         }
         return mealsList.take(top)
     }
 
-    fun bodyBuildingBestMeals(mealsList: MutableList<Meal>, top: Int): List<Meal> {
+    fun bodyBuildingBestMeals(mealsList: MutableList<Meal>, top: Int): List<Meal>? {
+        if (mealsList.isEmpty()|| top<0||top>mealsList.size) return null
         mealsList.sortByDescending {
             0.4 * it.protein + 0.15 * it.totalFat + 0.45 * it.carbohydrate
         }
         return mealsList.take(top)
     }
 
-    fun cuttingBestMeals(mealsList: MutableList<Meal>, top: Int): List<Meal> {
+    fun cuttingBestMeals(mealsList: MutableList<Meal>, top: Int): List<Meal>? {
+        if (mealsList.isEmpty()|| top<0||top>mealsList.size) return null
         mealsList.sortByDescending {
             0.5 * it.protein + 0.2 * it.totalFat + 0.3 * it.carbohydrate
         }
         return mealsList.take(top)
     }
 
-    fun bloodPressureBestMeals(mealsList: MutableList<Meal>, top: Int): List<Meal> {
+    fun bloodPressureBestMeals(mealsList: MutableList<Meal>, top: Int): List<Meal>? {
+        if (mealsList.isEmpty()|| top<0||top>mealsList.size) return null
         mealsList.sortByDescending {
             it.calcium + 0.7 * it.fiber - it.sodium - it.totalFat
         }
