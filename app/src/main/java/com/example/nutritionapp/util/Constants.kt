@@ -29,5 +29,7 @@ object Constants {
         const val FIBER_NUMBER = "FN"
         const val SUGAR_NUMBER = "SN"
         const val PROTEIN_NUMBER = "PN"
+        const val MALE = 'M'
+        const val FEMALE = 'F'
     }
 }
