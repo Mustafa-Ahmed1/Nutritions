@@ -8,6 +8,7 @@ import com.example.nutritionapp.R
 import com.example.nutritionapp.data.DataManager
 import com.example.nutritionapp.data.model.Meal
 import com.example.nutritionapp.databinding.ActivityMainBinding
+import com.example.nutritionapp.ui.MealAdapter
 import com.example.nutritionapp.ui.fragment.HomeFragment
 import com.example.nutritionapp.ui.base.BaseActivity
 import com.example.nutritionapp.util.Constants
@@ -40,6 +41,8 @@ class HomeActivity : BaseActivity<ActivityMainBinding>() {
         openFile()
         mealsList = (dataManager as DataManager).getMeals()
         setDefaultMainFragment()
+
+
     }
 
     private fun setDefaultMainFragment() {

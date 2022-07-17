@@ -6,45 +6,55 @@
     android:layout_height="match_parent"
     android:background="@color/background_color">
 
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout0"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+    <EditText
+        android:id="@+id/editText"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/special_height"
-        android:layout_marginHorizontal="@dimen/spacing_medium"
-        android:background="@drawable/search_input_background"
-        app:boxStrokeWidth="0dp"
-        android:layout_marginTop="@dimen/spacing_medium"
-        app:boxStrokeWidthFocused="0dp"
-        app:endIconMode="none"
+        android:layout_height="56dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_chainStyle="packed">
+        android:layout_margin="16dp"/>
 
-        <AutoCompleteTextView
-            android:id="@+id/all_meals"
-            style="@style/PrimaryTextStyle.Black"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@null"
-            android:drawableStart="@drawable/ic_search"
-            android:drawablePadding="@dimen/spacing_medium"
-            android:inputType="text"
-            android:paddingTop="@dimen/spacing_small"
-            android:paddingBottom="@dimen/spacing_small"
-            android:textCursorDrawable="@drawable/cursor" />
-    </com.google.android.material.textfield.TextInputLayout>
+<!--    <com.google.android.material.textfield.TextInputLayout-->
+<!--        android:id="@+id/textInputLayout0"-->
+<!--        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="@dimen/special_height"-->
+<!--        android:layout_marginHorizontal="@dimen/spacing_medium"-->
+<!--        android:background="@drawable/search_input_background"-->
+<!--        app:boxStrokeWidth="0dp"-->
+<!--        android:layout_marginTop="@dimen/spacing_medium"-->
+<!--        app:boxStrokeWidthFocused="0dp"-->
+<!--        app:endIconMode="none"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintVertical_chainStyle="packed">-->
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="@dimen/large_image"
-        android:layout_height="@dimen/large_image"
-        android:src="@drawable/search_image"
+<!--        <AutoCompleteTextView-->
+<!--            android:id="@+id/all_meals"-->
+<!--            style="@style/PrimaryTextStyle.Black"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:background="@null"-->
+<!--            android:drawableStart="@drawable/ic_search"-->
+<!--            android:drawablePadding="@dimen/spacing_medium"-->
+<!--            android:inputType="text"-->
+<!--            android:paddingTop="@dimen/spacing_small"-->
+<!--            android:paddingBottom="@dimen/spacing_small"-->
+<!--            android:textCursorDrawable="@drawable/cursor" />-->
+<!--    </com.google.android.material.textfield.TextInputLayout>-->
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_meal"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout0" />
+        app:layout_constraintTop_toBottomOf="@+id/editText"
+        tools:listitem="@layout/item_meal" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

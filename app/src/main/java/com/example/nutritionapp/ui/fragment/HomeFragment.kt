@@ -11,7 +11,7 @@ import com.example.nutritionapp.util.Constants
 
 class HomeFragment :BaseFragment<FragmentHomeBinding>() {
 
-    private lateinit var dataManager: Parcelable
+    private var dataManager: Parcelable = DataManager()
 
     override fun bindingInflater(): FragmentHomeBinding =
         FragmentHomeBinding.inflate(layoutInflater)

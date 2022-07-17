@@ -1,7 +1,7 @@
 package com.example.nutritionapp.data.model
 
 data class Meal(
-    val name:String,
+    val name: String,
     val calories: Double,
     val totalFat: Double,
     val sodium: Double,
