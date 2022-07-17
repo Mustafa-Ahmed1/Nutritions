@@ -1,11 +1,19 @@
 package com.example.nutritionapp
 
 import com.example.nutritionapp.data.model.Meal
+import com.example.nutritionapp.util.Constants
 
 class Calculations {
 
     fun calculateCustomGramsCalories(caloriesOf100g: Double, mealGrams: Double) =
         if (mealGrams <= 0 || caloriesOf100g <= 0) 0.0 else (mealGrams / 100.0) * caloriesOf100g
+
+    fun calculatePersonDataCalories(gender: Char, weight: Double, height: Double, age: Double) =
+        when (gender) {
+            Constants.KeyValues.MALE -> 66.0 + (13.7 * weight) + (5.0 * height) - (6.8 * age)
+            Constants.KeyValues.FEMALE -> 665.0 + (9.6 * weight) + (1.8 * height) - (4.7 * age)
+            else -> null
+        }
 
     fun getListByMealName(mealName: String, mealList: List<Meal>): Meal? {
         mealList.forEach {
