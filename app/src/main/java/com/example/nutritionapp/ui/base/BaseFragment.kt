@@ -40,12 +40,11 @@ abstract class BaseFragment<VB : ViewBinding> : Fragment(), CustomActionBar {
             StateNavigation.Remove -> transaction.remove(to)
             StateNavigation.Replace -> transaction.replace(R.id.root_fragment, to)
         }
-
-        transaction.commit()
+        transaction.addToBackStack(null).commit()
     }
 
     protected fun navigationTo(to: Fragment) {
-        changeNavigation(StateNavigation.Add, to)
+        changeNavigation(StateNavigation.Replace, to)
     }
 
     protected fun backNavigation(to: Fragment) {
