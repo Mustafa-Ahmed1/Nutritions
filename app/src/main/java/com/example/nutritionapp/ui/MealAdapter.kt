@@ -20,7 +20,7 @@ class MealAdapter(val list: List<Meal>, private val listener: MealInteractionLis
         val currentMeal = list[position]
         holder.binding.apply {
             textMealName.text = currentMeal.name
-            textCaloriesNumber.text = currentMeal.calories.toString()
+            textCaloriesNumber.text = currentMeal.calories.toInt().toString()
 
             root.setOnClickListener { listener.onClickItem(currentMeal) }
         }
