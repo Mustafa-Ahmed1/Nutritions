@@ -32,7 +32,7 @@ class HomeFragment :BaseFragment<FragmentHomeBinding>() {
 
     override fun onStart() {
         super.onStart()
-//         dataManager = requireNotNull(arguments?.getParcelable(Constants.KeyValues.DATA_MANAGER))
+        dataManager = requireNotNull(arguments?.getParcelable(Constants.KeyValues.DATA_MANAGER))
     }
 
     private fun buttonCardDiabetics() {

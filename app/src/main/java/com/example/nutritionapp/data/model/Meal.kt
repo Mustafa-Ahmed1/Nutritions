@@ -1,5 +1,7 @@
 package com.example.nutritionapp.data.model
 
+import java.io.Serializable
+
 data class Meal(
     val name: String,
     val calories: Double,
@@ -15,4 +17,4 @@ data class Meal(
     val fiber: Double,
     val sugars: Double,
     val caffeine: Double
-)
+) : Serializable

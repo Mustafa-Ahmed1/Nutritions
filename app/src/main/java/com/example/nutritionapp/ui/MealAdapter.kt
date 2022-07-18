@@ -9,7 +9,7 @@ import com.example.nutritionapp.`interface`.MealInteractionListener
 import com.example.nutritionapp.data.model.Meal
 import com.example.nutritionapp.databinding.ItemMealBinding
 
-class MealAdapter(val list: List<Meal>, val listener: MealInteractionListener) :
+class MealAdapter(val list: List<Meal>, private val listener: MealInteractionListener) :
     RecyclerView.Adapter<MealAdapter.MealViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MealViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_meal, parent, false)

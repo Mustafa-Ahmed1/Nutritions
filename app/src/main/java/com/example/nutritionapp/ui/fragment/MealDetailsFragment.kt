@@ -1,5 +1,6 @@
 package com.example.nutritionapp.ui.fragment
 
+import android.util.Log
 import androidx.fragment.app.Fragment
 import com.example.nutritionapp.data.model.Meal
 import com.example.nutritionapp.databinding.FragmentTestBinding
@@ -16,7 +17,7 @@ class MealDetailsFragment : BaseFragment<FragmentTestBinding>() {
     override fun back(): Fragment = MealsSearchFragment()
 
     override fun setUp() {
-        val meal: Meal? = activity?.intent?.getSerializableExtra(Constants.KeyValues.MEAL) as Meal?
+        val meal = arguments?.getSerializable(Constants.KeyValues.MEAL) as Meal?
         meal?.let { bindMeal(it) }
     }
 
