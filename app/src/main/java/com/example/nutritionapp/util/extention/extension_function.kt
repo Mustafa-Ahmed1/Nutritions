@@ -14,6 +14,7 @@ fun String.toPureNumber(): Double {
         this.contains(" g") -> {
             this.dropLast(2).toDouble()
         }
+
         this.contains("g") -> {
             this.dropLast(1).toDouble()
         }
