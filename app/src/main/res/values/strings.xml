@@ -29,6 +29,7 @@
 
     <string name="total_calories">Total calories</string>
     <string name="no_data_to_calculated">No data to calculated</string>
+    <string name="total_Calories_Up_Normal">Total calories up normal</string>
     <string name="add_meal">Add meal</string>
     <string name="meal_name">Meal name</string>
     <string name="grams">Grams</string>

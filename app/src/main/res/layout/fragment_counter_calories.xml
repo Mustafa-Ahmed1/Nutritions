@@ -8,9 +8,9 @@
 
     <ImageView
         android:id="@+id/image_total_calories_ring"
-        android:layout_width="@dimen/total_calories_ring_size"
-        android:layout_height="@dimen/total_calories_ring_size"
-        android:src="@drawable/ring"
+        android:layout_width="@dimen/fire_calories_counter_size"
+        android:layout_height="@dimen/fire_calories_counter_size"
+        android:src="@drawable/ic_fire_calories_counter"
         android:layout_marginTop="94dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -21,6 +21,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         style="@style/ExtraTextStyle"
+        android:layout_marginTop="16dp"
         android:text="@string/_0"
         app:layout_constraintBottom_toTopOf="@+id/text_total_calories"
         app:layout_constraintEnd_toEndOf="@+id/image_total_calories_ring"

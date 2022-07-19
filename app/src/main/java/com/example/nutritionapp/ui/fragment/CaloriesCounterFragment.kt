@@ -44,16 +44,31 @@ class CaloriesCounterFragment : BaseFragment<FragmentCounterCaloriesBinding>() {
             {
                 var textMealName = Calculations().getListByMealName(binding.textInputLayout0.editText?.text.toString(), mealsList)
                 var textG = Calculations().calculateCustomGramsCalories(textMealName?.calories.toString().toDouble(),  binding.editTextGrams.text.toString().toDouble())
-                binding.textTotalCaloriesValue.text = (binding.textTotalCaloriesValue.text.toString().toInt() + textG.toInt()).toString()
-                if(binding.textTotalCaloriesValue.text.toString().toInt() > 2572)
+                var totalCalories = (Math.abs(binding.textTotalCaloriesValue.text.toString().toInt() + textG.toInt())).toString()
+                if((binding.textTotalCaloriesValue.text.toString().toInt() < 15000) && (totalCalories.toDouble() < 15000))
                 {
-                    binding.apply {
-                        textTotalCaloriesValue.setTextColor(ContextCompat.getColor(requireContext(), R.color.red))
-                        imageTotalCaloriesRing.setColorFilter(ContextCompat.getColor(requireContext(), R.color.red))
-                        labelError.visibility = View.VISIBLE
-                        labelError.text = resources.getString(R.string.error_label)
+                    binding.textTotalCaloriesValue.text = totalCalories
+                    clearText()
+                    if(binding.textTotalCaloriesValue.text.toString().toInt() > 2572)
+                    {
+                        binding.apply {
+                            textTotalCaloriesValue.setTextColor(ContextCompat.getColor(requireContext(), R.color.red))
+                            imageTotalCaloriesRing.setColorFilter(ContextCompat.getColor(requireContext(), R.color.red))
+                            labelError.visibility = View.VISIBLE
+                            labelError.text = resources.getString(R.string.error_label)
+                            clearText()
+                        }
                     }
                 }
+                else
+                {
+                    binding.apply {
+                        labelError.text = resources.getString(R.string.total_Calories_Up_Normal)
+                        labelError.visibility = View.VISIBLE
+                        clearText()
+                    }
+                }
+
             }
             else{
                 binding.apply {
@@ -66,9 +81,8 @@ class CaloriesCounterFragment : BaseFragment<FragmentCounterCaloriesBinding>() {
         }
         binding.buttonReset.setOnClickListener{
             binding.apply {
-                textInputLayout0.editText?.text?.clear()
+                clearText()
                 textTotalCaloriesValue.text = resources.getString(R.string._0)
-                editTextGrams.text.clear()
                 textTotalCaloriesValue.setTextColor(ContextCompat.getColor(requireContext(), R.color.primary_color))
                 imageTotalCaloriesRing.setColorFilter(ContextCompat.getColor(requireContext(), R.color.primary_color))
                 labelError.visibility = View.INVISIBLE
@@ -76,7 +90,11 @@ class CaloriesCounterFragment : BaseFragment<FragmentCounterCaloriesBinding>() {
 
         }
     }
-
+    fun clearText(){
+        binding.apply {
+            textInputLayout0.editText?.text?.clear()
+            editTextGrams.text.clear()}
+    }
     override fun onStart() {
         super.onStart()
         dataManager = requireNotNull(arguments?.getParcelable(Constants.KeyValues.DATA_MANAGER))
