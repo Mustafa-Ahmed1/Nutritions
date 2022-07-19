@@ -30,7 +30,8 @@
         app:layout_constraintEnd_toStartOf="@+id/card_gym"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/header_title" />
+        app:layout_constraintTop_toBottomOf="@+id/header_title"
+        />
 
     <ImageView
         android:layout_width="0dp"
@@ -245,21 +246,23 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/calculate_required_calories"
-        android:layout_width="0dp"
-        android:layout_height="108dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_margin="16dp"
         app:cardCornerRadius="16dp"
         android:backgroundTint="#EFFFF1"
         app:cardElevation="8dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/header_title2">
 
         <LinearLayout
+            android:id="@+id/linearLayout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            />
+            android:layout_height="match_parent"
+            android:orientation="horizontal"/>
+
+
         <TextView
             android:textColor="#0F9649"
             android:fontFamily="@font/poppins_semi_bold"
@@ -268,26 +271,26 @@
             android:layout_height="wrap_content"
             android:textSize="12sp"
             android:text="@string/calculate_required_calories"
-            android:layout_margin="16dp"
-            />
+            android:layout_margin="16dp" />
 
         <TextView
-            android:fontFamily="@font/poppins_regular"
+            android:id="@+id/text_info"
             android:layout_width="wrap_content"
-            android:textSize="12sp"
-            android:textColor="@color/black"
             android:layout_height="wrap_content"
-            android:layout_marginTop="38dp"
             android:layout_marginStart="16dp"
-            android:layout_marginEnd="108dp"
-            android:text="@string/get_your" />
+            android:layout_marginTop="38dp"
+            android:layout_marginBottom="16dp"
+            android:layout_marginEnd="98dp"
+            android:fontFamily="@font/poppins_regular"
+            android:text="@string/get_your"
+            android:textColor="@color/black"
+            android:textSize="12sp" />
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_healthy_food"
             android:layout_gravity="end"
             android:layout_margin="16dp"
-
             tools:ignore="ContentDescription" />
 
 
