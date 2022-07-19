@@ -3,6 +3,7 @@ package com.example.nutritionapp
 import android.util.Log
 import com.example.nutritionapp.data.model.Meal
 import com.example.nutritionapp.util.Constants
+import java.util.*
 
 class Calculations {
 
@@ -16,7 +17,15 @@ class Calculations {
             else -> null
         }
 
-    fun getMealListByMealSubName(mealSubName: String, mealList: List<Meal>) = mealList.filter { it.name.startsWith(mealSubName) }
+    fun getMealListByMealSubName(mealSubName: String, mealList: List<Meal>): List<Meal> {
+        val mealListStarsWithSubName =
+            mealList.filter { it.name.lowercase().startsWith(mealSubName.lowercase()) }
+        val mealListContainsSubName = mealList.filter {
+            it.name.lowercase().contains(mealSubName.lowercase()) && !it.name.lowercase()
+                .startsWith(mealSubName.lowercase())
+        }
+        return mealListStarsWithSubName + mealListContainsSubName
+    }
 
     fun getListByMealName(mealName: String, mealList: List<Meal>): Meal? {
         mealList.forEach {
@@ -26,7 +35,7 @@ class Calculations {
     }
 
     fun diabeticsBestMeals(mealsList: MutableList<Meal>, top: Int): List<Meal>? {
-        if (mealsList.isEmpty()|| top<0||top>mealsList.size) return null
+        if (mealsList.isEmpty() || top < 0 || top > mealsList.size) return null
         mealsList.sortByDescending {
             it.potassium + 0.7 * it.carbohydrate + 0.5 * it.fiber - it.sugars
         }
@@ -34,7 +43,7 @@ class Calculations {
     }
 
     fun bodyBuildingBestMeals(mealsList: MutableList<Meal>, top: Int): List<Meal>? {
-        if (mealsList.isEmpty()|| top<0||top>mealsList.size) return null
+        if (mealsList.isEmpty() || top < 0 || top > mealsList.size) return null
         mealsList.sortByDescending {
             0.4 * it.protein + 0.15 * it.totalFat + 0.45 * it.carbohydrate
         }
@@ -42,7 +51,7 @@ class Calculations {
     }
 
     fun cuttingBestMeals(mealsList: MutableList<Meal>, top: Int): List<Meal>? {
-        if (mealsList.isEmpty()|| top<0||top>mealsList.size) return null
+        if (mealsList.isEmpty() || top < 0 || top > mealsList.size) return null
         mealsList.sortByDescending {
             0.5 * it.protein + 0.2 * it.totalFat + 0.3 * it.carbohydrate
         }
@@ -50,7 +59,7 @@ class Calculations {
     }
 
     fun bloodPressureBestMeals(mealsList: MutableList<Meal>, top: Int): List<Meal>? {
-        if (mealsList.isEmpty()|| top<0||top>mealsList.size) return null
+        if (mealsList.isEmpty() || top < 0 || top > mealsList.size) return null
         mealsList.sortByDescending {
             it.calcium + 0.7 * it.fiber - it.sodium - it.totalFat
         }
