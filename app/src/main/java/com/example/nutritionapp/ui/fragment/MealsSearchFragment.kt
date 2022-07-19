@@ -4,7 +4,9 @@ import android.content.Intent
 import android.os.Bundle
 import android.os.Parcelable
 import android.util.Log
+import android.widget.Adapter
 import android.widget.ArrayAdapter
+import androidx.core.widget.doOnTextChanged
 import com.example.nutritionapp.CSVParser
 import com.example.nutritionapp.Calculations
 import com.example.nutritionapp.R
@@ -25,6 +27,8 @@ class MealsSearchFragment : BaseFragment<FragmentSearchMealsBinding>(), MealInte
     private var dataManager: Parcelable = DataManager()
     private lateinit var mealsList: MutableList<Meal>
     private var mealDetailsFragment = MealDetailsFragment()
+    private var calculations = Calculations()
+    private lateinit var adapter: MealAdapter
 
     override fun bindingInflater(): FragmentSearchMealsBinding =
         FragmentSearchMealsBinding.inflate(layoutInflater)
@@ -34,16 +38,23 @@ class MealsSearchFragment : BaseFragment<FragmentSearchMealsBinding>(), MealInte
     override fun back(): Fragment = HomeFragment()
 
     override fun setUp() {
-
+        onTextChange()
     }
 
     override fun onStart() {
         super.onStart()
         dataManager = requireNotNull(arguments?.getParcelable(Constants.KeyValues.DATA_MANAGER))
         mealsList = (dataManager as DataManager).getMeals()
-
-        val adapter = MealAdapter(mealsList, this)
+        adapter = MealAdapter(mealsList, this)
         binding.recyclerMeal.adapter = adapter
+    }
+
+    private fun onTextChange(){
+        binding.searchEditText.doOnTextChanged { text, start, before, count ->
+            val newMealList = calculations.getMealListByMealSubName(text.toString(), mealsList)
+            adapter = MealAdapter(newMealList, this)
+            binding.recyclerMeal.adapter = adapter
+        }
     }
 
     override fun onClickItem(meal: Meal) {

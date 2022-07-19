@@ -1,5 +1,6 @@
 package com.example.nutritionapp
 
+import android.util.Log
 import com.example.nutritionapp.data.model.Meal
 import com.example.nutritionapp.util.Constants
 
@@ -14,6 +15,8 @@ class Calculations {
             Constants.KeyValues.FEMALE -> 665.0 + (9.6 * weight) + (1.8 * height) - (4.7 * age)
             else -> null
         }
+
+    fun getMealListByMealSubName(mealSubName: String, mealList: List<Meal>) = mealList.filter { it.name.startsWith(mealSubName) }
 
     fun getListByMealName(mealName: String, mealList: List<Meal>): Meal? {
         mealList.forEach {
