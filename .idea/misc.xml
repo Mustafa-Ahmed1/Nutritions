@@ -4,6 +4,10 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Kotlin_Corse/NutritionApp/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
+        <entry key="..\:/NutritionApp/app/src/main/res/layout/fragment_counter_calories.xml" value="0.22" />
+        <entry key="..\:/NutritionApp/app/src/main/res/layout/fragment_home.xml" value="0.33" />
+        <entry key="..\:/NutritionApp/app/src/main/res/layout/fragment_search_meals.xml" value="0.1" />
+        <entry key="..\:/NutritionApp/app/src/main/res/layout/fragment_top_meal.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Mustafa Ahmed/AndroidStudioProjects/NutritionApp/app/src/main/res/drawable-v24/card_background_blue.xml" value="0.1355" />
         <entry key="..\:/Users/Mustafa Ahmed/AndroidStudioProjects/NutritionApp/app/src/main/res/drawable-v24/card_background_purple.xml" value="0.1355" />
         <entry key="..\:/Users/Mustafa Ahmed/AndroidStudioProjects/NutritionApp/app/src/main/res/drawable-v24/card_background_red.xml" value="0.1355" />
