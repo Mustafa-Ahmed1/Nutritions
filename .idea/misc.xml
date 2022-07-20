@@ -58,6 +58,10 @@
         <entry key="..\:/Users/Mustafa Ahmed/AndroidStudioProjects/NutritionApp/app/src/main/res/layout/fragment_home.xml" value="0.264" />
         <entry key="..\:/Users/Mustafa Ahmed/AndroidStudioProjects/NutritionApp/app/src/main/res/layout/fragment_search_meals.xml" value="0.264" />
         <entry key="..\:/Users/Mustafa Ahmed/AndroidStudioProjects/NutritionApp/app/src/main/res/layout/fragment_test.xml" value="0.25" />
+        <entry key="..\:/Users/tofym/AndroidStudioProjects/NutritionApp/app/src/main/res/drawable-v24/card_background_blue.xml" value="0.111" />
+        <entry key="..\:/Users/tofym/AndroidStudioProjects/NutritionApp/app/src/main/res/drawable-v24/card_background_purple.xml" value="0.111" />
+        <entry key="..\:/Users/tofym/AndroidStudioProjects/NutritionApp/app/src/main/res/drawable-v24/card_background_red.xml" value="0.111" />
+        <entry key="..\:/Users/tofym/AndroidStudioProjects/NutritionApp/app/src/main/res/drawable-v24/card_background_yellow.xml" value="0.111" />
         <entry key="..\:/Users/tofym/AndroidStudioProjects/NutritionApp/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.147" />
         <entry key="..\:/Users/tofym/AndroidStudioProjects/NutritionApp/app/src/main/res/drawable/ic_athlete.xml" value="0.147" />
         <entry key="..\:/Users/tofym/AndroidStudioProjects/NutritionApp/app/src/main/res/drawable/ic_back_arrow.xml" value="0.147" />
@@ -66,16 +70,29 @@
         <entry key="..\:/Users/tofym/AndroidStudioProjects/NutritionApp/app/src/main/res/drawable/ic_double_arrow.xml" value="0.147" />
         <entry key="..\:/Users/tofym/AndroidStudioProjects/NutritionApp/app/src/main/res/drawable/ic_down_arrow.xml" value="0.127" />
         <entry key="..\:/Users/tofym/AndroidStudioProjects/NutritionApp/app/src/main/res/drawable/ic_filter.xml" value="0.147" />
+        <entry key="..\:/Users/tofym/AndroidStudioProjects/NutritionApp/app/src/main/res/drawable/ic_group.xml" value="0.108" />
+        <entry key="..\:/Users/tofym/AndroidStudioProjects/NutritionApp/app/src/main/res/drawable/ic_group2.xml" value="0.1205" />
+        <entry key="..\:/Users/tofym/AndroidStudioProjects/NutritionApp/app/src/main/res/drawable/ic_group3.xml" value="0.1205" />
         <entry key="..\:/Users/tofym/AndroidStudioProjects/NutritionApp/app/src/main/res/drawable/ic_gym.xml" value="0.147" />
         <entry key="..\:/Users/tofym/AndroidStudioProjects/NutritionApp/app/src/main/res/drawable/ic_launcher_background.xml" value="0.147" />
         <entry key="..\:/Users/tofym/AndroidStudioProjects/NutritionApp/app/src/main/res/drawable/ic_search.xml" value="0.147" />
+        <entry key="..\:/Users/tofym/AndroidStudioProjects/NutritionApp/app/src/main/res/drawable/ic_vector.xml" value="0.1815" />
+        <entry key="..\:/Users/tofym/AndroidStudioProjects/NutritionApp/app/src/main/res/drawable/shape_card.xml" value="0.108" />
         <entry key="..\:/Users/tofym/AndroidStudioProjects/NutritionApp/app/src/main/res/font/poppins.xml" value="0.23020833333333332" />
         <entry key="..\:/Users/tofym/AndroidStudioProjects/NutritionApp/app/src/main/res/layout-v26/fragment_home.xml" value="0.19895833333333332" />
         <entry key="..\:/Users/tofym/AndroidStudioProjects/NutritionApp/app/src/main/res/layout-v28/fragment_home.xml" value="0.1" />
         <entry key="..\:/Users/tofym/AndroidStudioProjects/NutritionApp/app/src/main/res/layout/activity_home.xml" value="0.1" />
-        <entry key="..\:/Users/tofym/AndroidStudioProjects/NutritionApp/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/tofym/AndroidStudioProjects/NutritionApp/app/src/main/res/layout/activity_main.xml" value="0.22" />
         <entry key="..\:/Users/tofym/AndroidStudioProjects/NutritionApp/app/src/main/res/layout/fragment_blank.xml" value="0.2" />
-        <entry key="..\:/Users/tofym/AndroidStudioProjects/NutritionApp/app/src/main/res/layout/fragment_home.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/tofym/AndroidStudioProjects/NutritionApp/app/src/main/res/layout/fragment_counter_calories.xml" value="0.16209371042634022" />
+        <entry key="..\:/Users/tofym/AndroidStudioProjects/NutritionApp/app/src/main/res/layout/fragment_health_advices.xml" value="0.22" />
+        <entry key="..\:/Users/tofym/AndroidStudioProjects/NutritionApp/app/src/main/res/layout/fragment_home.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/tofym/AndroidStudioProjects/NutritionApp/app/src/main/res/layout/fragment_search_meals.xml" value="0.14457831325301204" />
+        <entry key="..\:/Users/tofym/AndroidStudioProjects/NutritionApp/app/src/main/res/layout/fragment_test.xml" value="0.16417272338606242" />
+        <entry key="..\:/Users/tofym/AndroidStudioProjects/NutritionApp/app/src/main/res/layout/fragment_top_meal.xml" value="0.16417272338606242" />
+        <entry key="..\:/Users/tofym/AndroidStudioProjects/NutritionApp/app/src/main/res/menu-v26/navigation_bottoms.xml" value="0.2" />
+        <entry key="..\:/Users/tofym/AndroidStudioProjects/NutritionApp/app/src/main/res/menu/navigation_bottoms.xml" value="0.16417272338606242" />
+        <entry key="..\:/Users/tofym/AndroidStudioProjects/NutritionApp/app/src/main/res/menu/navigation_buttoms.xml" value="0.16417272338606242" />
         <entry key="..\:/Users/yaali/AndroidStudioProjects/NutritionApp/app/src/main/res/layout/fragment_counter_calories.xml" value="0.1" />
         <entry key="..\:/Users/yaali/AndroidStudioProjects/NutritionApp/app/src/main/res/layout/fragment_home.xml" value="0.15364583333333334" />
         <entry key="..\:/Users/yaali/AndroidStudioProjects/NutritionApp/app/src/main/res/layout/fragment_search_meals.xml" value="0.16757246376811594" />

@@ -110,9 +110,7 @@ class CaloriesCounterFragment : BaseFragment<FragmentCounterCaloriesBinding>() {
     private fun initViews() {
         binding.allMeals.setOnItemClickListener { _, _, _, _ ->
             val mealName = binding.allMeals.text.toString()
-
             val result = Calculations().getListByMealName(mealName, mealsList)
-
 
         }
     }

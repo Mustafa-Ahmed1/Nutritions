@@ -26,8 +26,8 @@ class HomeFragment :BaseFragment<FragmentHomeBinding>() {
 
     override fun setUp() {
         buttonCardDiabetics()
-        buttonShowAll()
-        buttonCaloriesCounter()
+//        buttonShowAll()
+//        buttonCaloriesCounter()
     }
 
     override fun onStart() {
@@ -41,22 +41,21 @@ class HomeFragment :BaseFragment<FragmentHomeBinding>() {
         }
     }
 
-    private fun buttonShowAll() {
-        val bundle = Bundle()
-        binding.showAll.setOnClickListener {
-            bundle.putParcelable(Constants.KeyValues.DATA_MANAGER, dataManager)
-            mealsSearchFragment.arguments = bundle
-            navigationTo(mealsSearchFragment)
-        }
-    }
+//    private fun buttonShowAll() {
+//        val bundle = Bundle()
+//        binding.showAll.setOnClickListener {
+//            bundle.putParcelable(Constants.KeyValues.DATA_MANAGER, dataManager)
+//            mealsSearchFragment.arguments = bundle
+//            navigationTo(mealsSearchFragment)
+//        }
+//    }
 
-    private fun buttonCaloriesCounter() {
-        val bundle = Bundle()
-        binding.caloriesCounter.setOnClickListener {
-            bundle.putParcelable(Constants.KeyValues.DATA_MANAGER, dataManager)
-            caloriesCounterFragment.arguments = bundle
-            navigationTo(caloriesCounterFragment)
-        }
-    }
-
+//    private fun buttonCaloriesCounter() {
+//        val bundle = Bundle()
+//        binding.caloriesCounter.setOnClickListener {
+//            bundle.putParcelable(Constants.KeyValues.DATA_MANAGER, dataManager)
+//            caloriesCounterFragment.arguments = bundle
+//            navigationTo(caloriesCounterFragment)
+//        }
+//    }
 }
