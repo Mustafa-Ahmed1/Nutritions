@@ -58,6 +58,7 @@
     <string name="diabetics_meals_informations">The most important elements that directly affect diabetic patients: potassium, carbohydrates, sugar, fiber.</string>
     <string name="search_for_all_meals">Search for all meals</string>
     <string name="error_label">You’re out of normal daily range</string>
+    <string name="_350g">350g</string>
 
 
 </resources>

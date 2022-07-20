@@ -21,6 +21,7 @@
         <entry key="..\:/Kotlin_Corse/NutritionApp/app/src/main/res/drawable/ic_filter.xml" value="0.176" />
         <entry key="..\:/Kotlin_Corse/NutritionApp/app/src/main/res/drawable/ic_gym.xml" value="0.176" />
         <entry key="..\:/Kotlin_Corse/NutritionApp/app/src/main/res/drawable/ic_keyboard_arrow_down_24.xml" value="0.176" />
+        <entry key="..\:/Kotlin_Corse/NutritionApp/app/src/main/res/drawable/rectangle_border.xml" value="0.176" />
         <entry key="..\:/Kotlin_Corse/NutritionApp/app/src/main/res/drawable/shape_card.xml" value="0.176" />
         <entry key="..\:/Kotlin_Corse/NutritionApp/app/src/main/res/drawable/spinner_icon.xml" value="0.176" />
         <entry key="..\:/Kotlin_Corse/NutritionApp/app/src/main/res/drawable/splash_screen.xml" value="0.176" />
@@ -32,7 +33,8 @@
         <entry key="..\:/Kotlin_Corse/NutritionApp/app/src/main/res/layout/fragment_search_meals.xml" value="0.20863616930312098" />
         <entry key="..\:/Kotlin_Corse/NutritionApp/app/src/main/res/layout/fragment_test.xml" value="0.20863616930312098" />
         <entry key="..\:/Kotlin_Corse/NutritionApp/app/src/main/res/layout/fragment_top_meal.xml" value="0.20863616930312098" />
-        <entry key="..\:/Kotlin_Corse/NutritionApp/app/src/main/res/layout/item_meal.xml" value="0.4" />
+        <entry key="..\:/Kotlin_Corse/NutritionApp/app/src/main/res/layout/item_calories_counter.xml" value="0.4" />
+        <entry key="..\:/Kotlin_Corse/NutritionApp/app/src/main/res/layout/item_meal.xml" value="0.2" />
         <entry key="..\:/Users/Mustafa Ahmed/AndroidStudioProjects/NutritionApp/app/src/main/res/drawable-v24/card_background_blue.xml" value="0.1355" />
         <entry key="..\:/Users/Mustafa Ahmed/AndroidStudioProjects/NutritionApp/app/src/main/res/drawable-v24/card_background_purple.xml" value="0.1355" />
         <entry key="..\:/Users/Mustafa Ahmed/AndroidStudioProjects/NutritionApp/app/src/main/res/drawable-v24/card_background_red.xml" value="0.1355" />
