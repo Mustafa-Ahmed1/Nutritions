@@ -13,4 +13,11 @@
     <color name="blue_card">#A7DCFF</color>
     <color name="purple_card">#CAB1FF</color>
     <color name="yellow_card">#FFB7AA</color>
+
+    <color name="red_card">#FC826D</color>
+    <color name="blue_card">#56B1EC</color>
+    <color name="purple_card">#D375FF</color>
+    <color name="yellow_card">#F2CF60</color>
+    <color name="background_color_info">#EFFFF1</color>
+    <color name="text_info_color">#134228</color>
 </resources>

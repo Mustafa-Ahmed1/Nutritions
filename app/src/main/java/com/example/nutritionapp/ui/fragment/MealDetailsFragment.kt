@@ -1,6 +1,8 @@
 package com.example.nutritionapp.ui.fragment
 
+import android.util.Log
 import androidx.fragment.app.Fragment
+import com.example.nutritionapp.data.model.Meal
 import com.example.nutritionapp.databinding.FragmentTestBinding
 import com.example.nutritionapp.ui.base.BaseFragment
 import com.example.nutritionapp.util.Constants
@@ -15,26 +17,20 @@ class MealDetailsFragment : BaseFragment<FragmentTestBinding>() {
     override fun back(): Fragment = MealsSearchFragment()
 
     override fun setUp() {
+        val meal = arguments?.getSerializable(Constants.KeyValues.MEAL) as Meal?
+        meal?.let { bindMeal(it) }
+    }
 
+    private fun bindMeal(meal: Meal) {
+        binding.apply {
+            caloriesValue.text = meal.calories.toString()
+            sugarsValue.text = meal.sugars.toString()
+            proteinsValue.text = meal.protein.toString()
+            fibersValue.text = meal.fiber.toString()
+        }
     }
 
     override fun onStart() {
         super.onStart()
-
-        arguments?.let {
-            with(Constants.KeyValues) {
-                val cal = it.getString(CAL_NUMBER)
-                val sugar = it.getString(SUGAR_NUMBER)
-                val protein = it.getString(PROTEIN_NUMBER)
-                val fiber = it.getString(FIBER_NUMBER)
-
-                binding.apply {
-                    caloriesValue.text = cal
-                    sugarsValue.text = sugar
-                    proteinsValue.text = protein
-                    fibersValue.text = fiber
-                }
-            }
-        }
     }
 }

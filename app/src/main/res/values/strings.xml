@@ -57,6 +57,7 @@
     <string name="diabetics_meals_informations">The most important elements that directly affect diabetic patients: potassium, carbohydrates, sugar, fiber.</string>
     <string name="search_for_all_meals">Search for all meals</string>
     <string name="error_label">You’re out of normal daily range</string>
+
     <string name="blood">Blood\npressure</string>
     <string name="building">building</string>
     <string name="pressure">pressure</string>
@@ -65,6 +66,14 @@
     <string name="home">Home</string>
     <string name="counter">Counter</string>
     <string name="calculate">Calculate</string>
+
+    <string name="health_advices">Health advices</string>
+    <string name="avoid_ultra_processed_foods">Avoid ultra-processed foods</string>
+    <string name="examples_include">Examples include:</string>
+    <string name="snack_cakes_">snack cakes - fast food - frozen meals - canned foods - chips.</string>
+    <string name="in_addition_">In addition to low-quality ingredients like inflammatory fats, added sugar, and refined grains, they’re usually low in fiber, protein, and micronutrients. Thus, they provide mostly empty calories.</string>
+    <string name="Ultra_prossed">Ultra-processed foods are foods containing ingredients that are significantly modified from their original form. They often contain additives like added sugar, highly refined oil, salt, preservatives, artificial sweeteners, colors, and flavors as well.\nExamples include:\n snack cakes - fast food - frozen meals - canned foods - chips.\n In addition to low-quality ingredients like inflammatory fats, added sugar, and refined grains, they’re usually low in fiber, protein, and micronutrients. Thus, they provide mostly empty calories.</string>
+
 
 
 </resources>
