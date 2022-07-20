@@ -18,8 +18,8 @@
 
         <com.github.mikephil.charting.charts.PieChart
             android:id="@+id/meal_Line_chart"
-            android:layout_width="200dp"
-            android:layout_height="200dp"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
             android:layout_marginTop="32dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -64,7 +64,7 @@
                 android:layout_width="48dp"
                 android:layout_height="48dp"
                 android:background="@drawable/fabric_shape"
-                app:backgroundTint="#AD5394 "
+                app:backgroundTint="#AD5394"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 

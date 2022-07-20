@@ -1,16 +1,14 @@
 package com.example.nutritionapp.ui.fragment
 
 import android.graphics.Color
-import android.util.Log
 import androidx.fragment.app.Fragment
 import com.example.nutritionapp.data.model.Meal
 import com.example.nutritionapp.databinding.FragmentMealDetailsBinding
-import com.example.nutritionapp.databinding.FragmentTestBinding
 import com.example.nutritionapp.ui.base.BaseFragment
 import com.example.nutritionapp.util.Constants
 import com.github.mikephil.charting.charts.PieChart
 import com.github.mikephil.charting.data.*
-import com.github.mikephil.charting.utils.ColorTemplate
+
 
 class MealDetailsFragment : BaseFragment<FragmentMealDetailsBinding>() {
 
@@ -23,32 +21,45 @@ class MealDetailsFragment : BaseFragment<FragmentMealDetailsBinding>() {
 
     override fun setUp() {
         val meal = arguments?.getSerializable(Constants.KeyValues.MEAL) as Meal?
-         lateinit var lineDataSet: LineDataSet
-         lateinit var linelist:ArrayList<Entry>
-         lateinit var lineData: LineData
-        var pc: PieChart? = null
-//        pc = findViewById(R.id.meal_Line_chart);
-        pc = binding.mealLineChart;
+        var piechart: PieChart? = null
+        piechart = binding.mealLineChart;
         val pieData: ArrayList<PieEntry> = ArrayList()
-        pieData.add(PieEntry(10f))
-        pieData.add(PieEntry(20f))
-        pieData.add(PieEntry(30f))
-        val dataSet = PieDataSet(pieData, "Survey Results")
+        pieData.add(PieEntry( meal!!.fiber.toFloat() ))
+        pieData.add(PieEntry(meal!!.sugars.toFloat() ))
+        pieData.add(PieEntry(meal!!.totalFat.toFloat() ))
+        pieData.add(PieEntry(meal!!.protein.toFloat() ))
+        val dataSet = PieDataSet(pieData, "" )
+        dataSet.sliceSpace = 7f
         val data = PieData(dataSet)
-        pc!!.data = data
-        dataSet.setColors(*ColorTemplate.JOYFUL_COLORS)
+        data.setDrawValues(false)
+        piechart.holeRadius = 90f
+        piechart.setDrawRoundedSlices(true)
+        piechart.description.isEnabled = false    // Hide the description
+        piechart.legend.isEnabled = false
+        piechart.data = data
+
+        val MY_COLORS = intArrayOf(
+            Color.rgb(173, 83, 148),
+            Color.rgb(133, 182, 255),
+            Color.rgb(235, 87, 87),
+            Color.rgb(226, 195, 101)
+        )
+        val colors = ArrayList<Int>()
+        for (c in MY_COLORS) colors.add(c)
+        dataSet.colors = colors
+
         dataSet.valueTextColor = Color.BLUE
         dataSet.valueTextSize = 20f
-
         meal?.let { bindMeal(it) }
     }
 
     private fun bindMeal(meal: Meal) {
         binding.apply {
-//            caloriesValue.text = meal.calories.toString()
-//            sugarsValue.text = meal.sugars.toString()
-//            proteinsValue.text = meal.protein.toString()
-//            fibersValue.text = meal.fiber.toString()
+            caloriesValue.text = meal.calories.toInt().toString()
+            fabricQuantity.text = meal.fiber.toString()
+            sugarQuantity.text = meal.sugars.toString()
+            proteinQuantity.text = meal.protein.toString()
+            fatQuantity.text = meal.totalFat.toString()
         }
     }
 
