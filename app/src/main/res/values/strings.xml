@@ -63,7 +63,7 @@
     <string name="examples_include">Examples include:</string>
     <string name="snack_cakes_">snack cakes - fast food - frozen meals - canned foods - chips.</string>
     <string name="in_addition_">In addition to low-quality ingredients like inflammatory fats, added sugar, and refined grains, they’re usually low in fiber, protein, and micronutrients. Thus, they provide mostly empty calories.</string>
-    <string name="Ultra_prossed">Ultra-processed foods are foods containing ingredients that are significantly modified from their original form. They often contain additives like added sugar, highly refined oil, salt, preservatives, artificial sweeteners, colors, and flavors as well.</string>
+    <string name="Ultra_prossed">Ultra-processed foods are foods containing ingredients that are significantly modified from their original form. They often contain additives like added sugar, highly refined oil, salt, preservatives, artificial sweeteners, colors, and flavors as well.\nExamples include:\n snack cakes - fast food - frozen meals - canned foods - chips.\n In addition to low-quality ingredients like inflammatory fats, added sugar, and refined grains, they’re usually low in fiber, protein, and micronutrients. Thus, they provide mostly empty calories.</string>
 
 
 </resources>
