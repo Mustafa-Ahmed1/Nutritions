@@ -2,7 +2,7 @@
     <string name="app_name">Nutrition App</string>
     <string name="best_meals">Best meals for each case!</string>
     <string name="diabetics">Diabetes</string>
-    <string name="gym_players">Body</string>
+    <string name="gym_players">Body\nbuilding</string>
 
     <string name="weight_loss">Overweight</string>
     <string name="blood_pressure">Blood pressure</string>
