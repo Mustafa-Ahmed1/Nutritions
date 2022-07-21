@@ -58,41 +58,18 @@ class MealsSearchFragment : BaseFragment<FragmentSearchMealsBinding>(), MealInte
         navigationTo(mealDetailsFragment)
     }
     private fun viewChips() {
-        binding.caloriesChip.setOnClickListener{
-            val newMealsList =calculations.sortCalories(mealsList)
-            adapter = MealAdapter(newMealsList, this)
-            binding.recyclerMeal.adapter=adapter
+        binding.apply {
+         caloriesChip.setOnClickListener{ baseViewChip(calculations.sortCalories(mealsList)) }
+         totalFatChip.setOnClickListener{ baseViewChip(calculations.sortTotalFat(mealsList)) }
+         fabricChip.setOnClickListener{ baseViewChip(calculations.sortFiber(mealsList)) }
+         sugarChip.setOnClickListener{ baseViewChip(calculations.sortSugars(mealsList)) }
+         proteinChip.setOnClickListener{ baseViewChip(calculations.sortProtein(mealsList)) }
+         sodiumChip.setOnClickListener{ baseViewChip(calculations.sortSodium(mealsList)) }
         }
-
-        binding.totalFatChip.setOnClickListener{
-            val newMealsList =calculations.sortTotalFat(mealsList)
-            adapter = MealAdapter(newMealsList, this)
-            binding.recyclerMeal.adapter=adapter
-        }
-
-        binding.fabricChip.setOnClickListener{
-            val newMealsList =calculations.sortFiber(mealsList)
-            adapter = MealAdapter(newMealsList, this)
-            binding.recyclerMeal.adapter=adapter
-        }
-
-        binding.sugarChip.setOnClickListener{
-            val newMealsList =calculations.sortSugars(mealsList)
-            adapter = MealAdapter(newMealsList, this)
-            binding.recyclerMeal.adapter=adapter
-        }
-
-        binding.proteinChip.setOnClickListener{
-            val newMealsList =calculations.sortProtein(mealsList)
-            adapter = MealAdapter(newMealsList, this)
-            binding.recyclerMeal.adapter=adapter
-        }
-
-        binding.sodiumChip.setOnClickListener{
-            val newMealsList =calculations.sortSodium(mealsList)
-            adapter = MealAdapter(newMealsList, this)
-            binding.recyclerMeal.adapter=adapter
-        }
+    }
+   private fun baseViewChip(mealList:List<Meal>){
+        adapter = MealAdapter(mealList, this)
+        binding.recyclerMeal.adapter=adapter
     }
 }
 
