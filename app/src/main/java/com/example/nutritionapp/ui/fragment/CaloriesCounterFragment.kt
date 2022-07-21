@@ -4,7 +4,9 @@ import android.annotation.SuppressLint
 import android.os.Parcelable
 import android.view.View
 import android.widget.ArrayAdapter
+import android.widget.Toast
 import androidx.core.content.ContextCompat
+import androidx.fragment.app.Fragment
 import com.example.nutritionapp.Calculations
 import com.example.nutritionapp.R
 import com.example.nutritionapp.data.DataManager
@@ -12,6 +14,7 @@ import com.example.nutritionapp.data.model.Meal
 import com.example.nutritionapp.databinding.FragmentCounterCaloriesBinding
 import com.example.nutritionapp.ui.base.BaseFragment
 import com.example.nutritionapp.util.Constants
+import kotlin.math.abs
 
 class CaloriesCounterFragment : BaseFragment<FragmentCounterCaloriesBinding>() {
     private lateinit var dataManager: Parcelable
@@ -23,11 +26,15 @@ class CaloriesCounterFragment : BaseFragment<FragmentCounterCaloriesBinding>() {
     override var visibilityBackButton: Boolean = false
     override fun getTitle(): String = getString(R.string.total_calories)
 
+    @SuppressLint("ResourceType")
     @SuppressLint("ResourceType", "SetTextI18n")
     override fun setUp() {
+
+    }
+
+    private fun clickEvents() {
         dataManager = requireNotNull(arguments?.getParcelable(Constants.KeyValues.DATA_MANAGER))
         mealsList = (dataManager as DataManager).getMeals()
-
         binding.buttonAdd.setOnClickListener {
             binding.labelError.visibility = View.INVISIBLE
             if ((binding.textInputLayout0.editText?.text.toString() != "") && (binding.editTextGrams.text.toString() != "")) {
@@ -35,54 +42,91 @@ class CaloriesCounterFragment : BaseFragment<FragmentCounterCaloriesBinding>() {
                     binding.textInputLayout0.editText?.text.toString(),
                     mealsList
                 )
-                val textG = Calculations().calculateCustomGramsCalories(
-                    textMealName?.calories.toString().toDouble(),
-                    binding.editTextGrams.text.toString().toDouble()
-                )
-                binding.textTotalCaloriesValue.text =
-                    (binding.textTotalCaloriesValue.text.toString()
-                        .toInt() + textG.toInt()).toString()
-                if (binding.textTotalCaloriesValue.text.toString().toInt() > 2572) {
-                    binding.textTotalCaloriesValue.setTextColor(
-                        ContextCompat.getColor(
-                            requireContext(),
-                            R.color.red
-                        )
+                if (textMealName != null) {
+                    val textG = Calculations().calculateCustomGramsCalories(
+                        textMealName.calories.toString().toDouble(),
+                        binding.editTextGrams.text.toString().toDouble()
                     )
-                    binding.imageTotalCaloriesRing.setColorFilter(
-                        ContextCompat.getColor(
-                            requireContext(),
-                            R.color.red
-                        )
-                    )
-                    binding.labelError.visibility = View.VISIBLE
-                    binding.labelError.text = resources.getString(R.string.error_label)
+                    val totalCalories = (abs(
+                        binding.textTotalCaloriesValue.text.toString().toInt() + textG.toInt()
+                    )).toString()
+                    if ((binding.textTotalCaloriesValue.text.toString()
+                            .toInt() < 15000) && (totalCalories.toDouble() < 15000)
+                    ) {
+                        binding.textTotalCaloriesValue.text = totalCalories
+                        clearText()
+                        if (binding.textTotalCaloriesValue.text.toString().toInt() > 2572) {
+                            binding.apply {
+                                textTotalCaloriesValue.setTextColor(
+                                    ContextCompat.getColor(
+                                        requireContext(),
+                                        R.color.red
+                                    )
+                                )
+                                imageTotalCaloriesRing.setColorFilter(
+                                    ContextCompat.getColor(
+                                        requireContext(),
+                                        R.color.red
+                                    )
+                                )
+                                clearText()
+                            }
+                            showToast(R.string.error_label)
+                        }
+                    } else {
+                        binding.apply {
+                            showToast(R.string.try_a_less_number_of_grams)
+                            clearText()
+                        }
+                    }
                 }
+            } else if (binding.editTextGrams.text.isEmpty() && binding.allMeals.text.isEmpty()) {
+                showToast(R.string.you_didnt_type_anything_yet)
+            } else if (binding.editTextGrams.text.isEmpty()) {
+                showToast(R.string.enter_the_number_of_grams)
+            } else if (binding.allMeals.text.isEmpty()) {
+                showToast(R.string.enter_your_meal_name)
             } else {
-                binding.labelError.text = resources.getString(R.string.no_data_to_calculated)
-                binding.labelError.visibility = View.VISIBLE
+                showToast(R.string.enter_a_valid_meal_name)
             }
         }
+
         binding.buttonReset.setOnClickListener {
-            binding.textInputLayout0.editText?.text?.clear()
-            binding.textTotalCaloriesValue.text = resources.getString(R.string._0)
-            binding.editTextGrams.text.clear()
-            binding.textTotalCaloriesValue.setTextColor(
-                ContextCompat.getColor(
-                    requireContext(),
-                    R.color.primary_color
+            binding.apply {
+                clearText()
+                textTotalCaloriesValue.text = resources.getString(R.string._0)
+                textTotalCaloriesValue.setTextColor(
+                    ContextCompat.getColor(
+                        requireContext(),
+                        R.color.primary_color
+                    )
                 )
-            )
-            binding.imageTotalCaloriesRing.setColorFilter(
-                ContextCompat.getColor(
-                    requireContext(),
-                    R.color.primary_color
+                imageTotalCaloriesRing.setColorFilter(
+                    ContextCompat.getColor(
+                        requireContext(),
+                        R.color.primary_color
+                    )
                 )
-            )
-            binding.labelError.visibility = View.INVISIBLE
+                labelError.visibility = View.INVISIBLE
+            }
         }
     }
 
+    private fun showToast(nameNotification: Int) {
+        val mToast = Toast.makeText(
+            context,
+            resources.getText(nameNotification),
+            Toast.LENGTH_SHORT
+        )
+        mToast.show()
+    }
+
+    fun clearText() {
+        binding.apply {
+            textInputLayout0.editText?.text?.clear()
+            editTextGrams.text.clear()
+        }
+    }
 
     override fun onStart() {
         super.onStart()
@@ -91,7 +135,9 @@ class CaloriesCounterFragment : BaseFragment<FragmentCounterCaloriesBinding>() {
         val mealsNamesList: MutableList<String> = mutableListOf()
         makeListOfMealNames(mealsNamesList, mealsList)
         setListAdapter(mealsNamesList)
+        clickEvents()
         initViews()
+
     }
 
     private fun makeListOfMealNames(mealsNamesList: MutableList<String>, mealsList: List<Meal>) {
@@ -109,7 +155,9 @@ class CaloriesCounterFragment : BaseFragment<FragmentCounterCaloriesBinding>() {
     private fun initViews() {
         binding.allMeals.setOnItemClickListener { _, _, _, _ ->
             val mealName = binding.allMeals.text.toString()
+
             val result = Calculations().getListByMealName(mealName, mealsList)
+
 
         }
     }

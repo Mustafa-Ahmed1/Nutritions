@@ -27,7 +27,8 @@
     <string name="oK">OK</string>
 
     <string name="total_calories">Total calories</string>
-    <string name="no_data_to_calculated">No data to calculated</string>
+    <string name="enter_a_valid_meal_name">Enter a valid meal name</string>
+    <string name="try_a_less_number_of_grams">Try a less number of grams</string>
     <string name="add_meal">Add meal</string>
     <string name="meal_name">Meal name</string>
     <string name="grams">Grams</string>
@@ -78,6 +79,9 @@
     <string name="search_bottom_navigation_bar">Search</string>
     <string name="calories_counter_bottom_navigation_bar">Calories Counter</string>
     <string name="health_advices_bottom_navigation_bar">Health advices</string>
+    <string name="you_didnt_type_anything_yet">You didn\'t type anything yet.</string>
+    <string name="enter_the_number_of_grams">Enter the number of grams.</string>
+    <string name="enter_your_meal_name">Enter your meal name.</string>
 
 
 </resources>

@@ -57,3 +57,5 @@ class HomeFragment :BaseFragment<FragmentHomeBinding>() {
 //        }
 //    }
 }
+
+}
