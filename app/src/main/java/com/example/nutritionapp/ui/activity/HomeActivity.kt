@@ -2,13 +2,13 @@ package com.example.nutritionapp.ui.activity
 
 import android.os.Bundle
 import android.os.Parcelable
+import android.util.Log
 import androidx.fragment.app.Fragment
-import com.example.nutritionapp.CSVParser
+import com.example.nutritionapp.util.parsers.CSVParser
 import com.example.nutritionapp.R
-import com.example.nutritionapp.data.DataManager
-import com.example.nutritionapp.data.model.Meal
+import com.example.nutritionapp.data.model.data.managers.MealDataManager
+import com.example.nutritionapp.data.model.data.Meal
 import com.example.nutritionapp.databinding.ActivityMainBinding
-import com.example.nutritionapp.ui.MealAdapter
 import com.example.nutritionapp.ui.fragment.HomeFragment
 import com.example.nutritionapp.ui.base.BaseActivity
 import com.example.nutritionapp.ui.fragment.CaloriesCounterFragment
@@ -16,13 +16,17 @@ import com.example.nutritionapp.ui.fragment.HealthAdvicesFragment
 import com.example.nutritionapp.ui.fragment.MealsSearchFragment
 import com.example.nutritionapp.util.Constants
 import com.example.nutritionapp.util.istVisible
+import com.example.nutritionapp.util.parsers.CSVParserHealthAdvice
 import java.io.InputStreamReader
 
+@Suppress("DEPRECATION")
 class HomeActivity : BaseActivity<ActivityMainBinding>() {
 
-    val parser = CSVParser()
+    private val maelParser = CSVParser()
+    private val healthAdviceParser = CSVParserHealthAdvice()
     val bundle = Bundle()
     private lateinit var dataManager: Parcelable
+    private lateinit var healthAdviceDataManger: Parcelable
     private lateinit var mealsList: MutableList<Meal>
 
     override fun bindingInflater() = ActivityMainBinding.inflate(layoutInflater)
@@ -47,10 +51,14 @@ class HomeActivity : BaseActivity<ActivityMainBinding>() {
 
     override fun setUp() {
         setTheme(R.style.Theme_NutritionApp)
-        openFile()
-        bundle.putParcelable(Constants.KeyValues.DATA_MANAGER, dataManager)
+        Log.v("ADD", openFile(Constants.FilePath.NUTRITION_CSV).toString())
+        dataManager = maelParser.getMealsFromCSV(openFile(Constants.FilePath.NUTRITION_CSV))
+        Log.v("BDD", openFile(Constants.FilePath.HEALTH_ADVICES_CSV).toString())
+        healthAdviceDataManger = healthAdviceParser.getHealthAdvicesFromCSV(openFile(Constants.FilePath.HEALTH_ADVICES_CSV))
+        Log.v("ASD", healthAdviceDataManger.toString())
+        bundle.putParcelable(Constants.KeyValues.Meal_DATA_MANAGER, dataManager)
         bottomNavigationBar()
-        mealsList = (dataManager as DataManager).getMeals()
+        mealsList = (dataManager as MealDataManager).getMeals()
         setDefaultMainFragment()
     }
 
@@ -91,6 +99,7 @@ class HomeActivity : BaseActivity<ActivityMainBinding>() {
                     true
                 }
                 R.id.pageHealthAdvices ->{
+                    bundle.putParcelable(Constants.KeyValues.HEALTH_ADVICE_DATA_MANAGER, healthAdviceDataManger)
                     changeNavigation(healthAdvicesFragment)
                     true
                 }
@@ -99,9 +108,9 @@ class HomeActivity : BaseActivity<ActivityMainBinding>() {
         }
     }
 
-    fun openFile() {
-        val inputStream = assets.open(Constants.FilePath.NUTRITION_CSV)
-        val buffer = InputStreamReader(inputStream)
-        dataManager = parser.getMealsFromCSV(buffer)
+    fun openFile(filePath: String): InputStreamReader {
+        val inputStream = assets.open(filePath)
+        Log.v("XDD", inputStream.toString())
+        return InputStreamReader(inputStream)
     }
 }

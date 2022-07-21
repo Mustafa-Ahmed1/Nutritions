@@ -1,16 +1,14 @@
 package com.example.nutritionapp.ui.fragment
 
-import android.annotation.SuppressLint
 import android.os.Parcelable
 import android.view.View
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.core.content.ContextCompat
-import androidx.fragment.app.Fragment
 import com.example.nutritionapp.Calculations
 import com.example.nutritionapp.R
-import com.example.nutritionapp.data.DataManager
-import com.example.nutritionapp.data.model.Meal
+import com.example.nutritionapp.data.model.data.managers.MealDataManager
+import com.example.nutritionapp.data.model.data.Meal
 import com.example.nutritionapp.databinding.FragmentCounterCaloriesBinding
 import com.example.nutritionapp.ui.base.BaseFragment
 import com.example.nutritionapp.util.Constants
@@ -31,8 +29,8 @@ class CaloriesCounterFragment(): BaseFragment<FragmentCounterCaloriesBinding>() 
     override fun setUp() {}
 
     private fun clickEvents() {
-        dataManager = requireNotNull(arguments?.getParcelable(Constants.KeyValues.DATA_MANAGER))
-        mealsList = (dataManager as DataManager).getMeals()
+        dataManager = requireNotNull(arguments?.getParcelable(Constants.KeyValues.Meal_DATA_MANAGER))
+        mealsList = (dataManager as MealDataManager).getMeals()
         binding.buttonAdd.setOnClickListener {
             binding.labelError.visibility = View.INVISIBLE
             if ((binding.textInputLayout0.editText?.text.toString() != "") && (binding.editTextGrams.text.toString() != "")) {
@@ -128,8 +126,8 @@ class CaloriesCounterFragment(): BaseFragment<FragmentCounterCaloriesBinding>() 
 
     override fun onStart() {
         super.onStart()
-        dataManager = requireNotNull(arguments?.getParcelable(Constants.KeyValues.DATA_MANAGER))
-        mealsList = (dataManager as DataManager).getMeals()
+        dataManager = requireNotNull(arguments?.getParcelable(Constants.KeyValues.Meal_DATA_MANAGER))
+        mealsList = (dataManager as MealDataManager).getMeals()
         val mealsNamesList: MutableList<String> = mutableListOf()
         makeListOfMealNames(mealsNamesList, mealsList)
         setListAdapter(mealsNamesList)

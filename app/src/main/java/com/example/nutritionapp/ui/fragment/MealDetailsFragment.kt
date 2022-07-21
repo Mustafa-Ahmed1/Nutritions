@@ -1,9 +1,7 @@
 package com.example.nutritionapp.ui.fragment
 
 import android.graphics.Color
-import android.util.Log
-import androidx.fragment.app.Fragment
-import com.example.nutritionapp.data.model.Meal
+import com.example.nutritionapp.data.model.data.Meal
 import com.example.nutritionapp.databinding.FragmentMealDetailsBinding
 import com.example.nutritionapp.ui.base.BaseFragment
 import com.example.nutritionapp.util.Constants

@@ -1,4 +1,4 @@
-package com.example.nutritionapp.data.model
+package com.example.nutritionapp.data.model.data
 
 import java.io.Serializable
 

@@ -2,7 +2,7 @@ package com.example.nutritionapp.ui.fragment
 
 import android.os.Parcelable
 import com.example.nutritionapp.R
-import com.example.nutritionapp.data.DataManager
+import com.example.nutritionapp.data.model.data.managers.MealDataManager
 import com.example.nutritionapp.databinding.FragmentHomeBinding
 import com.example.nutritionapp.ui.base.BaseFragment
 import com.example.nutritionapp.util.Constants
@@ -10,7 +10,7 @@ import com.example.nutritionapp.util.Constants
 
 class HomeFragment :BaseFragment<FragmentHomeBinding>() {
 
-    private var dataManager: Parcelable = DataManager()
+    private var mealDataManager: Parcelable = MealDataManager()
 
     override fun bindingInflater(): FragmentHomeBinding =
         FragmentHomeBinding.inflate(layoutInflater)
@@ -33,7 +33,7 @@ class HomeFragment :BaseFragment<FragmentHomeBinding>() {
 
     override fun onStart() {
         super.onStart()
-        dataManager = requireNotNull(arguments?.getParcelable(Constants.KeyValues.DATA_MANAGER))
+        mealDataManager = requireNotNull(arguments?.getParcelable(Constants.KeyValues.Meal_DATA_MANAGER))
     }
 
     private fun buttonCardDiabetics() {
@@ -45,7 +45,7 @@ class HomeFragment :BaseFragment<FragmentHomeBinding>() {
 //    private fun buttonShowAll() {
 //        val bundle = Bundle()
 //        binding.showAll.setOnClickListener {
-//            bundle.putParcelable(Constants.KeyValues.DATA_MANAGER, dataManager)
+//            bundle.putParcelable(Constants.KeyValues.Meal_DATA_MANAGER, mealDataManager)
 //            mealsSearchFragment.arguments = bundle
 //            navigationTo(mealsSearchFragment)
 //        }
@@ -54,7 +54,7 @@ class HomeFragment :BaseFragment<FragmentHomeBinding>() {
 //    private fun buttonCaloriesCounter() {
 //        val bundle = Bundle()
 //        binding.caloriesCounter.setOnClickListener {
-//            bundle.putParcelable(Constants.KeyValues.DATA_MANAGER, dataManager)
+//            bundle.putParcelable(Constants.KeyValues.Meal_DATA_MANAGER, mealDataManager)
 //            caloriesCounterFragment.arguments = bundle
 //            navigationTo(caloriesCounterFragment)
 //        }

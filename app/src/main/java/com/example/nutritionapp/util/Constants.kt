@@ -16,15 +16,19 @@ object Constants {
         const val FIBER = 59
         const val SUGARS = 60
         const val CAFFEINE = 74
+        const val TITLE = 1
+        const val DETAILS = 2
     }
 
     object FilePath {
         const val NUTRITION_CSV = "nutrition.csv"
+        const val HEALTH_ADVICES_CSV = "health_advices.csv"
     }
 
     object KeyValues {
         const val MEAL = "meal"
-        const val DATA_MANAGER = "dataManger"
+        const val Meal_DATA_MANAGER = "mealDataManger"
+        const val HEALTH_ADVICE_DATA_MANAGER = "healthAdviceDataManger"
         const val MEAL_NAME = "MN"
         const val CAL_NUMBER = "CN"
         const val FIBER_NUMBER = "FN"
