@@ -1,7 +1,5 @@
 package com.example.nutritionapp.ui.fragment
 
-import android.util.Log
-import androidx.fragment.app.Fragment
 import com.example.nutritionapp.data.model.Meal
 import com.example.nutritionapp.databinding.FragmentTestBinding
 import com.example.nutritionapp.ui.base.BaseFragment
@@ -13,8 +11,8 @@ class MealDetailsFragment : BaseFragment<FragmentTestBinding>() {
         FragmentTestBinding.inflate(layoutInflater)
 
     override var visibilityCustomActionBar: Boolean = true
-    override fun getTitle(): String = arguments?.getString(Constants.KeyValues.MEAL_NAME).toString()
-    override fun back(): Fragment = MealsSearchFragment()
+    override var visibilityBackButton: Boolean = true
+    override fun getTitle(): String = (arguments?.getSerializable(Constants.KeyValues.MEAL) as Meal).name
 
     override fun setUp() {
         val meal = arguments?.getSerializable(Constants.KeyValues.MEAL) as Meal?
@@ -30,7 +28,4 @@ class MealDetailsFragment : BaseFragment<FragmentTestBinding>() {
         }
     }
 
-    override fun onStart() {
-        super.onStart()
-    }
 }

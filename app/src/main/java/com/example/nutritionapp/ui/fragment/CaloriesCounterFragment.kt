@@ -5,7 +5,6 @@ import android.os.Parcelable
 import android.view.View
 import android.widget.ArrayAdapter
 import androidx.core.content.ContextCompat
-import androidx.fragment.app.Fragment
 import com.example.nutritionapp.Calculations
 import com.example.nutritionapp.R
 import com.example.nutritionapp.data.DataManager
@@ -21,8 +20,8 @@ class CaloriesCounterFragment : BaseFragment<FragmentCounterCaloriesBinding>() {
         FragmentCounterCaloriesBinding.inflate(layoutInflater)
 
     override var visibilityCustomActionBar: Boolean = true
+    override var visibilityBackButton: Boolean = false
     override fun getTitle(): String = getString(R.string.total_calories)
-    override fun back(): Fragment = HomeFragment()
 
     @SuppressLint("ResourceType", "SetTextI18n")
     override fun setUp() {

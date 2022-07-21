@@ -17,24 +17,27 @@
         android:layout_height="@dimen/zero"
         android:layout_below="@+id/widget_app_action"
         android:layout_alignParentBottom="true"
-        app:layout_constraintBottom_toBottomOf="@+id/bottom_navigation_bar"
-        app:layout_constraintTop_toBottomOf="@+id/widget_app_action" />
+
+        app:layout_constraintTop_toBottomOf="@+id/widget_app_action"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_navigation_bar"
+        />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation_bar"
+        style="@style/MaterialComponents.BottomNavigationView"
         android:layout_width="match_parent"
         android:layout_height="80dp"
+        android:background="@drawable/shape_bottom_navigation_bar"
         app:elevation="10dp"
-        style="@style/MaterialComponents.BottomNavigationView"
+
+        app:labelVisibilityMode="unlabeled"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/root_fragment"
         app:layout_constraintVertical_bias="1.0"
-        app:menu="@menu/bottom_navigation_bar"
-        app:labelVisibilityMode="unlabeled"
-        android:background="@drawable/shape_bottom_navigation_bar" />
+        app:menu="@menu/bottom_navigation_bar" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

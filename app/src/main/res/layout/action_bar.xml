@@ -4,6 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="?android:attr/actionBarSize"
     app:popupTheme="@style/ThemeOverlay.AppCompat.Dark"
+    app:contentInsetEnd="@dimen/zero"
+    app:contentInsetStart="@dimen/zero"
     app:theme="@style/myCustomAppBarTheme">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -15,6 +17,7 @@
             android:id="@+id/button_back"
             android:layout_width="@dimen/small_button"
             android:layout_height="@dimen/small_button"
+            android:layout_marginStart="@dimen/spacing_medium"
             android:layout_centerVertical="true"
             android:background="@drawable/ic_back_arrow"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -34,4 +37,5 @@
             app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 </androidx.appcompat.widget.Toolbar>

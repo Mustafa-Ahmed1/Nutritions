@@ -27,9 +27,9 @@ abstract class BaseFragment<VB : ViewBinding> : Fragment(), CustomActionBar {
         _binding = bindingInflater()
         setUp()
 
-        (activity as HomeActivity).setUpCustomActionBar(visibilityCustomActionBar, getTitle(), back())
+        (activity as HomeActivity).setUpCustomActionBar(visibilityCustomActionBar, visibilityBackButton, getTitle())
 
-        return requireNotNull(_binding).root
+        return _binding.root
     }
 
     private fun changeNavigation(state: StateNavigation, to: Fragment) {

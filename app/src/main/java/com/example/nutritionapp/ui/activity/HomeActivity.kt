@@ -27,14 +27,14 @@ class HomeActivity : BaseActivity<ActivityMainBinding>() {
 
     override fun bindingInflater() = ActivityMainBinding.inflate(layoutInflater)
 
-    fun setUpCustomActionBar(visible: Boolean, title: String?, back: Fragment?) {
+    fun setUpCustomActionBar(visible: Boolean, visibilityBackButton: Boolean, title: String?) {
         if (visible) {
-            binding.widgetAppAction.appAction
             binding.widgetAppAction.appActionTitle.text = title.toString()
             binding.widgetAppAction.buttonBack.setOnClickListener {
                 supportFragmentManager.popBackStack()
             }
         }
+        binding.widgetAppAction.buttonBack.visibility = istVisible(visibilityBackButton)
         binding.widgetAppAction.root.visibility = istVisible(visible)
     }
 

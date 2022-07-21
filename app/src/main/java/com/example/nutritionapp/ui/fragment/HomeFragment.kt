@@ -1,8 +1,6 @@
 package com.example.nutritionapp.ui.fragment
 
-import android.os.Bundle
 import android.os.Parcelable
-import androidx.fragment.app.Fragment
 import com.example.nutritionapp.data.DataManager
 import com.example.nutritionapp.databinding.FragmentHomeBinding
 import com.example.nutritionapp.ui.base.BaseFragment
@@ -21,8 +19,8 @@ class HomeFragment :BaseFragment<FragmentHomeBinding>() {
     private val caloriesCounterFragment = CaloriesCounterFragment()
 
     override var visibilityCustomActionBar: Boolean = false
+    override var visibilityBackButton: Boolean = false
     override fun getTitle(): String? = null
-    override fun back(): Fragment? = null
 
     override fun setUp() {
         buttonCardDiabetics()
