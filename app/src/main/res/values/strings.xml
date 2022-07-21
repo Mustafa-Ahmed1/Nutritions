@@ -59,6 +59,7 @@
     <string name="search_for_all_meals">Search for all meals</string>
     <string name="error_label">You’re out of normal daily range</string>
     <string name="_350g">350g</string>
+    <string name="no_meal_to_show">No meal to show</string>
 
 
 </resources>

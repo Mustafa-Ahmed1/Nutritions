@@ -1,9 +1,11 @@
 package com.example.nutritionapp.ui.fragment
 
 import android.content.Intent
+import android.opengl.Visibility
 import android.os.Bundle
 import android.os.Parcelable
 import android.util.Log
+import android.view.View
 import android.widget.Adapter
 import android.widget.ArrayAdapter
 import androidx.core.widget.doOnTextChanged
@@ -52,6 +54,13 @@ class MealsSearchFragment : BaseFragment<FragmentSearchMealsBinding>(), MealInte
     private fun onTextChange(){
         binding.searchEditText.doOnTextChanged { text, start, before, count ->
             val newMealList = calculations.getMealListByMealSubName(text.toString(), mealsList)
+            if (newMealList.isEmpty() && text.toString().isNotEmpty()){
+                binding.imageSearch.visibility = View.VISIBLE
+                binding.textNoMeal.visibility = View.VISIBLE
+            } else {
+                binding.imageSearch.visibility = View.GONE
+                binding.textNoMeal.visibility = View.GONE
+            }
             adapter = MealAdapter(newMealList, this)
             binding.recyclerMeal.adapter = adapter
         }

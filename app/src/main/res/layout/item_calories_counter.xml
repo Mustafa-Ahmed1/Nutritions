@@ -32,6 +32,8 @@
             android:layout_marginHorizontal="@dimen/spacing_small"
             android:layout_marginTop="@dimen/spacing_too_small"
             android:text="@string/meal_name"
+            android:lines="1"
+            android:ellipsize="end"
             app:layout_constraintEnd_toStartOf="@+id/icon_close"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/text_grams" />

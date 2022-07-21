@@ -75,7 +75,7 @@ class CaloriesCounterFragment : BaseFragment<FragmentCounterCaloriesBinding>(),
                         editTextGramsLayout.editText?.text.toString().toInt()
                     )
                 )
-                adapter = CaloriesCounterAdapter(mealWithGramsList, this)
+                adapter = CaloriesCounterAdapter(mealWithGramsList, this@CaloriesCounterFragment)
                 recyclerViewMealWithGrams.adapter = adapter
                 textInputLayout0.editText?.text?.clear()
                 editTextGrams.text?.clear()
@@ -102,7 +102,7 @@ class CaloriesCounterFragment : BaseFragment<FragmentCounterCaloriesBinding>(),
             )
             labelError.visibility = View.INVISIBLE
             mealWithGramsList = mutableListOf()
-            adapter = CaloriesCounterAdapter(mealWithGramsList, this)
+            adapter = CaloriesCounterAdapter(mealWithGramsList, this@CaloriesCounterFragment)
             recyclerViewMealWithGrams.adapter = adapter
         }
         }
@@ -116,7 +116,6 @@ class CaloriesCounterFragment : BaseFragment<FragmentCounterCaloriesBinding>(),
         val mealsNamesList: MutableList<String> = mutableListOf()
         makeListOfMealNames(mealsNamesList, mealsList)
         setListAdapter(mealsNamesList)
-        initViews()
         adapter = CaloriesCounterAdapter(mealWithGramsList, this)
         binding.recyclerViewMealWithGrams.adapter = adapter
     }
@@ -133,13 +132,13 @@ class CaloriesCounterFragment : BaseFragment<FragmentCounterCaloriesBinding>(),
         binding.allMeals.setAdapter(adapter)
     }
 
-    private fun initViews() {
-        binding.allMeals.setOnItemClickListener { _, _, _, _ ->
-            val mealName = binding.allMeals.text.toString()
-
-            val result = calculations.getListByMealName(mealName, mealsList)
-        }
-    }
+//    private fun initViews() {
+//        binding.allMeals.setOnItemClickListener { _, _, _, _ ->
+//            val mealName = binding.allMeals.text.toString()
+//
+//            val result = calculations.getListByMealName(mealName, mealsList)
+//        }
+//    }
 
     override fun onClickClose(meal: MealWithGrams) {
         val currentMeal = calculations.getListByMealName(

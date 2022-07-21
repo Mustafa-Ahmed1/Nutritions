@@ -28,6 +28,10 @@
         <item name="android:textColor">@color/black</item>
     </style>
 
+    <style name="PrimaryTextStyle.PrimaryColor">
+        <item name="android:textColor">@color/primary_color</item>
+    </style>
+
     <style name="PrimaryTextStyle.Gray">
         <item name="android:textColor">@color/gray</item>
     </style>

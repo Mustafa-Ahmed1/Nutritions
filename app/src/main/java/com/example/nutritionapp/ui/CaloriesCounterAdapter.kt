@@ -20,7 +20,7 @@ class CaloriesCounterAdapter(val list: List<MealWithGrams>, private val listener
         val currentMeal = list[position]
         holder.binding.apply {
             textMealName.text = currentMeal.mealName
-            textGrams.text = currentMeal.mealGrams.toString()
+            "${currentMeal.mealGrams}g".also { textGrams.text = it }
             iconClose.setOnClickListener { listener.onClickClose(currentMeal) }
         }
     }
