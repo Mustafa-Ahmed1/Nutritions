@@ -1,15 +1,9 @@
 package com.example.nutritionapp.ui.fragment
 
-import android.content.Intent
-import android.opengl.Visibility
 import android.os.Bundle
 import android.os.Parcelable
-import android.util.Log
 import android.view.View
-import android.widget.Adapter
-import android.widget.ArrayAdapter
 import androidx.core.widget.doOnTextChanged
-import com.example.nutritionapp.CSVParser
 import com.example.nutritionapp.Calculations
 import com.example.nutritionapp.R
 import com.example.nutritionapp.data.DataManager
@@ -17,12 +11,9 @@ import com.example.nutritionapp.data.model.Meal
 import androidx.fragment.app.Fragment
 import com.example.nutritionapp.`interface`.MealInteractionListener
 import com.example.nutritionapp.databinding.FragmentSearchMealsBinding
-import com.example.nutritionapp.databinding.FragmentTestBinding
 import com.example.nutritionapp.ui.MealAdapter
 import com.example.nutritionapp.ui.base.BaseFragment
 import com.example.nutritionapp.util.Constants
-import java.io.InputStreamReader
-import java.io.Serializable
 
 class MealsSearchFragment : BaseFragment<FragmentSearchMealsBinding>(), MealInteractionListener {
 
@@ -52,7 +43,7 @@ class MealsSearchFragment : BaseFragment<FragmentSearchMealsBinding>(), MealInte
     }
 
     private fun onTextChange(){
-        binding.searchEditText.doOnTextChanged { text, start, before, count ->
+        binding.searchEditText.doOnTextChanged { text, _, _, _ ->
             val newMealList = calculations.getMealListByMealSubName(text.toString(), mealsList)
             if (newMealList.isEmpty() && text.toString().isNotEmpty()){
                 binding.imageSearch.visibility = View.VISIBLE

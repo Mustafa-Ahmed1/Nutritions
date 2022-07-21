@@ -1,6 +1,5 @@
 package com.example.nutritionapp.ui.fragment
 
-import android.util.Log
 import androidx.fragment.app.Fragment
 import com.example.nutritionapp.data.model.Meal
 import com.example.nutritionapp.databinding.FragmentTestBinding
@@ -28,9 +27,5 @@ class MealDetailsFragment : BaseFragment<FragmentTestBinding>() {
             proteinsValue.text = meal.protein.toString()
             fibersValue.text = meal.fiber.toString()
         }
-    }
-
-    override fun onStart() {
-        super.onStart()
     }
 }

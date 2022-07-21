@@ -29,7 +29,7 @@ abstract class BaseFragment<VB : ViewBinding> : Fragment(), CustomActionBar {
 
         (activity as HomeActivity).setUpCustomActionBar(visibilityCustomActionBar, getTitle(), back())
 
-        return requireNotNull(_binding).root
+        return _binding.root
     }
 
     private fun changeNavigation(state: StateNavigation, to: Fragment) {

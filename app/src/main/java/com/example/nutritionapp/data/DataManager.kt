@@ -14,8 +14,7 @@ class DataManager() : Parcelable {
 
     fun getMeals(): MutableList<Meal> = meals
 
-    constructor(parcel: Parcel) : this() {
-    }
+    constructor(parcel: Parcel) : this()
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
 

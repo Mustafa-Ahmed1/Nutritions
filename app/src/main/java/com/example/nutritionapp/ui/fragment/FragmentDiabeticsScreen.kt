@@ -16,7 +16,7 @@ class FragmentDiabeticsScreen :BaseFragment<FragmentTopMealBinding>(){
     override fun back(): Fragment = HomeFragment()
     @SuppressLint("SetTextI18n")
     override fun setUp() {
-        binding.textInfo.text = getString(R.string.diabetics_meals_informations)
+        binding.textInfo.text = getString(R.string.diabetics_meals_information)
     }
 
 

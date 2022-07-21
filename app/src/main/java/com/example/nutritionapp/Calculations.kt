@@ -1,9 +1,7 @@
 package com.example.nutritionapp
 
-import android.util.Log
 import com.example.nutritionapp.data.model.Meal
 import com.example.nutritionapp.util.Constants
-import java.util.*
 
 class Calculations {
 

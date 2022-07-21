@@ -14,7 +14,8 @@
         android:src="@drawable/ring"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/calories_shape" />
 
     <TextView
         android:id="@+id/text_total_calories_value"
@@ -94,7 +95,7 @@
         android:background="@drawable/rectangle_border"
         android:hint="@string/grams"
         android:inputType="number"
-        android:paddingStart="@dimen/spacing_medium"
+        android:paddingHorizontal="@dimen/spacing_medium"
         app:boxStrokeWidth="0dp"
         app:boxStrokeWidthFocused="0dp"
         app:endIconMode="none"
