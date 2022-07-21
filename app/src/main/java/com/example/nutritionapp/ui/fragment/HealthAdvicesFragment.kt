@@ -13,6 +13,8 @@ class HealthAdvicesFragment : BaseFragment<FragmentHealthAdvicesBinding>() {
     override var visibilityBackButton: Boolean = false
     override fun getTitle(): String = getString(R.string.health_advices)
 
+    override var visibleBottomNavigationBar: Boolean = true
+
     override fun setUp() {}
 
 }

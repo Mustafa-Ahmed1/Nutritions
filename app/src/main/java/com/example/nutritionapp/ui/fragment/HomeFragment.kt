@@ -1,6 +1,7 @@
 package com.example.nutritionapp.ui.fragment
 
 import android.os.Parcelable
+import com.example.nutritionapp.R
 import com.example.nutritionapp.data.DataManager
 import com.example.nutritionapp.databinding.FragmentHomeBinding
 import com.example.nutritionapp.ui.base.BaseFragment
@@ -18,9 +19,11 @@ class HomeFragment :BaseFragment<FragmentHomeBinding>() {
     private val mealsSearchFragment = MealsSearchFragment()
     private val caloriesCounterFragment = CaloriesCounterFragment()
 
-    override var visibilityCustomActionBar: Boolean = false
+    override var visibleBottomNavigationBar: Boolean = true
+
+    override var visibilityCustomActionBar: Boolean = true
     override var visibilityBackButton: Boolean = false
-    override fun getTitle(): String? = null
+    override fun getTitle(): String = getString(R.string.best_meals)
 
     override fun setUp() {
         buttonCardDiabetics()
@@ -56,6 +59,6 @@ class HomeFragment :BaseFragment<FragmentHomeBinding>() {
 //            navigationTo(caloriesCounterFragment)
 //        }
 //    }
-}
+
 
 }

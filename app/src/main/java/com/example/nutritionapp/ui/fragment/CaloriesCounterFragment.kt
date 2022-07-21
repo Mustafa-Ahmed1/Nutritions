@@ -16,7 +16,7 @@ import com.example.nutritionapp.ui.base.BaseFragment
 import com.example.nutritionapp.util.Constants
 import kotlin.math.abs
 
-class CaloriesCounterFragment : BaseFragment<FragmentCounterCaloriesBinding>() {
+class CaloriesCounterFragment(): BaseFragment<FragmentCounterCaloriesBinding>() {
     private lateinit var dataManager: Parcelable
     private lateinit var mealsList: MutableList<Meal>
     override fun bindingInflater(): FragmentCounterCaloriesBinding =
@@ -26,11 +26,9 @@ class CaloriesCounterFragment : BaseFragment<FragmentCounterCaloriesBinding>() {
     override var visibilityBackButton: Boolean = false
     override fun getTitle(): String = getString(R.string.total_calories)
 
-    @SuppressLint("ResourceType")
-    @SuppressLint("ResourceType", "SetTextI18n")
-    override fun setUp() {
+    override var visibleBottomNavigationBar: Boolean = true
 
-    }
+    override fun setUp() {}
 
     private fun clickEvents() {
         dataManager = requireNotNull(arguments?.getParcelable(Constants.KeyValues.DATA_MANAGER))

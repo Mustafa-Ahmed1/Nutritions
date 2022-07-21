@@ -28,6 +28,8 @@ class MealsSearchFragment : BaseFragment<FragmentSearchMealsBinding>(), MealInte
     override var visibilityBackButton: Boolean = false
     override fun getTitle(): String = getString(R.string.search_for_all_meals)
 
+    override var visibleBottomNavigationBar: Boolean = true
+
     override fun setUp() {
         onTextChange()
     }
