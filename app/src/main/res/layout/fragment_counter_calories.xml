@@ -7,8 +7,10 @@
 
     <ImageView
         android:id="@+id/image_total_calories_ring"
-        android:layout_width="@dimen/fire_calories_counter_size"
-        android:layout_height="@dimen/fire_calories_counter_size"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="1:1"
+        android:layout_marginHorizontal="72dp"
         android:layout_marginTop="16dp"
         android:src="@drawable/ic_fire_calories_counter"
         app:layout_constraintEnd_toEndOf="parent"
@@ -115,14 +117,13 @@
         style="@style/PrimaryTextStyle.Regular.White"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/spacing_medium"
+        android:layout_marginTop="@dimen/spacing_medium"
         android:background="@drawable/rectangle1"
         android:paddingHorizontal="@dimen/spacing_large"
         android:paddingVertical="@dimen/spacing_small"
         android:text="@string/add"
         android:textAllCaps="false"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/edit_text_grams"
         app:layout_constraintTop_toBottomOf="@+id/edit_text_grams" />
 
     <androidx.appcompat.widget.AppCompatButton
@@ -130,14 +131,12 @@
         style="@style/PrimaryTextStyle.Regular.PrimaryColor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/spacing_extra_large"
         android:background="@drawable/border"
         android:paddingHorizontal="@dimen/spacing_large"
         android:paddingVertical="@dimen/spacing_small"
         android:text="@string/reset"
         android:textAllCaps="false"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="@+id/edit_text_grams"
+        app:layout_constraintTop_toTopOf="@+id/button_add" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

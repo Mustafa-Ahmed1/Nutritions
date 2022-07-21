@@ -2,7 +2,6 @@ package com.example.nutritionapp.ui.fragment
 
 import android.annotation.SuppressLint
 import android.os.Parcelable
-import android.util.Log
 import android.view.View
 import android.widget.ArrayAdapter
 import android.widget.Toast
@@ -15,6 +14,7 @@ import com.example.nutritionapp.data.model.Meal
 import com.example.nutritionapp.databinding.FragmentCounterCaloriesBinding
 import com.example.nutritionapp.ui.base.BaseFragment
 import com.example.nutritionapp.util.Constants
+import kotlin.math.abs
 
 class CaloriesCounterFragment : BaseFragment<FragmentCounterCaloriesBinding>() {
     private lateinit var dataManager: Parcelable
@@ -31,22 +31,22 @@ class CaloriesCounterFragment : BaseFragment<FragmentCounterCaloriesBinding>() {
 
     }
 
-    fun clickEvents() {
+    private fun clickEvents() {
         dataManager = requireNotNull(arguments?.getParcelable(Constants.KeyValues.DATA_MANAGER))
         mealsList = (dataManager as DataManager).getMeals()
         binding.buttonAdd.setOnClickListener {
             binding.labelError.visibility = View.INVISIBLE
             if ((binding.textInputLayout0.editText?.text.toString() != "") && (binding.editTextGrams.text.toString() != "")) {
-                var textMealName = Calculations().getListByMealName(
+                val textMealName = Calculations().getListByMealName(
                     binding.textInputLayout0.editText?.text.toString(),
                     mealsList
                 )
-                if(textMealName != null){
-                    var textG = Calculations().calculateCustomGramsCalories(
-                        textMealName?.calories.toString().toDouble(),
+                if (textMealName != null) {
+                    val textG = Calculations().calculateCustomGramsCalories(
+                        textMealName.calories.toString().toDouble(),
                         binding.editTextGrams.text.toString().toDouble()
                     )
-                    var totalCalories = (Math.abs(
+                    val totalCalories = (abs(
                         binding.textTotalCaloriesValue.text.toString().toInt() + textG.toInt()
                     )).toString()
                     if ((binding.textTotalCaloriesValue.text.toString()
@@ -79,14 +79,17 @@ class CaloriesCounterFragment : BaseFragment<FragmentCounterCaloriesBinding>() {
                         }
                     }
                 }
-                    else
-                    {
-                        showToast(R.string.enter_a_valid_meal_name)
-                    }
-                } else {
-                   showToast(R.string.enter_a_valid_meal_name)
-                }
+            } else if (binding.editTextGrams.text.isEmpty() && binding.allMeals.text.isEmpty()) {
+                showToast(R.string.you_didnt_type_anything_yet)
+            } else if (binding.editTextGrams.text.isEmpty()) {
+                showToast(R.string.enter_the_number_of_grams)
+            } else if (binding.allMeals.text.isEmpty()) {
+                showToast(R.string.enter_your_meal_name)
+            } else {
+                showToast(R.string.enter_a_valid_meal_name)
+            }
         }
+
         binding.buttonReset.setOnClickListener {
             binding.apply {
                 clearText()
@@ -107,15 +110,16 @@ class CaloriesCounterFragment : BaseFragment<FragmentCounterCaloriesBinding>() {
             }
         }
     }
-    fun showToast(nameNotificaton:Int)
-    {
+
+    private fun showToast(nameNotification: Int) {
         val mToast = Toast.makeText(
             context,
-            resources.getText(nameNotificaton),
+            resources.getText(nameNotification),
             Toast.LENGTH_SHORT
         )
         mToast.show()
     }
+
     fun clearText() {
         binding.apply {
             textInputLayout0.editText?.text?.clear()
