@@ -82,6 +82,8 @@
     <string name="you_didnt_type_anything_yet">You didn\'t type anything yet.</string>
     <string name="enter_the_number_of_grams">Enter the number of grams.</string>
     <string name="enter_your_meal_name">Enter your meal name.</string>
+    <string name="sort_by">sort by</string>
+    <string name="sodium">Sodium</string>
 
 
 </resources>

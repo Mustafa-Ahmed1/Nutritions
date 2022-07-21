@@ -32,6 +32,7 @@ class MealsSearchFragment : BaseFragment<FragmentSearchMealsBinding>(), MealInte
 
     override fun setUp() {
         onTextChange()
+        viewChips()
     }
 
     override fun onStart() {
@@ -55,6 +56,43 @@ class MealsSearchFragment : BaseFragment<FragmentSearchMealsBinding>(), MealInte
         bundle.putSerializable(Constants.KeyValues.MEAL,meal)
         mealDetailsFragment.arguments = bundle
         navigationTo(mealDetailsFragment)
+    }
+    private fun viewChips() {
+        binding.caloriesChip.setOnClickListener{
+            val newMealsList =calculations.sortCalories(mealsList)
+            adapter = MealAdapter(newMealsList, this)
+            binding.recyclerMeal.adapter=adapter
+        }
+
+        binding.totalFatChip.setOnClickListener{
+            val newMealsList =calculations.sortTotalFat(mealsList)
+            adapter = MealAdapter(newMealsList, this)
+            binding.recyclerMeal.adapter=adapter
+        }
+
+        binding.fabricChip.setOnClickListener{
+            val newMealsList =calculations.sortFiber(mealsList)
+            adapter = MealAdapter(newMealsList, this)
+            binding.recyclerMeal.adapter=adapter
+        }
+
+        binding.sugarChip.setOnClickListener{
+            val newMealsList =calculations.sortSugars(mealsList)
+            adapter = MealAdapter(newMealsList, this)
+            binding.recyclerMeal.adapter=adapter
+        }
+
+        binding.proteinChip.setOnClickListener{
+            val newMealsList =calculations.sortProtein(mealsList)
+            adapter = MealAdapter(newMealsList, this)
+            binding.recyclerMeal.adapter=adapter
+        }
+
+        binding.sodiumChip.setOnClickListener{
+            val newMealsList =calculations.sortSodium(mealsList)
+            adapter = MealAdapter(newMealsList, this)
+            binding.recyclerMeal.adapter=adapter
+        }
     }
 }
 
