@@ -8,19 +8,22 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="450dp"
+        android:layout_height="wrap_content"
         android:layout_margin="24dp"
         android:background="@drawable/bagraoundshap"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:paddingBottom="24dp"
+        android:elevation="7dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <com.github.mikephil.charting.charts.PieChart
             android:id="@+id/meal_Line_chart"
-            android:layout_width="250dp"
-            android:layout_height="250dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="56dp"
             android:layout_marginTop="32dp"
+            app:layout_constraintDimensionRatio="1:1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -29,35 +32,37 @@
             android:id="@+id/calories_value"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="108dp"
+            android:layout_marginBottom="32dp"
             android:fontFamily="sans-serif-black"
             android:text="230"
             android:textColor="#000000"
             android:textSize="32sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintBottom_toBottomOf="@+id/meal_Line_chart"
+            app:layout_constraintEnd_toEndOf="@+id/meal_Line_chart"
+            app:layout_constraintStart_toStartOf="@+id/meal_Line_chart"
+            app:layout_constraintTop_toTopOf="@+id/meal_Line_chart" />
 
         <TextView
             android:id="@+id/calories_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="sans-serif-condensed-medium"
+            android:fontFamily="@font/poppins"
             android:text="calories"
             android:textColor="#000000"
             android:textSize="16sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/calories_value"
+            app:layout_constraintStart_toStartOf="@+id/calories_value"
             app:layout_constraintTop_toBottomOf="@+id/calories_value" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/fabric_container"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginBottom="24dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent">
+            android:layout_marginTop="32dp"
+            app:layout_constraintEnd_toStartOf="@+id/sugar_container"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/meal_Line_chart">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/fabric_value_container"
@@ -71,25 +76,29 @@
                 <TextView
                     android:id="@+id/fabric_quantity"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif-medium"
+                    android:layout_height="18sp"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:lineSpacingMultiplier="0.26"
                     android:text="5"
                     android:textColor="#000000"
+                    android:textSize="16sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:lineHeight="24dp"
+                    tools:lineHeight="24px" />
 
                 <TextView
                     android:id="@+id/gram_Label1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif-light"
+                    android:fontFamily="@font/poppins_regular"
                     android:text="gram"
                     android:textColor="#000000"
                     android:textSize="8sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/fabric_quantity"
+                    app:layout_constraintStart_toStartOf="@+id/fabric_quantity"
                     app:layout_constraintTop_toBottomOf="@+id/fabric_quantity" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
@@ -99,7 +108,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
-                android:fontFamily="sans-serif-medium"
+                android:fontFamily="@font/poppins_regular"
                 android:text="FABRIC"
                 android:textColor="#000000"
                 android:textSize="12sp"
@@ -114,9 +123,9 @@
             android:id="@+id/sugar_container"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginBottom="24dp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toBottomOf="@+id/fabric_container"
+            app:layout_constraintEnd_toStartOf="@+id/fat_container"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/fabric_container">
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -132,26 +141,27 @@
                 <TextView
                     android:id="@+id/sugar_quantity"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif-medium"
+                    android:layout_height="18sp"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/poppins_medium"
                     android:text="5"
                     android:textColor="#000000"
-                    app:layout_constraintBottom_toTopOf="@+id/gram_Label2"
+                    android:textSize="16sp"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent" />
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:id="@+id/gram_Label2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
-                    android:fontFamily="sans-serif-light"
+                    android:fontFamily="@font/poppins_regular"
                     android:text="gram"
                     android:textColor="#000000"
                     android:textSize="8sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent" />
+                    app:layout_constraintEnd_toEndOf="@+id/sugar_quantity"
+                    app:layout_constraintStart_toStartOf="@+id/sugar_quantity"
+                    app:layout_constraintTop_toBottomOf="@+id/sugar_quantity" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -160,7 +170,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
-                android:fontFamily="sans-serif-medium"
+                android:fontFamily="@font/poppins_regular"
                 android:text="SUGAR"
                 android:textColor="#000000"
                 android:textSize="12sp"
@@ -175,9 +185,9 @@
             android:id="@+id/fat_container"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginBottom="24dp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toBottomOf="@+id/sugar_container"
+            app:layout_constraintEnd_toStartOf="@+id/protein_container"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/sugar_container">
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -193,26 +203,27 @@
                 <TextView
                     android:id="@+id/fat_quantity"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif-medium"
+                    android:layout_height="18sp"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/poppins_medium"
                     android:text="5"
                     android:textColor="#000000"
-                    app:layout_constraintBottom_toTopOf="@+id/gram_Label3"
+                    android:textSize="16sp"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent" />
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:id="@+id/gram_Label3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
-                    android:fontFamily="sans-serif-light"
+                    android:fontFamily="@font/poppins_regular"
                     android:text="gram"
                     android:textColor="#000000"
                     android:textSize="8sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent" />
+                    app:layout_constraintEnd_toEndOf="@+id/fat_quantity"
+                    app:layout_constraintStart_toStartOf="@+id/fat_quantity"
+                    app:layout_constraintTop_toBottomOf="@+id/fat_quantity" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -221,7 +232,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
-                android:fontFamily="sans-serif-medium"
+                android:fontFamily="@font/poppins_regular"
                 android:text="FAT"
                 android:textColor="#000000"
                 android:textSize="12sp"
@@ -236,9 +247,9 @@
             android:id="@+id/protein_container"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginBottom="24dp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toBottomOf="@+id/fat_container"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/fat_container">
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -254,26 +265,27 @@
                 <TextView
                     android:id="@+id/protein_quantity"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif-medium"
+                    android:layout_height="18sp"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/poppins_medium"
                     android:text="5"
                     android:textColor="#000000"
-                    app:layout_constraintBottom_toTopOf="@+id/gram_Label4"
+                    android:textSize="16sp"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent" />
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:id="@+id/gram_Label4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
-                    android:fontFamily="sans-serif-light"
+                    android:fontFamily="@font/poppins_regular"
                     android:text="gram"
                     android:textColor="#000000"
                     android:textSize="8sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent" />
+                    app:layout_constraintEnd_toEndOf="@+id/protein_quantity"
+                    app:layout_constraintStart_toStartOf="@+id/protein_quantity"
+                    app:layout_constraintTop_toBottomOf="@+id/protein_quantity" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -282,7 +294,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
-                android:fontFamily="sans-serif-medium"
+                android:fontFamily="@font/poppins_regular"
                 android:text="PROTEIN"
                 android:textColor="#000000"
                 android:textSize="12sp"
