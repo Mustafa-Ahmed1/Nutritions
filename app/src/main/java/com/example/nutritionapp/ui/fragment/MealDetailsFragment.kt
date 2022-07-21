@@ -1,5 +1,6 @@
 package com.example.nutritionapp.ui.fragment
 
+import android.graphics.Color
 import android.util.Log
 import androidx.fragment.app.Fragment
 import com.example.nutritionapp.data.model.Meal
@@ -8,7 +9,6 @@ import com.example.nutritionapp.ui.base.BaseFragment
 import com.example.nutritionapp.util.Constants
 import com.github.mikephil.charting.charts.PieChart
 import com.github.mikephil.charting.data.*
-
 
 class MealDetailsFragment : BaseFragment<FragmentMealDetailsBinding>() {
 
