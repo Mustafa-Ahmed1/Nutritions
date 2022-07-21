@@ -110,4 +110,10 @@
         <item name="height">@dimen/height_action_bar</item>
     </style>
 
+    <style name="MaterialComponents.BottomNavigationView" parent="Widget.MaterialComponents.BottomNavigationView">
+        <!--        <item name="materialThemeOverlay">@style/ThemeOverlay.BottomNavView</item>-->
+        <item name="itemIconTint">@drawable/nav_item_color_state</item>
+        <item name="itemTextColor">@drawable/nav_item_color_state</item>
+    </style>
+
 </resources>
