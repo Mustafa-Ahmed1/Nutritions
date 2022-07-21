@@ -1,26 +1,17 @@
 package com.example.nutritionapp.ui.fragment
 
-import android.content.Intent
 import android.os.Bundle
 import android.os.Parcelable
-import android.util.Log
-import android.widget.Adapter
-import android.widget.ArrayAdapter
 import androidx.core.widget.doOnTextChanged
-import com.example.nutritionapp.CSVParser
 import com.example.nutritionapp.Calculations
 import com.example.nutritionapp.R
 import com.example.nutritionapp.data.DataManager
 import com.example.nutritionapp.data.model.Meal
-import androidx.fragment.app.Fragment
 import com.example.nutritionapp.`interface`.MealInteractionListener
 import com.example.nutritionapp.databinding.FragmentSearchMealsBinding
-import com.example.nutritionapp.databinding.FragmentTestBinding
 import com.example.nutritionapp.ui.MealAdapter
 import com.example.nutritionapp.ui.base.BaseFragment
 import com.example.nutritionapp.util.Constants
-import java.io.InputStreamReader
-import java.io.Serializable
 
 class MealsSearchFragment : BaseFragment<FragmentSearchMealsBinding>(), MealInteractionListener {
 
@@ -34,8 +25,8 @@ class MealsSearchFragment : BaseFragment<FragmentSearchMealsBinding>(), MealInte
         FragmentSearchMealsBinding.inflate(layoutInflater)
 
     override var visibilityCustomActionBar: Boolean = true
+    override var visibilityBackButton: Boolean = false
     override fun getTitle(): String = getString(R.string.search_for_all_meals)
-    override fun back(): Fragment = HomeFragment()
 
     override fun setUp() {
         onTextChange()

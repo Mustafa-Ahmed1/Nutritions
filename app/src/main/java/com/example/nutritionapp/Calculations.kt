@@ -19,6 +19,16 @@ class Calculations {
 
     }
 
+    fun getMealListByMealSubName(mealSubName: String, mealList: List<Meal>): List<Meal> {
+        val mealListStarsWithSubName =
+            mealList.filter { it.name.lowercase().startsWith(mealSubName.lowercase()) }
+        val mealListContainsSubName = mealList.filter {
+            it.name.lowercase().contains(mealSubName.lowercase()) && !it.name.lowercase()
+                .startsWith(mealSubName.lowercase())
+        }
+        return mealListStarsWithSubName + mealListContainsSubName
+    }
+
     fun getListByMealName(mealName: String, mealList: List<Meal>): Meal? {
         mealList.forEach {
             if (it.name == mealName) return it
