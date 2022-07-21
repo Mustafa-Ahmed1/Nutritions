@@ -10,8 +10,10 @@ class FragmentDiabeticsScreen :BaseFragment<FragmentTopMealBinding>(){
         FragmentTopMealBinding.inflate(layoutInflater)
 
     override var visibilityCustomActionBar: Boolean= true
-    override var visibilityBackButton: Boolean = false
+    override var visibilityBackButton: Boolean = true
     override fun getTitle(): String = getString(R.string.top_5_diabetics_meals)
+
+    override var visibleBottomNavigationBar: Boolean = false
 
     override fun setUp() {
         binding.textInfo.text = getString(R.string.diabetics_meals_informations)

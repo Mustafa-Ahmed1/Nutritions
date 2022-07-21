@@ -108,6 +108,9 @@
         <entry key="app/src/main/res/layout/action_bar.xml" value="0.43333333333333335" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_diabetics_screen.xml" value="0.10054347826086957" />
+        <entry key="app/src/main/res/layout/fragment_health_advices.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/fragment_search_meals.xml" value="0.1921875" />
         <entry key="app/src/main/res/menu/bottom_navigation_bar.xml" value="0.1921875" />
       </map>
     </option>

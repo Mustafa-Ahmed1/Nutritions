@@ -19,6 +19,8 @@ class MealDetailsFragment : BaseFragment<FragmentMealDetailsBinding>() {
     override var visibilityBackButton: Boolean = true
     override fun getTitle(): String = (arguments?.getSerializable(Constants.KeyValues.MEAL) as Meal).name
 
+    override var visibleBottomNavigationBar: Boolean = false
+
     override fun setUp() {
         val meal = arguments?.getSerializable(Constants.KeyValues.MEAL) as Meal?
         var piechart: PieChart? = null

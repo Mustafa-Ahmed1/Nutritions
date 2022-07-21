@@ -9,31 +9,18 @@
     android:background="@color/background_color"
     tools:context=".ui.fragment.HomeFragment">
 
-
-    <TextView
-        android:id="@+id/header_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/spacing_medium"
-        android:layout_marginTop="@dimen/spacing_extra_large"
-        android:text="@string/best_meals"
-        style="@style/PrimaryTextStyle"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/card_diabetics"
-        android:layout_marginTop="@dimen/spacing_medium"
         android:layout_width="@dimen/zero"
         android:layout_height="@dimen/height_card"
+        android:layout_marginTop="@dimen/spacing_medium"
         android:layout_marginHorizontal="16dp"
         android:background="@drawable/shape_card"
         android:backgroundTint="@color/diabetes_card"
         app:layout_constraintEnd_toStartOf="@+id/card_gym"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/header_title" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:layout_width="0dp"
