@@ -63,6 +63,7 @@
         app:boxStrokeWidth="0dp"
         app:boxStrokeWidthFocused="0dp"
         app:endIconMode="none"
+        app:hintEnabled="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/image_total_calories_ring"
@@ -77,6 +78,7 @@
             android:background="@null"
             android:drawablePadding="@dimen/spacing_medium"
             android:hint="@string/meal_name"
+
             android:inputType="text"
             android:paddingTop="@dimen/spacing_small"
             android:paddingBottom="@dimen/spacing_small"

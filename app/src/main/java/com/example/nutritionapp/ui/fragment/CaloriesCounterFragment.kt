@@ -2,6 +2,7 @@ package com.example.nutritionapp.ui.fragment
 
 import android.annotation.SuppressLint
 import android.os.Parcelable
+import android.util.Log
 import android.view.View
 import android.widget.ArrayAdapter
 import android.widget.Toast
@@ -33,7 +34,6 @@ class CaloriesCounterFragment : BaseFragment<FragmentCounterCaloriesBinding>() {
     fun clickEvents() {
         dataManager = requireNotNull(arguments?.getParcelable(Constants.KeyValues.DATA_MANAGER))
         mealsList = (dataManager as DataManager).getMeals()
-
         binding.buttonAdd.setOnClickListener {
             binding.labelError.visibility = View.INVISIBLE
             if ((binding.textInputLayout0.editText?.text.toString() != "") && (binding.editTextGrams.text.toString() != "")) {
@@ -41,71 +41,51 @@ class CaloriesCounterFragment : BaseFragment<FragmentCounterCaloriesBinding>() {
                     binding.textInputLayout0.editText?.text.toString(),
                     mealsList
                 )
-                var textG = Calculations().calculateCustomGramsCalories(
-                    textMealName?.calories.toString().toDouble(),
-                    binding.editTextGrams.text.toString().toDouble()
-                )
-                var totalCalories = (Math.abs(
-                    binding.textTotalCaloriesValue.text.toString().toInt() + textG.toInt()
-                )).toString()
-                if ((binding.textTotalCaloriesValue.text.toString()
-                        .toInt() < 15000) && (totalCalories.toDouble() < 15000)
-                ) {
-                    binding.textTotalCaloriesValue.text = totalCalories
-                    clearText()
-                    if (binding.textTotalCaloriesValue.text.toString().toInt() > 2572) {
+                if(textMealName != null){
+                    var textG = Calculations().calculateCustomGramsCalories(
+                        textMealName?.calories.toString().toDouble(),
+                        binding.editTextGrams.text.toString().toDouble()
+                    )
+                    var totalCalories = (Math.abs(
+                        binding.textTotalCaloriesValue.text.toString().toInt() + textG.toInt()
+                    )).toString()
+                    if ((binding.textTotalCaloriesValue.text.toString()
+                            .toInt() < 15000) && (totalCalories.toDouble() < 15000)
+                    ) {
+                        binding.textTotalCaloriesValue.text = totalCalories
+                        clearText()
+                        if (binding.textTotalCaloriesValue.text.toString().toInt() > 2572) {
+                            binding.apply {
+                                textTotalCaloriesValue.setTextColor(
+                                    ContextCompat.getColor(
+                                        requireContext(),
+                                        R.color.red
+                                    )
+                                )
+                                imageTotalCaloriesRing.setColorFilter(
+                                    ContextCompat.getColor(
+                                        requireContext(),
+                                        R.color.red
+                                    )
+                                )
+                                clearText()
+                            }
+                            showToast(R.string.error_label)
+                        }
+                    } else {
                         binding.apply {
-                            textTotalCaloriesValue.setTextColor(
-                                ContextCompat.getColor(
-                                    requireContext(),
-                                    R.color.red
-                                )
-                            )
-                            imageTotalCaloriesRing.setColorFilter(
-                                ContextCompat.getColor(
-                                    requireContext(),
-                                    R.color.red
-                                )
-                            )
-//                            labelError.visibility = View.VISIBLE
-//                            labelError.text = resources.getString(R.string.error_label)
+                            showToast(R.string.try_a_less_number_of_grams)
                             clearText()
                         }
-                        val mToast = Toast.makeText(
-                            context,
-                            resources.getText(R.string.error_label),
-                            Toast.LENGTH_SHORT
-                        )
-                        mToast.show()
-                    }
-                } else {
-                    binding.apply {
-//                        labelError.text = resources.getString(R.string.try_a_less_number_of_grams)
-//                        labelError.visibility = View.VISIBLE
-                        val mToast = Toast.makeText(
-                            context,
-                            resources.getText(R.string.try_a_less_number_of_grams),
-                            Toast.LENGTH_SHORT
-                        )
-                        mToast.show()
-                        clearText()
                     }
                 }
-
-            } else {
-//                binding.apply {
-//                    labelError.text = resources.getString(R.string.enter_a_valid_meal_name)
-//                    labelError.visibility = View.VISIBLE
-//                }
-                val mToast = Toast.makeText(
-                    context,
-                    resources.getText(R.string.enter_a_valid_meal_name),
-                    Toast.LENGTH_SHORT
-                )
-                mToast.show()
-            }
-
-
+                    else
+                    {
+                        showToast(R.string.enter_a_valid_meal_name)
+                    }
+                } else {
+                   showToast(R.string.enter_a_valid_meal_name)
+                }
         }
         binding.buttonReset.setOnClickListener {
             binding.apply {
@@ -125,10 +105,17 @@ class CaloriesCounterFragment : BaseFragment<FragmentCounterCaloriesBinding>() {
                 )
                 labelError.visibility = View.INVISIBLE
             }
-
         }
     }
-
+    fun showToast(nameNotificaton:Int)
+    {
+        val mToast = Toast.makeText(
+            context,
+            resources.getText(nameNotificaton),
+            Toast.LENGTH_SHORT
+        )
+        mToast.show()
+    }
     fun clearText() {
         binding.apply {
             textInputLayout0.editText?.text?.clear()
