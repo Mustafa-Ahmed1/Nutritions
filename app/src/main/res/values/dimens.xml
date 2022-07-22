@@ -19,7 +19,7 @@
 
     <dimen name="small_button">24dp</dimen>
     <dimen name="spacing_too_small">4dp</dimen>
-    <dimen name="total_calories_ring_size">160dp</dimen>
+    <dimen name="fire_calories_counter_size">192dp</dimen>
     <dimen name="special_height">56dp</dimen>
     <dimen name="height_action_bar">100dp</dimen>
     <dimen name="large_image">350dp</dimen>
@@ -28,6 +28,8 @@
     <dimen name="height_card_view">56dp</dimen>
     <dimen name="elevation_element">50dp</dimen>
     <dimen name="spacing_specific">24dp</dimen>
+    <dimen name="radius_normal">8dp</dimen>
+    <dimen name="spacing_small_specific">12dp</dimen>
 
 
 </resources>

@@ -1,13 +1,13 @@
 <resources>
 
     <style name="Theme.NutritionApp" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-        <item name="android:statusBarColor">@color/primary_color</item>
+        <item name="android:statusBarColor">@color/background_color</item>
         <item name="android:windowBackground">@drawable/splash_screen</item>
         <item name="android:windowActivityTransitions">true</item>
     </style>
 
     <style name="DefaultTextStyle" parent="@android:style/TextAppearance.Widget.TextView">
-        <item name="android:textColor">@color/black</item>
+        <item name="android:textColor">@color/normal_text</item>
     </style>
 
     <style name="TitleTextStyle" parent="DefaultTextStyle">
@@ -25,11 +25,19 @@
     </style>
 
     <style name="PrimaryTextStyle.Black">
-        <item name="android:textColor">@color/black</item>
+        <item name="android:textColor">@color/normal_text</item>
+    </style>
+
+    <style name="PrimaryTextStyle.PrimaryColor">
+        <item name="android:textColor">@color/primary_color</item>
     </style>
 
     <style name="PrimaryTextStyle.Gray">
         <item name="android:textColor">@color/gray</item>
+    </style>
+
+    <style name="PrimaryTextStyle.Red">
+        <item name="android:textColor">@color/red</item>
     </style>
 
     <style name="PrimaryTextStyle.Regular" parent="DefaultTextStyle">
@@ -45,7 +53,7 @@
     </style>
 
     <style name="PrimaryTextStyle.Regular.Black">
-        <item name="android:textColor">@color/black</item>
+        <item name="android:textColor">@color/normal_text</item>
     </style>
 
     <style name="PrimaryTextStyle.Regular.PrimaryColor">
@@ -62,7 +70,7 @@
     </style>
 
     <style name="SecondaryTextStyle.Black">
-        <item name="android:textColor">@color/black</item>
+        <item name="android:textColor">@color/normal_text</item>
     </style>
 
     <style name="ExtraTextStyle" parent="DefaultTextStyle">
@@ -71,8 +79,16 @@
         <item name="android:textColor">@color/primary_color</item>
     </style>
 
-    <style name="CaptionTextStyle" parent="PrimaryTextStyle">
+    <style name="CaptionTextStyle" parent="DefaultTextStyle">
         <item name="android:textSize">@dimen/font_size_caption</item>
+    </style>
+
+    <style name="CaptionTextStyle.Medium">
+        <item name="fontFamily"> @font/poppins_medium </item>
+    </style>
+
+    <style name="CaptionTextStyle.Medium.PrimaryColor">
+        <item name="android:textColor"> @color/primary_color </item>
     </style>
 
     <style name="CaptionTextStyle.White">
@@ -80,7 +96,7 @@
     </style>
 
     <style name="CaptionTextStyle.Black">
-        <item name="android:textColor">@color/black</item>
+        <item name="android:textColor">@color/normal_text</item>
     </style>
 
     <style name="CaptionTextStyle.Red">
@@ -99,8 +115,8 @@
 
     <style name="AppTheme.ActionBar.TitleText" parent="TextAppearance.AppCompat.Widget.ActionBar.Title">
         <item name="android:textSize">@dimen/font_size_secondary</item>
-        <item name="android:textColor">@color/black</item>
-        <item name="android:fontFamily">@font/poppins_regular</item>
+        <item name="android:textColor">@color/normal_text</item>
+        <item name="android:fontFamily">@font/poppins_semi_bold</item>
     </style>
 
     <style name="AppTheme.ActionBar" parent="Widget.AppCompat.Light.ActionBar">
@@ -108,6 +124,33 @@
         <item name="titleTextStyle">@style/AppTheme.ActionBar.TitleText</item>
         <item name="android:height">@dimen/height_action_bar</item>
         <item name="height">@dimen/height_action_bar</item>
+    </style>
+
+    <style name="MaterialComponents.BottomNavigationView" parent="Widget.MaterialComponents.BottomNavigationView">
+        <!--        <item name="materialThemeOverlay">@style/ThemeOverlay.BottomNavView</item>-->
+        <item name="itemIconTint">@drawable/nav_item_color_state</item>
+        <item name="itemTextColor">@drawable/nav_item_color_state</item>
+    </style>
+
+    <style name="CustomChipStyle" parent="Widget.MaterialComponents.Chip.Choice">
+        <item name="android:textColor">@drawable/text_color_chips</item>
+        <item name="chipStrokeWidth">1dp</item>
+        <item name="chipStrokeColor">@color/primary_color</item>
+        <item name="chipBackgroundColor">@drawable/chips</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:fontFamily">@font/poppins_medium</item>
+    </style>
+
+    <style name="chipText" parent="TextAppearance.MaterialComponents.Chip">
+        <item name="android:textSize">12sp</item>
+        <item name="android:fontFamily">@font/poppins_regular</item>
+    </style>
+
+    <style name="TextLabelSearch">
+        <item name="android:textColorHint">@color/gray</item>
+        <item name="colorAccent">@color/primary_color</item>
+        <item name="colorControlNormal">@color/primary_color</item>
+        <item name="colorControlActivated">@color/primary_color</item>
     </style>
 
 </resources>
