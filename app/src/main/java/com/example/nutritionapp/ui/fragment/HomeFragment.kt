@@ -2,7 +2,7 @@ package com.example.nutritionapp.ui.fragment
 
 import android.os.Parcelable
 import com.example.nutritionapp.R
-import com.example.nutritionapp.data.model.data.managers.MealDataManager
+import com.example.nutritionapp.data.model.managers.MealDataManager
 import com.example.nutritionapp.databinding.FragmentHomeBinding
 import com.example.nutritionapp.ui.base.BaseFragment
 import com.example.nutritionapp.util.Constants

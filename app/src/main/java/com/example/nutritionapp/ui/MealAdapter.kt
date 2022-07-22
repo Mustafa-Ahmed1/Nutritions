@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.nutritionapp.R
 import com.example.nutritionapp.`interface`.MealInteractionListener
-import com.example.nutritionapp.data.model.data.Meal
+import com.example.nutritionapp.data.model.Meal
 import com.example.nutritionapp.databinding.ItemMealBinding
 
 class MealAdapter(val list: List<Meal>, private val listener: MealInteractionListener) :

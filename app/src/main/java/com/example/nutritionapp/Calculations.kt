@@ -1,6 +1,6 @@
 package com.example.nutritionapp
 
-import com.example.nutritionapp.data.model.data.Meal
+import com.example.nutritionapp.data.model.Meal
 import com.example.nutritionapp.util.Constants
 
 class Calculations {

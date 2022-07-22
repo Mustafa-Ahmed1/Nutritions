@@ -5,8 +5,8 @@ import android.os.Parcelable
 import androidx.core.widget.doOnTextChanged
 import com.example.nutritionapp.Calculations
 import com.example.nutritionapp.R
-import com.example.nutritionapp.data.model.data.managers.MealDataManager
-import com.example.nutritionapp.data.model.data.Meal
+import com.example.nutritionapp.data.model.managers.MealDataManager
+import com.example.nutritionapp.data.model.Meal
 import com.example.nutritionapp.`interface`.MealInteractionListener
 import com.example.nutritionapp.databinding.FragmentSearchMealsBinding
 import com.example.nutritionapp.ui.MealAdapter
