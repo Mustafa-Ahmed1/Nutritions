@@ -74,9 +74,6 @@ class MealsSearchFragment : BaseFragment<FragmentSearchMealsBinding>(), MealInte
             proteinChip.setOnCheckedChangeListener { buttonView, isChecked ->
                 if (isChecked) baseViewChip(calculations.sortProtein(mealsList)) else mealList(mealsList)
             }
-            sodiumChip.setOnCheckedChangeListener { buttonView, isChecked ->
-                if (isChecked) baseViewChip(calculations.sortSodium(mealsList)) else mealList(mealsList)
-            }
 
         }
     }

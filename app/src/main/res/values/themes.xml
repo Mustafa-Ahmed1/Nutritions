@@ -120,13 +120,18 @@
         <item name="itemTextColor">@drawable/nav_item_color_state</item>
     </style>
 
-    <style name="CutomChipStyle" parent="Widget.MaterialComponents.Chip.Choice">
+    <style name="CustomChipStyle" parent="Widget.MaterialComponents.Chip.Choice">
         <item name="android:textColor">@drawable/text_color_chips</item>
         <item name="chipStrokeWidth">1dp</item>
         <item name="chipStrokeColor">@color/primary_color</item>
         <item name="chipBackgroundColor">@drawable/chips</item>
         <item name="android:textSize">@dimen/font_size_primary</item>
         <item name="android:fontFamily">@font/poppins_medium</item>
+    </style>
+
+    <style name="chipText" parent="TextAppearance.MaterialComponents.Chip">
+        <item name="android:textSize">12sp</item>
+        <item name="android:fontFamily">@font/poppins_regular</item>
     </style>
 
 </resources>
