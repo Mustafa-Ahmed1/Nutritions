@@ -197,6 +197,10 @@ class CaloriesCounterFragment : BaseFragment<FragmentCounterCaloriesBinding>(),
                         )
                     )
                     labelError.visibility = View.INVISIBLE
+                    mealWithGramsList = mutableListOf()
+                    adapter =
+                        CaloriesCounterAdapter(mealWithGramsList, this@CaloriesCounterFragment)
+                    recyclerViewMealWithGrams.adapter = adapter
                 }
             }
         }
