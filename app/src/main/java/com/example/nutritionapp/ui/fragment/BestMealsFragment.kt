@@ -24,9 +24,10 @@ class BestMealsFragment :BaseFragment<FragmentTopMealBinding>(), MealInteraction
     override fun bindingInflater(): FragmentTopMealBinding =
         FragmentTopMealBinding.inflate(layoutInflater)
 
+    var nameee = ""
     override var visibilityCustomActionBar: Boolean= true
     override var visibilityBackButton: Boolean = true
-    override fun getTitle(): String = "Top 100 meals"
+    override fun getTitle(): String = nameee
 
     override var visibleBottomNavigationBar: Boolean = false
 
@@ -40,15 +41,23 @@ class BestMealsFragment :BaseFragment<FragmentTopMealBinding>(), MealInteraction
         when (bestMealType){
             Constants.KeyValues.DIABETICS -> {
                 newMealList = calculations.diabeticsBestMeals(mealsList, 100) as MutableList<Meal>
+                nameee = "Diabetics top meals"
+                binding.textInfo.text = "Here are the top 100 meals for diabetics. it based on specific calculations, witch contains sugar, carbohydrate, potassium and fiber."
             }
             Constants.KeyValues.GYM -> {
                 newMealList = calculations.bodyBuildingBestMeals(mealsList, 100) as MutableList<Meal>
+                nameee = "Bodybuilding top meals"
+                binding.textInfo.text = "Here are the top 100 meals for bodybuilders. it based on specific calculations, witch contains protein, total fat and carbohydrate."
             }
             Constants.KeyValues.PRESSURE -> {
                 newMealList = calculations.bloodPressureBestMeals(mealsList, 100) as MutableList<Meal>
+                nameee = "Blood pressure top meals"
+                binding.textInfo.text = "Here are the top 100 meals for blood pressure. it based on specific calculations, witch contains calcium, fiber, sodium and total fat."
             }
             Constants.KeyValues.WEIGHT_LOSS -> {
                 newMealList = calculations.weightLossBestMeals(mealsList, 100) as MutableList<Meal>
+                nameee = "Overweight top meals"
+                binding.textInfo.text = "Here are the top 100 meals for Weight losing. it based on specific calculations, witch contains protein, total fat and carbohydrate."
             }
         }
 
