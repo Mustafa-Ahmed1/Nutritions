@@ -60,7 +60,9 @@ class Calculations {
         return mealsList.take(top)
     }
 
-    fun cuttingBestMeals(mealsList: MutableList<Meal>, top: Int): List<Meal>? {
+
+    fun weightLossBestMeals(mealsList: MutableList<Meal>, top: Int): List<Meal>? {
+
         if (mealsList.isEmpty() || top <= 0 || top > mealsList.size) return null
         mealsList.sortByDescending {
             0.5 * it.protein + 0.2 * it.totalFat + 0.3 * it.carbohydrate
@@ -75,6 +77,14 @@ class Calculations {
         }
         return mealsList.take(top)
     }
+
+    fun sortCalories(mealsList: MutableList<Meal>) = mealsList.sortedByDescending { it.calories }
+    fun sortTotalFat(mealsList: MutableList<Meal>) = mealsList.sortedByDescending { it.totalFat }
+    fun sortFiber(mealsList: MutableList<Meal>) = mealsList.sortedByDescending { it.fiber }
+    fun sortSugars(mealsList: MutableList<Meal>) = mealsList.sortedByDescending { it.sugars }
+    fun sortProtein(mealsList: MutableList<Meal>) = mealsList.sortedByDescending { it.protein }
+    fun sortSodium(mealsList: MutableList<Meal>) = mealsList.sortedByDescending { it.sodium }
+}
 
     fun getRandomAdvice(healthAdviceList: MutableList<HealthAdvice>): HealthAdvice {
         val randomIndex = (0 until healthAdviceList.size).random()
