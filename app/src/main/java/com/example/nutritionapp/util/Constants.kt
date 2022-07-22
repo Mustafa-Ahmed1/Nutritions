@@ -36,5 +36,10 @@ object Constants {
         const val PROTEIN_NUMBER = "PN"
         const val MALE = 'M'
         const val FEMALE = 'F'
+        const val BEST_MEAL_TYPE = "bestMealType"
+        const val WEIGHT_LOSS = "WeightLoss"
+        const val DIABETICS = "Diabetics"
+        const val PRESSURE = "Pressure"
+        const val GYM = "Gym"
     }
 }
