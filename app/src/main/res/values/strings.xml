@@ -89,6 +89,7 @@
     <string name="sort_by">Sort by</string>
     <string name="sodium">Sodium</string>
     <string name="meal_details">Meal Details</string>
+    <string name="no_data_to_calculated">No data to calculated</string>
 
 
 </resources>

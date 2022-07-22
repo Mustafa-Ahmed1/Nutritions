@@ -2,24 +2,25 @@ package com.example.nutritionapp.ui.fragment
 
 import android.annotation.SuppressLint
 import android.os.Parcelable
+import android.util.Log
 import android.view.View
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.core.content.ContextCompat
-import androidx.fragment.app.Fragment
 import com.example.nutritionapp.Calculations
 import com.example.nutritionapp.R
 import com.example.nutritionapp.`interface`.MealWithGramsInteractionListener
-import com.example.nutritionapp.data.DataManager
-import com.example.nutritionapp.data.model.Meal
 import com.example.nutritionapp.data.MealWithGrams
+import com.example.nutritionapp.data.model.Meal
+import com.example.nutritionapp.data.model.managers.MealDataManager
 import com.example.nutritionapp.databinding.FragmentCounterCaloriesBinding
-import com.example.nutritionapp.ui.base.BaseFragment
 import com.example.nutritionapp.ui.CaloriesCounterAdapter
+import com.example.nutritionapp.ui.base.BaseFragment
 import com.example.nutritionapp.util.Constants
 import kotlin.math.abs
 
-class CaloriesCounterFragment : BaseFragment<FragmentCounterCaloriesBinding>() {
+class CaloriesCounterFragment : BaseFragment<FragmentCounterCaloriesBinding>(),
+    MealWithGramsInteractionListener {
     private lateinit var dataManager: Parcelable
     private var mealID = 0
     private val calculations = Calculations()
@@ -37,18 +38,15 @@ class CaloriesCounterFragment : BaseFragment<FragmentCounterCaloriesBinding>() {
 
     @SuppressLint("ResourceType", "SetTextI18n")
     override fun setUp() {
-        dataManager = requireNotNull(arguments?.getParcelable(Constants.KeyValues.DATA_MANAGER))
-        mealsList = (dataManager as DataManager).getMeals()
-
-        with (binding) {
+        with(binding) {
             buttonAdd.setOnClickListener {
-                mealID++
                 labelError.visibility = View.INVISIBLE
                 if ((textInputLayout0.editText?.text.toString() != "") && (editTextGrams.text.toString() != "")) {
                     val currentMeal = calculations.getListByMealName(
                         textInputLayout0.editText?.text.toString(),
                         mealsList
                     )
+                    Log.v("ASDD", textInputLayout0.editText?.text.toString())
                     val mealCustomGramsCalories = calculations.calculateCustomGramsCalories(
                         currentMeal?.calories.toString().toDouble(),
                         editTextGrams.text.toString().toDouble()
@@ -72,13 +70,11 @@ class CaloriesCounterFragment : BaseFragment<FragmentCounterCaloriesBinding>() {
                         labelError.visibility = View.VISIBLE
                         labelError.text = resources.getString(R.string.error_label)
                     }
-                    mealWithGramsList.add(
-                        MealWithGrams(
-                            mealID, textInputLayout0.editText?.text.toString(),
-                            editTextGramsLayout.editText?.text.toString().toInt()
-                        )
-                    )
-                    adapter = CaloriesCounterAdapter(mealWithGramsList, this@CaloriesCounterFragment)
+                    Log.v("HJK", mealWithGramsList.toString())
+
+                    Log.v("HJK", mealWithGramsList.toString())
+                    adapter =
+                        CaloriesCounterAdapter(mealWithGramsList, this@CaloriesCounterFragment)
                     recyclerViewMealWithGrams.adapter = adapter
                     textInputLayout0.editText?.text?.clear()
                     editTextGrams.text?.clear()
@@ -112,84 +108,96 @@ class CaloriesCounterFragment : BaseFragment<FragmentCounterCaloriesBinding>() {
     }
 
     private fun clickEvents() {
-        dataManager = requireNotNull(arguments?.getParcelable(Constants.KeyValues.Meal_DATA_MANAGER))
+        dataManager =
+            requireNotNull(arguments?.getParcelable(Constants.KeyValues.Meal_DATA_MANAGER))
         mealsList = (dataManager as MealDataManager).getMeals()
-        binding.buttonAdd.setOnClickListener {
-            binding.labelError.visibility = View.INVISIBLE
-            if ((binding.textInputLayout0.editText?.text.toString() != "") && (binding.editTextGrams.text.toString() != "")) {
-                val textMealName = Calculations().getListByMealName(
-                    binding.textInputLayout0.editText?.text.toString(),
-                    mealsList
-                )
-                if (textMealName != null) {
-                    val textG = Calculations().calculateCustomGramsCalories(
-                        textMealName.calories.toString().toDouble(),
-                        binding.editTextGrams.text.toString().toDouble()
+        with(binding)
+        {
+            buttonAdd.setOnClickListener {
+                labelError.visibility = View.INVISIBLE
+                if ((textInputLayout0.editText?.text.toString() != "") && (editTextGrams.text.toString() != "")) {
+                    val currentMeal = Calculations().getListByMealName(
+                        textInputLayout0.editText?.text.toString(),
+                        mealsList
                     )
-                    val totalCalories = (abs(
-                        binding.textTotalCaloriesValue.text.toString().toInt() + textG.toInt()
-                    )).toString()
-                    if ((binding.textTotalCaloriesValue.text.toString()
-                            .toInt() < 15000) && (totalCalories.toDouble() < 15000)
-                    ) {
-                        binding.textTotalCaloriesValue.text = totalCalories
-                        clearText()
-                        if (binding.textTotalCaloriesValue.text.toString().toInt() > 2572) {
-                            binding.apply {
-                                textTotalCaloriesValue.setTextColor(
-                                    ContextCompat.getColor(
-                                        requireContext(),
-                                        R.color.red
+                    if (currentMeal != null) {
+                        val textG = Calculations().calculateCustomGramsCalories(
+                            currentMeal.calories.toString().toDouble(),
+                            editTextGrams.text.toString().toDouble()
+                        )
+                        val totalCalories = (abs(
+                            textTotalCaloriesValue.text.toString().toInt() + textG.toInt()
+                        )).toString()
+                        if ((textTotalCaloriesValue.text.toString()
+                                .toInt() < 15000) && (totalCalories.toDouble() < 15000)) {
+                            mealID++
+                            textTotalCaloriesValue.text = totalCalories
+                            if (textTotalCaloriesValue.text.toString().toInt() > 2572) {
+                                apply {
+                                    textTotalCaloriesValue.setTextColor(
+                                        ContextCompat.getColor(
+                                            requireContext(),
+                                            R.color.red
+                                        )
                                     )
-                                )
-                                imageTotalCaloriesRing.setColorFilter(
-                                    ContextCompat.getColor(
-                                        requireContext(),
-                                        R.color.red
+                                    imageTotalCaloriesRing.setColorFilter(
+                                        ContextCompat.getColor(
+                                            requireContext(),
+                                            R.color.red
+                                        )
                                     )
+                                }
+                                showToast(R.string.error_label)
+                            }
+                            mealWithGramsList.add(
+                                MealWithGrams(
+                                    mealID, textInputLayout0.editText?.text.toString(),
+                                    editTextGrams.text.toString().toInt()
                                 )
+                            )
+                            adapter =
+                                CaloriesCounterAdapter(mealWithGramsList, this@CaloriesCounterFragment)
+                            recyclerViewMealWithGrams.adapter = adapter
+                            clearText()
+                        } else {
+                            apply {
+                                showToast(R.string.try_a_less_number_of_grams)
                                 clearText()
                             }
-                            showToast(R.string.error_label)
                         }
                     } else {
-                        binding.apply {
-                            showToast(R.string.try_a_less_number_of_grams)
-                            clearText()
-                        }
+                        showToast(R.string.enter_a_valid_meal_name)
+                        clearText()
                     }
-                }
-                else {
+                } else if (editTextGrams.text.isEmpty() && allMeals.text.isEmpty()) {
+                    showToast(R.string.you_didnt_type_anything_yet)
+                } else if (editTextGrams.text.isEmpty()) {
+                    showToast(R.string.enter_the_number_of_grams)
+                } else if (allMeals.text.isEmpty()) {
+                    showToast(R.string.enter_your_meal_name)
+                } else {
                     showToast(R.string.enter_a_valid_meal_name)
                 }
-            } else if (binding.editTextGrams.text.isEmpty() && binding.allMeals.text.isEmpty()) {
-                showToast(R.string.you_didnt_type_anything_yet)
-            }else if (binding.editTextGrams.text.isEmpty()) {
-                showToast(R.string.enter_the_number_of_grams)
-            } else if (binding.allMeals.text.isEmpty()) {
-                showToast(R.string.enter_your_meal_name)
-            } else {
-                showToast(R.string.enter_a_valid_meal_name)
             }
-        }
 
-        binding.buttonReset.setOnClickListener {
-            binding.apply {
-                clearText()
-                textTotalCaloriesValue.text = resources.getString(R.string._0)
-                textTotalCaloriesValue.setTextColor(
-                    ContextCompat.getColor(
-                        requireContext(),
-                        R.color.primary_color
+            buttonReset.setOnClickListener {
+                apply {
+                    clearText()
+                    textTotalCaloriesValue.text = resources.getString(R.string._0)
+                    textTotalCaloriesValue.setTextColor(
+                        ContextCompat.getColor(
+                            requireContext(),
+                            R.color.primary_color
+                        )
                     )
-                )
-                imageTotalCaloriesRing.setColorFilter(
-                    ContextCompat.getColor(
-                        requireContext(),
-                        R.color.primary_color
+                    imageTotalCaloriesRing.setColorFilter(
+                        ContextCompat.getColor(
+                            requireContext(),
+                            R.color.primary_color
+                        )
                     )
-                )
-                labelError.visibility = View.INVISIBLE
+                    labelError.visibility = View.INVISIBLE
+                }
             }
         }
     }
@@ -204,16 +212,17 @@ class CaloriesCounterFragment : BaseFragment<FragmentCounterCaloriesBinding>() {
     }
 
     fun clearText() {
-        binding.apply {
-            textInputLayout0.editText?.text?.clear()
-            editTextGrams.text.clear()
+        apply {
+            binding.textInputLayout0.editText?.text?.clear()
+            binding.editTextGrams.text.clear()
         }
     }
 
     override fun onStart() {
         super.onStart()
-        dataManager = requireNotNull(arguments?.getParcelable(Constants.KeyValues.DATA_MANAGER))
-        mealsList = (dataManager as DataManager).getMeals()
+        dataManager =
+            requireNotNull(arguments?.getParcelable(Constants.KeyValues.Meal_DATA_MANAGER))
+        mealsList = (dataManager as MealDataManager).getMeals()
         val mealsNamesList: MutableList<String> = mutableListOf()
         makeListOfMealNames(mealsNamesList, mealsList)
         setListAdapter(mealsNamesList)

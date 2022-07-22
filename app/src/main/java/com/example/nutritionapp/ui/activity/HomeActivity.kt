@@ -57,9 +57,14 @@ class HomeActivity : BaseActivity<ActivityMainBinding>() {
         healthAdviceDataManger = healthAdviceParser.getHealthAdvicesFromCSV(openFile(Constants.FilePath.HEALTH_ADVICES_CSV))
         Log.v("ASD", healthAdviceDataManger.toString())
         bundle.putParcelable(Constants.KeyValues.Meal_DATA_MANAGER, dataManager)
-        bottomNavigationBar()
         mealsList = (dataManager as MealDataManager).getMeals()
         setDefaultMainFragment()
+//        bottomNavigationBar()
+    }
+
+    override fun onStart() {
+        super.onStart()
+        bottomNavigationBar()
     }
 
     private fun setDefaultMainFragment() {

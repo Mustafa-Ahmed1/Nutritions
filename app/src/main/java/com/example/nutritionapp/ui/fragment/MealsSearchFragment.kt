@@ -1,29 +1,21 @@
 package com.example.nutritionapp.ui.fragment
 
-import android.content.Intent
 import android.os.Bundle
 import android.os.Parcelable
-import android.util.Log
 import android.view.View
-import android.widget.Adapter
-import android.widget.ArrayAdapter
 import androidx.core.widget.doOnTextChanged
-import com.example.nutritionapp.CSVParser
 import com.example.nutritionapp.Calculations
 import com.example.nutritionapp.R
-import com.example.nutritionapp.data.DataManager
 import com.example.nutritionapp.data.model.Meal
-import androidx.fragment.app.Fragment
 import com.example.nutritionapp.`interface`.MealInteractionListener
+import com.example.nutritionapp.data.model.managers.MealDataManager
 import com.example.nutritionapp.databinding.FragmentSearchMealsBinding
-import com.example.nutritionapp.databinding.FragmentTestBinding
 import com.example.nutritionapp.ui.MealAdapter
 import com.example.nutritionapp.ui.base.BaseFragment
 import com.example.nutritionapp.util.Constants
-import java.io.InputStreamReader
-import java.io.Serializable
 
-class MealsSearchFragment : BaseFragment<FragmentSearchMealsBinding>(), MealInteractionListener {
+class MealsSearchFragment() : BaseFragment<FragmentSearchMealsBinding>(),
+    MealInteractionListener {
 
     private var mealDataManager: Parcelable = MealDataManager()
     private lateinit var mealsList: MutableList<Meal>
@@ -34,12 +26,14 @@ class MealsSearchFragment : BaseFragment<FragmentSearchMealsBinding>(), MealInte
     override fun bindingInflater(): FragmentSearchMealsBinding =
         FragmentSearchMealsBinding.inflate(layoutInflater)
 
+    override var visibilityBackButton: Boolean = false
     override var visibilityCustomActionBar: Boolean = true
     override fun getTitle(): String = getString(R.string.search_for_all_meals)
     override var visibleBottomNavigationBar: Boolean = true
 
     override fun setUp() {
         onTextChange()
+        viewChips()
     }
 
     override fun onStart() {
@@ -73,19 +67,19 @@ class MealsSearchFragment : BaseFragment<FragmentSearchMealsBinding>(), MealInte
     }
     private fun viewChips() {
         binding.apply {
-            caloriesChip.setOnCheckedChangeListener { buttonView, isChecked ->
+            caloriesChip.setOnCheckedChangeListener { _, isChecked ->
                 if (isChecked) baseViewChip(calculations.sortCalories(mealsList)) else mealList(mealsList)
             }
-            totalFatChip.setOnCheckedChangeListener { buttonView, isChecked ->
+            totalFatChip.setOnCheckedChangeListener { _, isChecked ->
                 if (isChecked) baseViewChip(calculations.sortTotalFat(mealsList)) else mealList(mealsList)
             }
-            fabricChip.setOnCheckedChangeListener { buttonView, isChecked ->
+            fabricChip.setOnCheckedChangeListener { _, isChecked ->
                 if (isChecked) baseViewChip(calculations.sortFiber(mealsList)) else mealList(mealsList)
             }
-            sugarChip.setOnCheckedChangeListener { buttonView, isChecked ->
+            sugarChip.setOnCheckedChangeListener { _, isChecked ->
                 if (isChecked) baseViewChip(calculations.sortSugars(mealsList)) else mealList(mealsList)
             }
-            proteinChip.setOnCheckedChangeListener { buttonView, isChecked ->
+            proteinChip.setOnCheckedChangeListener { _, isChecked ->
                 if (isChecked) baseViewChip(calculations.sortProtein(mealsList)) else mealList(mealsList)
             }
 
