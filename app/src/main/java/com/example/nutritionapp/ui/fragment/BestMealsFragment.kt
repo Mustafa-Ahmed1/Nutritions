@@ -26,7 +26,7 @@ class BestMealsFragment :BaseFragment<FragmentTopMealBinding>(), MealInteraction
 
     override var visibilityCustomActionBar: Boolean= true
     override var visibilityBackButton: Boolean = true
-    override fun getTitle(): String = getString(R.string.top_5_diabetics_meals)
+    override fun getTitle(): String = "Top 100 meals"
 
     override var visibleBottomNavigationBar: Boolean = false
 
