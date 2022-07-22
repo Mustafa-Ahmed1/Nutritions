@@ -1,5 +1,6 @@
 package com.example.nutritionapp.ui.fragment
 
+import android.annotation.SuppressLint
 import android.graphics.Color
 import com.example.nutritionapp.R
 import com.example.nutritionapp.data.model.Meal
@@ -20,6 +21,7 @@ class MealDetailsFragment : BaseFragment<FragmentMealDetailsBinding>() {
 
     override var visibleBottomNavigationBar: Boolean = false
 
+    @SuppressLint("ResourceAsColor")
     override fun setUp() {
         val meal = arguments?.getSerializable(Constants.KeyValues.MEAL) as Meal?
         val pieChart = binding.mealLineChart
@@ -37,7 +39,7 @@ class MealDetailsFragment : BaseFragment<FragmentMealDetailsBinding>() {
         pieChart.description.isEnabled = false    // Hide the description
         pieChart.legend.isEnabled = false
         pieChart.data = data
-        pieChart.setHoleColor(R.color.card_background)
+        pieChart.setHoleColor(0)
 
         val myColor = intArrayOf(
             Color.rgb(173, 83, 148),
