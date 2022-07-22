@@ -82,11 +82,9 @@ class MealsSearchFragment : BaseFragment<FragmentSearchMealsBinding>(), MealInte
         binding.recyclerMeal.adapter=adapter
     }
     private fun mealList(mealList:List<Meal>){
-        dataManager = requireNotNull(arguments?.getParcelable(Constants.KeyValues.DATA_MANAGER))
-        mealsList = (dataManager as DataManager).getMeals()
+        mealDataManager = requireNotNull(arguments?.getParcelable(Constants.KeyValues.Meal_DATA_MANAGER))
+        mealsList = (mealDataManager as MealDataManager).getMeals()
         adapter = MealAdapter(mealList, this)
         binding.recyclerMeal.adapter = adapter
     }
 }
-
-
