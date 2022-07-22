@@ -59,17 +59,36 @@ class MealsSearchFragment : BaseFragment<FragmentSearchMealsBinding>(), MealInte
     }
     private fun viewChips() {
         binding.apply {
-         caloriesChip.setOnClickListener{ baseViewChip(calculations.sortCalories(mealsList)) }
-         totalFatChip.setOnClickListener{ baseViewChip(calculations.sortTotalFat(mealsList)) }
-         fabricChip.setOnClickListener{ baseViewChip(calculations.sortFiber(mealsList)) }
-         sugarChip.setOnClickListener{ baseViewChip(calculations.sortSugars(mealsList)) }
-         proteinChip.setOnClickListener{ baseViewChip(calculations.sortProtein(mealsList)) }
-         sodiumChip.setOnClickListener{ baseViewChip(calculations.sortSodium(mealsList)) }
+            caloriesChip.setOnCheckedChangeListener { buttonView, isChecked ->
+                if (isChecked) baseViewChip(calculations.sortCalories(mealsList)) else mealList(mealsList)
+            }
+            totalFatChip.setOnCheckedChangeListener { buttonView, isChecked ->
+                if (isChecked) baseViewChip(calculations.sortTotalFat(mealsList)) else mealList(mealsList)
+            }
+            fabricChip.setOnCheckedChangeListener { buttonView, isChecked ->
+                if (isChecked) baseViewChip(calculations.sortFiber(mealsList)) else mealList(mealsList)
+            }
+            sugarChip.setOnCheckedChangeListener { buttonView, isChecked ->
+                if (isChecked) baseViewChip(calculations.sortSugars(mealsList)) else mealList(mealsList)
+            }
+            proteinChip.setOnCheckedChangeListener { buttonView, isChecked ->
+                if (isChecked) baseViewChip(calculations.sortProtein(mealsList)) else mealList(mealsList)
+            }
+            sodiumChip.setOnCheckedChangeListener { buttonView, isChecked ->
+                if (isChecked) baseViewChip(calculations.sortSodium(mealsList)) else mealList(mealsList)
+            }
+
         }
     }
    private fun baseViewChip(mealList:List<Meal>){
         adapter = MealAdapter(mealList, this)
         binding.recyclerMeal.adapter=adapter
+    }
+    private fun mealList(mealList:List<Meal>){
+        dataManager = requireNotNull(arguments?.getParcelable(Constants.KeyValues.DATA_MANAGER))
+        mealsList = (dataManager as DataManager).getMeals()
+        adapter = MealAdapter(mealList, this)
+        binding.recyclerMeal.adapter = adapter
     }
 }
 

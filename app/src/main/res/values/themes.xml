@@ -121,14 +121,12 @@
     </style>
 
     <style name="CutomChipStyle" parent="Widget.MaterialComponents.Chip.Choice">
-        <item name="chipSurfaceColor">@color/white</item>
         <item name="android:textColor">@drawable/text_color_chips</item>
         <item name="chipStrokeWidth">1dp</item>
         <item name="chipStrokeColor">@color/primary_color</item>
         <item name="chipBackgroundColor">@drawable/chips</item>
         <item name="android:textSize">@dimen/font_size_primary</item>
         <item name="android:fontFamily">@font/poppins_medium</item>
-
     </style>
 
 </resources>
