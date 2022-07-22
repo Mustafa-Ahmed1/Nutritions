@@ -38,7 +38,9 @@
             android:text="@string/cal"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            android:includeFontPadding="false"
+            android:fontFamily="@font/poppins_regular"/>
 
         <TextView
             android:id="@+id/text_calories_number"
@@ -50,7 +52,8 @@
             android:textColor="@color/primary_color"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/text_cal"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            android:includeFontPadding="false"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
