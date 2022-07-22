@@ -1,13 +1,13 @@
 <resources>
 
     <style name="Theme.NutritionApp" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-        <item name="android:statusBarColor">@color/gray</item>
+        <item name="android:statusBarColor">@color/background_color</item>
         <item name="android:windowBackground">@drawable/splash_screen</item>
         <item name="android:windowActivityTransitions">true</item>
     </style>
 
     <style name="DefaultTextStyle" parent="@android:style/TextAppearance.Widget.TextView">
-        <item name="android:textColor">@color/black</item>
+        <item name="android:textColor">@color/normal_text</item>
     </style>
 
     <style name="TitleTextStyle" parent="DefaultTextStyle">
@@ -25,7 +25,7 @@
     </style>
 
     <style name="PrimaryTextStyle.Black">
-        <item name="android:textColor">@color/black</item>
+        <item name="android:textColor">@color/normal_text</item>
     </style>
 
     <style name="PrimaryTextStyle.PrimaryColor">
@@ -53,7 +53,7 @@
     </style>
 
     <style name="PrimaryTextStyle.Regular.Black">
-        <item name="android:textColor">@color/black</item>
+        <item name="android:textColor">@color/normal_text</item>
     </style>
 
     <style name="PrimaryTextStyle.Regular.PrimaryColor">
@@ -70,7 +70,7 @@
     </style>
 
     <style name="SecondaryTextStyle.Black">
-        <item name="android:textColor">@color/black</item>
+        <item name="android:textColor">@color/normal_text</item>
     </style>
 
     <style name="ExtraTextStyle" parent="DefaultTextStyle">
@@ -96,7 +96,7 @@
     </style>
 
     <style name="CaptionTextStyle.Black">
-        <item name="android:textColor">@color/black</item>
+        <item name="android:textColor">@color/normal_text</item>
     </style>
 
     <style name="CaptionTextStyle.Red">
@@ -115,7 +115,7 @@
 
     <style name="AppTheme.ActionBar.TitleText" parent="TextAppearance.AppCompat.Widget.ActionBar.Title">
         <item name="android:textSize">@dimen/font_size_secondary</item>
-        <item name="android:textColor">@color/black</item>
+        <item name="android:textColor">@color/normal_text</item>
         <item name="android:fontFamily">@font/poppins_semi_bold</item>
     </style>
 
@@ -137,7 +137,7 @@
         <item name="chipStrokeWidth">1dp</item>
         <item name="chipStrokeColor">@color/primary_color</item>
         <item name="chipBackgroundColor">@drawable/chips</item>
-        <item name="android:textSize">@dimen/font_size_primary</item>
+        <item name="android:textSize">12sp</item>
         <item name="android:fontFamily">@font/poppins_medium</item>
     </style>
 

@@ -80,13 +80,14 @@
             style="@style/PrimaryTextStyle.Black"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:fontFamily="@font/poppins_regular"
             android:background="@null"
             android:drawablePadding="@dimen/spacing_medium"
+            android:fontFamily="@font/poppins_regular"
             android:hint="@string/meal_name"
             android:inputType="text"
             android:paddingTop="@dimen/spacing_small"
             android:paddingBottom="@dimen/spacing_small"
+            android:textColor="@color/normal_text"
             android:textCursorDrawable="@drawable/cursor"
             android:theme="@style/TextLabelSearch" />
     </com.google.android.material.textfield.TextInputLayout>
@@ -98,15 +99,16 @@
         android:layout_height="@dimen/special_height"
         android:layout_margin="@dimen/spacing_medium"
         android:background="@drawable/rectangle_border"
+        android:fontFamily="@font/poppins_regular"
         android:hint="@string/grams"
         android:importantForAutofill="no"
         android:inputType="number"
-        android:fontFamily="@font/poppins_regular"
         android:paddingHorizontal="@dimen/spacing_medium"
+        android:textColor="@color/normal_text"
+        android:theme="@style/TextLabelSearch"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout0"
-        android:theme="@style/TextLabelSearch"/>
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout0" />
 
     <TextView
         android:id="@+id/text_g"
@@ -143,6 +145,7 @@
         android:paddingVertical="@dimen/spacing_small"
         android:text="@string/add"
         android:textAllCaps="false"
+        android:textColor="@color/background_color"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edit_text_grams" />
 

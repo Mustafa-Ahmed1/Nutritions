@@ -10,14 +10,17 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:paddingVertical="8dp"
+        android:background="@color/card_background">
 
         <TextView
             android:id="@+id/text_grams"
             style="@style/CaptionTextStyle.Medium.PrimaryColor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/spacing_small"
+            android:layout_marginStart="@dimen/spacing_small"
+            android:layout_marginBottom="4dp"
             android:fontFamily="@font/poppins_medium"
             android:text="@string/_350g"
             android:textSize="12sp"
@@ -29,13 +32,11 @@
             android:layout_width="@dimen/zero"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/spacing_small"
-            android:layout_marginTop="@dimen/spacing_too_small"
-            android:layout_marginBottom="8dp"
             android:ellipsize="end"
             android:fontFamily="@font/poppins_regular"
             android:lines="1"
             android:text="@string/meal_name"
-            android:textColor="@color/black"
+            android:textColor="@color/text_on_card"
             android:textSize="12sp"
             app:layout_constraintEnd_toStartOf="@+id/icon_close"
             app:layout_constraintStart_toStartOf="parent"

@@ -37,6 +37,7 @@ class MealDetailsFragment : BaseFragment<FragmentMealDetailsBinding>() {
         pieChart.description.isEnabled = false    // Hide the description
         pieChart.legend.isEnabled = false
         pieChart.data = data
+        pieChart.setHoleColor(R.color.card_background)
 
         val myColor = intArrayOf(
             Color.rgb(173, 83, 148),

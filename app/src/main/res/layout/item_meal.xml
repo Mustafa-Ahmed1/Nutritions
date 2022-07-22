@@ -11,7 +11,8 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/card_background">
 
         <TextView
             android:id="@+id/text_meal_name"
@@ -23,7 +24,7 @@
             android:fontFamily="@font/poppins_regular"
             android:lines="1"
             android:text="@string/french_fries"
-            android:textColor="@color/black"
+            android:textColor="@color/normal_text"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/text_calories_number"
             app:layout_constraintStart_toStartOf="parent"

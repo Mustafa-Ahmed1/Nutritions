@@ -47,7 +47,7 @@
             android:layout_margin="@dimen/spacing_medium"
             android:fontFamily="@font/poppins_medium"
             android:text="@string/french_fries"
-            android:textColor="@color/black"
+            android:textColor="@color/normal_text"
             app:layout_constraintBottom_toBottomOf="@id/layout_french_fries"
             app:layout_constraintStart_toStartOf="@id/layout_french_fries"
             app:layout_constraintTop_toTopOf="@id/layout_french_fries" />
@@ -59,7 +59,7 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="@dimen/spacing_medium"
             android:text="@string/cal"
-            android:textColor="@color/black"
+            android:textColor="@color/normal_text"
             app:layout_constraintBottom_toBottomOf="@+id/textView_100_french_fries"
             app:layout_constraintEnd_toEndOf="@id/layout_french_fries"
             app:layout_constraintTop_toTopOf="@+id/textView_100_french_fries" />
@@ -99,7 +99,7 @@
             android:layout_margin="@dimen/spacing_medium"
             android:fontFamily="@font/poppins_medium"
             android:text="@string/cheese_burger"
-            android:textColor="@color/black"
+            android:textColor="@color/normal_text"
             app:layout_constraintBottom_toBottomOf="@id/layout_cheese_burger"
             app:layout_constraintStart_toStartOf="@id/layout_cheese_burger"
             app:layout_constraintTop_toTopOf="@id/layout_cheese_burger" />
@@ -111,7 +111,7 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="@dimen/spacing_medium"
             android:text="@string/cal"
-            android:textColor="@color/black"
+            android:textColor="@color/normal_text"
             app:layout_constraintBottom_toBottomOf="@+id/textView_125_cheese_burger"
             app:layout_constraintEnd_toEndOf="@id/layout_cheese_burger"
             app:layout_constraintTop_toTopOf="@+id/textView_125_cheese_burger" />
@@ -151,7 +151,7 @@
             android:layout_margin="@dimen/spacing_medium"
             android:fontFamily="@font/poppins_medium"
             android:text="@string/fried_chicken"
-            android:textColor="@color/black"
+            android:textColor="@color/normal_text"
             app:layout_constraintBottom_toBottomOf="@id/layout_fried_chicken"
             app:layout_constraintStart_toStartOf="@id/layout_fried_chicken"
             app:layout_constraintTop_toTopOf="@id/layout_fried_chicken" />
@@ -163,7 +163,7 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="@dimen/spacing_medium"
             android:text="@string/cal"
-            android:textColor="@color/black"
+            android:textColor="@color/normal_text"
             app:layout_constraintBottom_toBottomOf="@+id/textView_250_fried_chicken"
             app:layout_constraintEnd_toEndOf="@id/layout_fried_chicken"
             app:layout_constraintTop_toTopOf="@+id/textView_250_fried_chicken" />
@@ -203,7 +203,7 @@
             android:layout_margin="@dimen/spacing_medium"
             android:fontFamily="@font/poppins_medium"
             android:text="Pizza Hut"
-            android:textColor="@color/black"
+            android:textColor="@color/normal_text"
             app:layout_constraintBottom_toBottomOf="@id/layout_pizza_hut"
             app:layout_constraintStart_toStartOf="@id/layout_pizza_hut"
             app:layout_constraintTop_toTopOf="@id/layout_pizza_hut" />
@@ -215,7 +215,7 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="@dimen/spacing_medium"
             android:text="@string/cal"
-            android:textColor="@color/black"
+            android:textColor="@color/normal_text"
             app:layout_constraintBottom_toBottomOf="@+id/textView_450_pizza_hut"
             app:layout_constraintEnd_toEndOf="@id/layout_pizza_hut"
             app:layout_constraintTop_toTopOf="@+id/textView_450_pizza_hut" />
@@ -256,7 +256,7 @@
             android:layout_marginStart="16dp"
             android:fontFamily="@font/poppins_medium"
             android:text="Nodels"
-            android:textColor="@color/black"
+            android:textColor="@color/normal_text"
             app:layout_constraintBottom_toBottomOf="@id/layout_nodels"
             app:layout_constraintStart_toStartOf="@id/layout_nodels"
             app:layout_constraintTop_toTopOf="@id/layout_nodels" />
@@ -268,7 +268,7 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="@dimen/spacing_medium"
             android:text="@string/cal"
-            android:textColor="@color/black"
+            android:textColor="@color/normal_text"
             app:layout_constraintBottom_toBottomOf="@+id/textView_500_nodels"
             app:layout_constraintEnd_toEndOf="@id/layout_nodels"
             app:layout_constraintTop_toTopOf="@+id/textView_500_nodels" />
