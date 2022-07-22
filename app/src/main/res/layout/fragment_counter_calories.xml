@@ -10,21 +10,22 @@
         android:id="@+id/image_total_calories_ring"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintDimensionRatio="1:1"
         android:layout_marginHorizontal="72dp"
         android:layout_marginTop="16dp"
+        android:contentDescription="@string/calories_shape"
         android:src="@drawable/ic_fire_calories_counter"
+        app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:contentDescription="@string/calories_shape" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/text_total_calories_value"
+        style="@style/ExtraTextStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        style="@style/ExtraTextStyle"
         android:layout_marginTop="24dp"
+        android:includeFontPadding="false"
         android:text="@string/_0"
         app:layout_constraintBottom_toTopOf="@+id/text_total_calories"
         app:layout_constraintEnd_toEndOf="@+id/image_total_calories_ring"
@@ -34,26 +35,28 @@
 
     <TextView
         android:id="@+id/text_total_calories"
+        style="@style/CaptionTextStyle.Black"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="2dp"
-        style="@style/CaptionTextStyle.Black"
+        android:fontFamily="@font/poppins_medium"
         android:text="@string/total_calories"
         app:layout_constraintBottom_toBottomOf="@+id/image_total_calories_ring"
         app:layout_constraintEnd_toEndOf="@+id/image_total_calories_ring"
         app:layout_constraintStart_toStartOf="@+id/image_total_calories_ring"
         app:layout_constraintTop_toBottomOf="@+id/text_total_calories_value" />
+
     <TextView
         android:id="@+id/label_error"
+        style="@style/PrimaryTextStyle.Red"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/error_label"
-        style="@style/PrimaryTextStyle.Red"
         android:layout_marginBottom="@dimen/spacing_medium"
+        android:text="@string/error_label"
         android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@id/textInputLayout0"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/textInputLayout0" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayout0"
@@ -77,13 +80,15 @@
             style="@style/PrimaryTextStyle.Black"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:fontFamily="@font/poppins_regular"
             android:background="@null"
             android:drawablePadding="@dimen/spacing_medium"
             android:hint="@string/meal_name"
             android:inputType="text"
             android:paddingTop="@dimen/spacing_small"
             android:paddingBottom="@dimen/spacing_small"
-            android:textCursorDrawable="@drawable/cursor" />
+            android:textCursorDrawable="@drawable/cursor"
+            android:theme="@style/TextLabelSearch" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <EditText
@@ -94,12 +99,14 @@
         android:layout_margin="@dimen/spacing_medium"
         android:background="@drawable/rectangle_border"
         android:hint="@string/grams"
+        android:importantForAutofill="no"
         android:inputType="number"
+        android:fontFamily="@font/poppins_regular"
         android:paddingHorizontal="@dimen/spacing_medium"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout0"
-        android:importantForAutofill="no" />
+        android:theme="@style/TextLabelSearch"/>
 
     <TextView
         android:id="@+id/text_g"
@@ -118,6 +125,7 @@
         android:layout_height="@dimen/zero"
         android:layout_marginHorizontal="@dimen/spacing_small_specific"
         android:layout_marginTop="@dimen/spacing_medium"
+        android:overScrollMode="never"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button_add"
