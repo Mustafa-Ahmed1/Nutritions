@@ -18,6 +18,7 @@ class HomeFragment :BaseFragment<FragmentHomeBinding>() {
     private val diabeticsScreenFragment = FragmentDiabeticsScreen()
     private val mealsSearchFragment = MealsSearchFragment()
     private val caloriesCounterFragment = CaloriesCounterFragment()
+    private val calculateRequiredCaloriesFragment = CalculateRequiredCaloriesFragment()
 
     override var visibleBottomNavigationBar: Boolean = true
 
@@ -29,7 +30,9 @@ class HomeFragment :BaseFragment<FragmentHomeBinding>() {
         buttonCardDiabetics()
 //        buttonShowAll()
 //        buttonCaloriesCounter()
+        buttonCalculateRequiredCalories()
     }
+
 
     override fun onStart() {
         super.onStart()
@@ -59,6 +62,12 @@ class HomeFragment :BaseFragment<FragmentHomeBinding>() {
 //            navigationTo(caloriesCounterFragment)
 //        }
 //    }
+
+    private fun buttonCalculateRequiredCalories() {
+        binding.calculateRequiredCalories.setOnClickListener {
+            navigationTo(calculateRequiredCaloriesFragment)
+        }
+    }
 
 
 }

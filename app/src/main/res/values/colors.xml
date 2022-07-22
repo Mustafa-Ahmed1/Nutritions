@@ -18,5 +18,8 @@
     <color name="background_color_info">#EFFFF1</color>
     <color name="text_info_color">#134228</color>
     <color name="disable_bottom_navigation_bar">#9B9B9B</color>
+    <color name="background_card">#EFFFF1</color>
+
+
 
 </resources>
