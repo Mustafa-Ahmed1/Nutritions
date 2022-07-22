@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="zero">0dp</dimen>
+    <dimen name="spacing_very_small">4dp</dimen>
 
     <dimen name="spacing_small">8dp</dimen>
     <dimen name="spacing_medium">16dp</dimen>
@@ -31,5 +32,9 @@
     <dimen name="radius_normal">8dp</dimen>
     <dimen name="spacing_small_specific">12dp</dimen>
 
+
+    <dimen name="height_card_input">85dp</dimen>
+    <dimen name="card_elevation">2dp</dimen>
+    <dimen name="button_elevation">2dp</dimen>
 
 </resources>

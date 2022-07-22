@@ -23,6 +23,7 @@ class HomeFragment :BaseFragment<FragmentHomeBinding>() {
     private val bestMealFragment = BestMealsFragment()
     private val mealsSearchFragment = MealsSearchFragment()
     private val caloriesCounterFragment = CaloriesCounterFragment()
+    private val calculateRequiredCaloriesFragment = CalculateRequiredCaloriesFragment()
 
     override var visibleBottomNavigationBar: Boolean = true
 
@@ -35,7 +36,9 @@ class HomeFragment :BaseFragment<FragmentHomeBinding>() {
         buttonCardGym()
         buttonCardPressure()
         buttonCardWeightLoss()
+
     }
+
 
     override fun onStart() {
         super.onStart()
@@ -60,6 +63,7 @@ class HomeFragment :BaseFragment<FragmentHomeBinding>() {
         }
     }
 
+
     private fun buttonCardPressure() {
         binding.cardPressure.setOnClickListener {
             bundle.putString(Constants.KeyValues.BEST_MEAL_TYPE, Constants.KeyValues.PRESSURE)
@@ -67,6 +71,7 @@ class HomeFragment :BaseFragment<FragmentHomeBinding>() {
             navigationTo(bestMealFragment)
         }
     }
+
 
     private fun buttonCardWeightLoss() {
         binding.cardWeightLoss.setOnClickListener {

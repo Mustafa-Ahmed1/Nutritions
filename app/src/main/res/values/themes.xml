@@ -4,6 +4,9 @@
         <item name="android:statusBarColor">@color/background_color</item>
         <item name="android:windowBackground">@drawable/splash_screen</item>
         <item name="android:windowActivityTransitions">true</item>
+        <item name="colorPrimary">@color/primary_color</item>
+
+
     </style>
 
     <style name="DefaultTextStyle" parent="@android:style/TextAppearance.Widget.TextView">
@@ -151,6 +154,41 @@
         <item name="colorAccent">@color/primary_color</item>
         <item name="colorControlNormal">@color/primary_color</item>
         <item name="colorControlActivated">@color/primary_color</item>
+    </style>
+
+    <style name="ShapeAppearanceOverlay.MyApp.Button.Circle" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+
+<!--    <style name="SecondaryTextStyle" parent="DefaultTextStyle">-->
+<!--        <item name="android:textSize">@dimen/font_size_secondary</item>-->
+<!--        <item name="android:fontFamily">@font/poppins_medium</item>-->
+<!--    </style>-->
+
+    <style name="CircleButton" parent="Widget.MaterialComponents.Button.OutlinedButton.Icon">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerRadius">50dp</item>
+        <item name="iconPadding">@dimen/zero</item>
+        <item name="android:insetTop">@dimen/zero</item>
+        <item name="android:insetBottom">@dimen/zero</item>
+        <item name="android:padding">@dimen/zero</item>
+        <item name="iconTint">@color/primary_color</item>
+    </style>
+
+    <style name="DefaultButton" parent="CircleButton">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerRadius">50dp</item>
+        <item name="iconPadding">@dimen/zero</item>
+        <item name="android:insetTop">@dimen/zero</item>
+        <item name="android:insetBottom">@dimen/zero</item>
+        <item name="android:padding">@dimen/zero</item>
+        <item name="iconTint">@color/primary_color</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/font_size_primary</item>
+        <item name="android:fontFamily">@font/poppins_medium</item>
+
+
     </style>
 
 </resources>

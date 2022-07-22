@@ -92,4 +92,18 @@
     <string name="no_data_to_calculated">No data to calculated</string>
 
 
+    <string name="title_calculate_requiredCcalories">Calculate required calories</string>
+    <string name="weight_kg">Weight (kg)</string>
+    <string name="height_cm">Height (cm)</string>
+    <string name="age_y">Age (years)</string>
+    <string name="get_your_required_calories">Get your required calories</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="gender">Gender</string>
+    <string name="is_your_daily_required_calories">Is your daily required calories!</string>
+    <string name="full_to_get_required_calories">Full to get required calories!</string>
+
+
+
+
 </resources>
