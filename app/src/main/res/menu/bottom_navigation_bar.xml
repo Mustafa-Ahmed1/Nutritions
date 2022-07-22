@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/pageHome"
+        android:icon="@drawable/nav_home_icon_state"
+        android:title="@string/home_bottom_navigation_bar"/>
+
+    <item android:id="@+id/pageSearch"
+        android:icon="@drawable/nav_search_icon_state"
+        android:title="@string/search_bottom_navigation_bar"/>
+
+    <item android:id="@+id/pageCaloriesCounter"
+        android:icon="@drawable/nav_calories_icon_state"
+        android:title="@string/calories_counter_bottom_navigation_bar"/>
+
+    <item android:id="@+id/pageHealthAdvices"
+        android:icon="@drawable/nav_advices_icon_state"
+        android:title="@string/health_advices_bottom_navigation_bar"/>
+
+</menu>

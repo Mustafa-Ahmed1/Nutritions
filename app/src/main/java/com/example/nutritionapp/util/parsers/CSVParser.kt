@@ -1,20 +1,21 @@
-package com.example.nutritionapp
+package com.example.nutritionapp.util.parsers
 
-import com.example.nutritionapp.data.DataManager
+import com.example.nutritionapp.data.model.managers.MealDataManager
 import com.example.nutritionapp.data.model.Meal
 import com.example.nutritionapp.util.Constants
+import com.example.nutritionapp.util.extention.removeQuotations
 import com.example.nutritionapp.util.extention.toPureNumber
 import java.io.InputStreamReader
 
 class CSVParser {
-    fun getMealsFromCSV(buffer: InputStreamReader): DataManager {
-        val dataManager = DataManager()
+    fun getMealsFromCSV(buffer: InputStreamReader): MealDataManager {
+        val mealDataManager = MealDataManager()
         buffer.forEachLine {
             val mealLineData = it.split(",")
             with(Constants.ColumnIndex) {
-                 dataManager.addMeal(
+                 mealDataManager.addMeal(
                     Meal(
-                        name = mealLineData[NAME],
+                        name = mealLineData[NAME].removeQuotations(),
                         calories = mealLineData[CALORIES].toDouble(),
                         totalFat = mealLineData[TOTAL_FAT].toPureNumber(),
                         sodium = mealLineData[SODIUM].toPureNumber(),
@@ -32,6 +33,6 @@ class CSVParser {
                 )
             }
         }
-        return dataManager
+        return mealDataManager
     }
 }

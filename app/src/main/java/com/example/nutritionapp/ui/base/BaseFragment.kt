@@ -17,6 +17,8 @@ abstract class BaseFragment<VB : ViewBinding> : Fragment(), CustomActionBar {
     abstract fun bindingInflater(): VB
     protected val binding get() = _binding
 
+   abstract var visibleBottomNavigationBar: Boolean
+
     abstract fun setUp()
 
     override fun onCreateView(
@@ -27,7 +29,7 @@ abstract class BaseFragment<VB : ViewBinding> : Fragment(), CustomActionBar {
         _binding = bindingInflater()
         setUp()
 
-        (activity as HomeActivity).setUpCustomActionBar(visibilityCustomActionBar, getTitle(), back())
+        (activity as HomeActivity).setUpCustomActionBar(visibilityCustomActionBar, visibilityBackButton, getTitle(),visibleBottomNavigationBar)
 
         return _binding.root
     }

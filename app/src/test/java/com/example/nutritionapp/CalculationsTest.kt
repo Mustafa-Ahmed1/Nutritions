@@ -93,7 +93,7 @@ internal class CalculationsTest {
     }
     // endregion
 
-    // region test functions for calculateCustomGramsCalories function
+    // region test functions for diabeticsBestMeals function
     @Test
     fun should_ReturnNullValue_When_EnterListMealNull() {
         // given top and isnull list
@@ -125,6 +125,16 @@ internal class CalculationsTest {
         assertEquals(null, result)
     }
 
+    @Test
+    fun should_ReturnNullValue_When_EnterZeroAndList() {
+        // given  top Zero
+        val top =0
+        val newMeal= newList()
+        // when calculate diabetics
+        val result = Calculations().diabeticsBestMeals(newMeal,top)
+        // then should return null value
+        assertEquals(null, result)
+    }
     @Test
     fun should_ReturnCorrectValue_When_EnterCorrectTopAndListMeal() {
         // given correct top and list
@@ -170,6 +180,16 @@ internal class CalculationsTest {
     }
 
     @Test
+    fun should_ReturnNullValue_When_EnterZeroTopAndListOfBodyBuilding() {
+        // given  top Zero
+        val top =0
+        val newMeal= newList()
+        // when calculate bodyBuildingBestMeals
+        val result = Calculations().bodyBuildingBestMeals(newMeal,top)
+        // then should return null value
+        assertEquals(null, result)
+    }
+    @Test
     fun should_ReturnCorrectValue_When_EnterCorrectTopAndListMealOfBodyBuilding() {
         // given correct top and list
         val top =5
@@ -181,7 +201,7 @@ internal class CalculationsTest {
     }
 // endregion
 
-    // region test functions for calculateCustomGramsCalories function
+    // region test functions for cuttingBestMeals function
     @Test
     fun should_ReturnNullValue_When_EnterListMealNullOfCutting() {
         // given top and isnull list
@@ -214,6 +234,16 @@ internal class CalculationsTest {
     }
 
     @Test
+    fun should_ReturnNullValue_When_EnterZeroTopBiggerListSizeOfCutting() {
+        // given  top Zero
+        val top =0
+        val newMeal= newList()
+        // when calculate cuttingBestMeals
+        val result = Calculations().cuttingBestMeals(newMeal,top)
+        // then should return null value
+        assertEquals(null, result)
+    }
+    @Test
     fun should_ReturnCorrectValue_When_EnterCorrectTopAndListMealOfCutting() {
         // given correct top and list
         val top =5
@@ -225,7 +255,7 @@ internal class CalculationsTest {
     }
     // endregion
 
-    // region test functions for calculateCustomGramsCalories function
+    // region test functions for bloodPressureBestMeals function
     @Test
     fun should_ReturnNullValue_When_EnterListMealNullOfBloodPressure() {
         // given top and isnull list
@@ -258,6 +288,16 @@ internal class CalculationsTest {
     }
 
     @Test
+    fun should_ReturnNullValue_When_EnterZeroTopAndListOfBloodPressure() {
+        // given  top Zero
+        val top =0
+        val newMeal= newList()
+        // when calculate bloodPressureBestMeals
+        val result = Calculations().bloodPressureBestMeals(newMeal,top)
+        // then should return null value
+        assertEquals(null, result)
+    }
+    @Test
     fun should_ReturnCorrectValue_When_EnterCorrectTopAndListMealOfBloodPressure() {
         // given correct top and list
         val top =5
@@ -266,6 +306,324 @@ internal class CalculationsTest {
         val result = Calculations().bloodPressureBestMeals(newMeal,top)
         // then should return correct bloodPressure value meal list
         assertEquals(newMeal, result)
+    }
+    // endregion
+
+    // region test functions for calculatePersonDataCalories male function
+    @Test
+    fun should_ReturnNullValue_When_EnterCorrectGenderMaleAndWeightAndHeightAndNegativeAge() {
+        // given correct Gender And Weight And Height And NegativeAge
+        val gender = 'M'
+        val weight=5.0
+        val height=6.0
+        val age =-25
+        // when calculate calculatePersonDataCalories
+        val result = Calculations().calculatePersonDataCalories(gender,weight,height,age)
+        // then should return null
+        assertEquals(0.0, result)
+    }
+    @Test
+    fun should_ReturnNullValue_When_EnterCorrectGenderMaleAndWeightAndNegativeHeightAndAge() {
+        // given correct Gender And Weight And NegativeHeight And Age
+        val gender = 'M'
+        val weight=5.0
+        val height=-6.0
+        val age =25
+        // when calculate calculatePersonDataCalories
+        val result = Calculations().calculatePersonDataCalories(gender,weight,height,age)
+        // then should return null
+        assertEquals(0.0, result)
+    }
+    @Test
+    fun should_ReturnNullValue_When_EnterCorrectGenderMaleAndNegativeWeightAndHeightAndAge() {
+        // given correct Gender And NegativeWeight And Height And Age
+        val gender = 'M'
+        val weight=-5.0
+        val height=6.0
+        val age =25
+        // when calculate calculatePersonDataCalories
+        val result = Calculations().calculatePersonDataCalories(gender,weight,height,age)
+        // then should return null
+        assertEquals(0.0, result)
+    }
+    @Test
+    fun should_ReturnNullValue_When_EnterCorrectGenderMaleAndNegativeWeightAndNegativeHeightAndAge() {
+        // given correct Gender And NegativeWeight And NegativeHeight And Age
+        val gender = 'M'
+        val weight=-5.0
+        val height=-6.0
+        val age =25
+        // when calculate calculatePersonDataCalories
+        val result = Calculations().calculatePersonDataCalories(gender,weight,height,age)
+        // then should return null
+        assertEquals(0.0, result)
+    }
+    @Test
+    fun should_ReturnNullValue_When_EnterCorrectGenderMaleAndWeightAndNegativeHeightAndNegativeAge() {
+        // given correct Gender And Weight And NegativeHeight And NegativeAge
+        val gender = 'M'
+        val weight=5.0
+        val height=-6.0
+        val age =-25
+        // when calculate calculatePersonDataCalories
+        val result = Calculations().calculatePersonDataCalories(gender,weight,height,age)
+        // then should return null
+        assertEquals(0.0, result)
+    }
+    @Test
+    fun should_ReturnNullValue_When_EnterCorrectGenderMaleAndNegativeWeightAndHeightAndNegativeAge() {
+        // given correct Gender And NegativeWeight And Height And NegativeAge
+        val gender = 'M'
+        val weight=-5.0
+        val height=6.0
+        val age =-25
+        // when calculate calculatePersonDataCalories
+        val result = Calculations().calculatePersonDataCalories(gender,weight,height,age)
+        // then should return null
+        assertEquals(0.0, result)
+    }
+    @Test
+    fun should_ReturnNullValue_When_EnterCorrectGenderMaleAndNegativeWeightAndNegativeHeightAndNegativeAge() {
+        // given correct Gender And NegativeWeight And NegativeHeight And NegativeAge
+        val gender = 'M'
+        val weight=-5.0
+        val height=-6.0
+        val age =-25
+        // when calculate calculatePersonDataCalories
+        val result = Calculations().calculatePersonDataCalories(gender,weight,height,age)
+        // then should return null
+        assertEquals(0.0, result)
+    }
+    @Test
+    fun should_ReturnNullValue_When_EnterCorrectGenderMaleAndZeroWeightAndZeroHeightAndAge() {
+        // given correct Gender And ZeroWeight And ZeroHeight And Age
+        val gender = 'M'
+        val weight=0.0
+        val height=0.0
+        val age =5
+        // when calculate calculatePersonDataCalories
+        val result = Calculations().calculatePersonDataCalories(gender,weight,height,age)
+        // then should return null
+        assertEquals(0.0, result)
+    }
+    @Test
+    fun should_ReturnNullValue_When_EnterCorrectGenderMaleAndWeightAndZeroHeightAndZeroAge() {
+        // given correct Gender And Weight And ZeroHeight And ZeroAge
+        val gender = 'M'
+        val weight=5.8
+        val height=0.0
+        val age =0
+        // when calculate calculatePersonDataCalories
+        val result = Calculations().calculatePersonDataCalories(gender,weight,height,age)
+        // then should return null
+        assertEquals(0.0, result)
+    }
+    @Test
+    fun should_ReturnNullValue_When_EnterCorrectGenderMaleAndZeroWeightAndHeightAndZeroAge() {
+        // given correct Gender And ZeroWeight And Height And ZeroAge
+        val gender = 'M'
+        val weight=0.0
+        val height=8.9
+        val age =0
+        // when calculate calculatePersonDataCalories
+        val result = Calculations().calculatePersonDataCalories(gender,weight,height,age)
+        // then should return null
+        assertEquals(0.0, result)
+    }
+    @Test
+    fun should_ReturnNullValue_When_EnterCorrectGenderMaleAndZeroWeightAndZeroHeightAndZeroAge() {
+        // given correct Gender And ZeroWeight And ZeroHeight And ZeroAge
+        val gender = 'M'
+        val weight=0.0
+        val height=0.0
+        val age =0
+        // when calculate calculatePersonDataCalories
+        val result = Calculations().calculatePersonDataCalories(gender,weight,height,age)
+        // then should return null
+        assertEquals(0.0, result)
+    }
+    @Test
+    fun should_ReturnNullValue_When_EnterCorrectGenderMaleHAndWeightAndHeightAndAge() {
+        // given correct Gender H And Weight And Height And Age
+        val gender = 'H'
+        val weight=5.0
+        val height=6.0
+        val age =25
+        // when calculate calculatePersonDataCalories
+        val result = Calculations().calculatePersonDataCalories(gender,weight,height,age)
+        // then should return null
+        assertEquals(0.0, result)
+    }
+    @Test
+    fun should_ReturnCorrectValue_When_EnterCorrectGenderMaleAndWeightAndHeightAndAge() {
+        // given correct Gender  And Weight And Height And Age
+        val gender = 'M'
+        val weight=74.0
+        val height=171.0
+        val age =25
+        // when calculate calculatePersonDataCalories
+        val result = Calculations().calculatePersonDataCalories(gender,weight,height,age)
+        // then should return null
+        assertEquals(1764.8, result)
+    }
+    // endregion
+
+    // region test functions for calculatePersonDataCalories Female function
+    @Test
+    fun should_ReturnNullValue_When_EnterCorrectGenderFemaleAndWeightAndHeightAndNegativeAge() {
+        // given correct Gender And Weight And Height And NegativeAge
+        val gender = 'M'
+        val weight=5.0
+        val height=6.0
+        val age =-25
+        // when calculate calculatePersonDataCalories
+        val result = Calculations().calculatePersonDataCalories(gender,weight,height,age)
+        // then should return null
+        assertEquals(0.0, result)
+    }
+    @Test
+    fun should_ReturnNullValue_When_EnterCorrectGenderFemaleAndWeightAndNegativeHeightAndAge() {
+        // given correct Gender And Weight And NegativeHeight And Age
+        val gender = 'M'
+        val weight=5.0
+        val height=-6.0
+        val age =25
+        // when calculate calculatePersonDataCalories
+        val result = Calculations().calculatePersonDataCalories(gender,weight,height,age)
+        // then should return null
+        assertEquals(0.0, result)
+    }
+    @Test
+    fun should_ReturnNullValue_When_EnterCorrectGenderFemaleAndNegativeWeightAndHeightAndAge() {
+        // given correct Gender And NegativeWeight And Height And Age
+        val gender = 'M'
+        val weight=-5.0
+        val height=6.0
+        val age =25
+        // when calculate calculatePersonDataCalories
+        val result = Calculations().calculatePersonDataCalories(gender,weight,height,age)
+        // then should return null
+        assertEquals(0.0, result)
+    }
+    @Test
+    fun should_ReturnNullValue_When_EnterCorrectGenderFemaleAndNegativeWeightAndNegativeHeightAndAge() {
+        // given correct Gender And NegativeWeight And NegativeHeight And Age
+        val gender = 'M'
+        val weight=-5.0
+        val height=-6.0
+        val age =25
+        // when calculate calculatePersonDataCalories
+        val result = Calculations().calculatePersonDataCalories(gender,weight,height,age)
+        // then should return null
+        assertEquals(0.0, result)
+    }
+    @Test
+    fun should_ReturnNullValue_When_EnterCorrectGenderFemaleAndWeightAndNegativeHeightAndNegativeAge() {
+        // given correct Gender And Weight And NegativeHeight And NegativeAge
+        val gender = 'M'
+        val weight=5.0
+        val height=-6.0
+        val age =-25
+        // when calculate calculatePersonDataCalories
+        val result = Calculations().calculatePersonDataCalories(gender,weight,height,age)
+        // then should return null
+        assertEquals(0.0, result)
+    }
+    @Test
+    fun should_ReturnNullValue_When_EnterCorrectGenderFemaleAndNegativeWeightAndHeightAndNegativeAge() {
+        // given correct Gender And NegativeWeight And Height And NegativeAge
+        val gender = 'M'
+        val weight=-5.0
+        val height=6.0
+        val age =-25
+        // when calculate calculatePersonDataCalories
+        val result = Calculations().calculatePersonDataCalories(gender,weight,height,age)
+        // then should return null
+        assertEquals(0.0, result)
+    }
+    @Test
+    fun should_ReturnNullValue_When_EnterCorrectGenderFemaleAndNegativeWeightAndNegativeHeightAndNegativeAge() {
+        // given correct Gender And NegativeWeight And NegativeHeight And NegativeAge
+        val gender = 'M'
+        val weight=-5.0
+        val height=-6.0
+        val age =-25
+        // when calculate calculatePersonDataCalories
+        val result = Calculations().calculatePersonDataCalories(gender,weight,height,age)
+        // then should return null
+        assertEquals(0.0, result)
+    }
+    @Test
+    fun should_ReturnNullValue_When_EnterCorrectGenderFemaleAndZeroWeightAndZeroHeightAndAge() {
+        // given correct Gender And ZeroWeight And ZeroHeight And Age
+        val gender = 'M'
+        val weight=0.0
+        val height=0.0
+        val age =5
+        // when calculate calculatePersonDataCalories
+        val result = Calculations().calculatePersonDataCalories(gender,weight,height,age)
+        // then should return null
+        assertEquals(0.0, result)
+    }
+    @Test
+    fun should_ReturnNullValue_When_EnterCorrectGenderFemaleAndWeightAndZeroHeightAndZeroAge() {
+        // given correct Gender And Weight And ZeroHeight And ZeroAge
+        val gender = 'M'
+        val weight=5.8
+        val height=0.0
+        val age =0
+        // when calculate calculatePersonDataCalories
+        val result = Calculations().calculatePersonDataCalories(gender,weight,height,age)
+        // then should return null
+        assertEquals(0.0, result)
+    }
+    @Test
+    fun should_ReturnNullValue_When_EnterCorrectGenderFemaleAndZeroWeightAndHeightAndZeroAge() {
+        // given correct Gender And ZeroWeight And Height And ZeroAge
+        val gender = 'M'
+        val weight=0.0
+        val height=8.9
+        val age =0
+        // when calculate calculatePersonDataCalories
+        val result = Calculations().calculatePersonDataCalories(gender,weight,height,age)
+        // then should return null
+        assertEquals(0.0, result)
+    }
+    @Test
+    fun should_ReturnNullValue_When_EnterCorrectGenderFemaleAndZeroWeightAndZeroHeightAndZeroAge() {
+        // given correct Gender And ZeroWeight And ZeroHeight And ZeroAge
+        val gender = 'M'
+        val weight=0.0
+        val height=0.0
+        val age =0
+        // when calculate calculatePersonDataCalories
+        val result = Calculations().calculatePersonDataCalories(gender,weight,height,age)
+        // then should return null
+        assertEquals(0.0, result)
+    }
+    @Test
+    fun should_ReturnNullValue_When_EnterCorrectGenderFemaleAAndWeightAndHeightAndAge() {
+        // given correct Gender H And Weight And Height And Age
+        val gender = 'A'
+        val weight=5.0
+        val height=6.0
+        val age =25
+        // when calculate calculatePersonDataCalories
+        val result = Calculations().calculatePersonDataCalories(gender,weight,height,age)
+        // then should return null
+        assertEquals(0.0, result)
+    }
+    @Test
+    fun should_ReturnCorrectValue_When_EnterCorrectGenderFemaleAndWeightAndHeightAndAge() {
+        // given correct Gender H And Weight And Height And Age
+        val gender = 'F'
+        val weight=95.0
+        val height=170.0
+        val age =28
+        // when calculate calculatePersonDataCalories
+        val result = Calculations().calculatePersonDataCalories(gender,weight,height,age)
+        // then should return null
+        assertEquals(1751.4, result)
     }
     // endregion
 }

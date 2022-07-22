@@ -1,21 +1,20 @@
 <resources>
     <string name="app_name">Nutrition App</string>
+    <string name="best_meals">Top meals for you</string>
+    <string name="diabetics">Diabetes</string>
+    <string name="gym_players">Body\nbuilding</string>
 
-    <string name="best_meals">Best meals</string>
-    <string name="diabetics">Diabetics</string>
-    <string name="gym_players">Gym players</string>
-    <string name="weight_loss">Weight loss</string>
+    <string name="weight_loss">Overweight</string>
     <string name="blood_pressure">Blood pressure</string>
     <string name="show_all_meals_with_details">Show all meals with details</string>
     <string name="calories_counter">Calories Counter</string>
-    <string name="more_features">More features</string>
-
+    <string name="do_it_easily">Do it easily</string>
     <string name="best_diabetes_meals">Best diabetes meals</string>
     <string name="best_bodybuilding_meals">Best bodybuilding meals</string>
     <string name="best_weight_losing_meals">Best weight losing meals</string>
     <string name="best_blood_pressure_meals">Best blood pressure meals</string>
 
-    <string name="search">Search</string>
+    <string name="search_your_meals">Search your meals</string>
     <string name="all_meals">All meals</string>
     <string name="ascending">Ascending</string>
     <string name="descending">Descending</string>
@@ -27,8 +26,9 @@
     <string name="protein">Protein</string>
     <string name="oK">OK</string>
 
-    <string name="total_calories">Total calories</string>
-    <string name="no_data_to_calculated">No data to calculated</string>
+    <string name="total_calories">Total Calories</string>
+    <string name="enter_a_valid_meal_name">Enter a valid meal name</string>
+    <string name="try_a_less_number_of_grams">Try a less number of grams</string>
     <string name="add_meal">Add meal</string>
     <string name="meal_name">Meal name</string>
     <string name="grams">Grams</string>
@@ -62,6 +62,33 @@
     <string name="no_meal_to_show">No meal to show</string>
     <string name="remove_item">Remove item</string>
     <string name="calories_shape">Calories shape</string>
+
+    <string name="blood">Blood\npressure</string>
+    <string name="building">building</string>
+    <string name="pressure">pressure</string>
+    <string name="calculate_required_calories">Calculate required calories</string>
+    <string name="get_your">get your required calories for your body easily, depending on your weight, age and gender.</string>
+    <string name="home">Home</string>
+    <string name="counter">Counter</string>
+    <string name="calculate">Calculate</string>
+
+    <string name="health_advices">Health Advices</string>
+    <string name="avoid_ultra_processed_foods">Avoid ultra-processed foods</string>
+    <string name="examples_include">Examples include:</string>
+    <string name="snack_cakes_">snack cakes - fast food - frozen meals - canned foods - chips.</string>
+    <string name="in_addition_">In addition to low-quality ingredients like inflammatory fats, added sugar, and refined grains, they’re usually low in fiber, protein, and micronutrients. Thus, they provide mostly empty calories.</string>
+    <string name="Ultra_prossed">Ultra-processed foods are foods containing ingredients that are significantly modified from their original form. They often contain additives like added sugar, highly refined oil, salt, preservatives, artificial sweeteners, colors, and flavors as well.\nExamples include:\n snack cakes - fast food - frozen meals - canned foods - chips.\n In addition to low-quality ingredients like inflammatory fats, added sugar, and refined grains, they’re usually low in fiber, protein, and micronutrients. Thus, they provide mostly empty calories.</string>
+
+    <string name="home_bottom_navigation_bar">Home</string>
+    <string name="search_bottom_navigation_bar">Search</string>
+    <string name="calories_counter_bottom_navigation_bar">Calories Counter</string>
+    <string name="health_advices_bottom_navigation_bar">Health Advices</string>
+    <string name="you_didnt_type_anything_yet">You didn\'t type anything yet.</string>
+    <string name="enter_the_number_of_grams">Enter the number of grams.</string>
+    <string name="enter_your_meal_name">Enter your meal name.</string>
+    <string name="sort_by">Sort by</string>
+    <string name="sodium">Sodium</string>
+    <string name="meal_details">Meal Details</string>
 
 
 </resources>

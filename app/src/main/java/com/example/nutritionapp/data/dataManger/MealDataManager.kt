@@ -1,10 +1,10 @@
-package com.example.nutritionapp.data
+package com.example.nutritionapp.data.model.managers
 
 import android.os.Parcel
 import android.os.Parcelable
 import com.example.nutritionapp.data.model.Meal
 
-class DataManager() : Parcelable {
+class MealDataManager() : Parcelable {
 
     private val meals: MutableList<Meal> = mutableListOf()
 
@@ -24,12 +24,12 @@ class DataManager() : Parcelable {
         return 0
     }
 
-    companion object CREATOR : Parcelable.Creator<DataManager> {
-        override fun createFromParcel(parcel: Parcel): DataManager {
-            return DataManager(parcel)
+    companion object CREATOR : Parcelable.Creator<MealDataManager> {
+        override fun createFromParcel(parcel: Parcel): MealDataManager {
+            return MealDataManager(parcel)
         }
 
-        override fun newArray(size: Int): Array<DataManager?> {
+        override fun newArray(size: Int): Array<MealDataManager?> {
             return arrayOfNulls(size)
         }
     }
