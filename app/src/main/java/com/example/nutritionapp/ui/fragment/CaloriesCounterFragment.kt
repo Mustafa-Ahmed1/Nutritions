@@ -76,9 +76,12 @@ class CaloriesCounterFragment(): BaseFragment<FragmentCounterCaloriesBinding>() 
                         }
                     }
                 }
-            } else if (binding.editTextGrams.text.isEmpty() && binding.allMeals.text.isEmpty()) {
+                else {
+                    showToast(R.string.enter_a_valid_meal_name)
+                }
+            } else if (binding.editTextGrams.text.isEmpty() || binding.allMeals.text.isEmpty()) {
                 showToast(R.string.you_didnt_type_anything_yet)
-            } else if (binding.editTextGrams.text.isEmpty()) {
+            }else if (binding.editTextGrams.text.isEmpty()) {
                 showToast(R.string.enter_the_number_of_grams)
             } else if (binding.allMeals.text.isEmpty()) {
                 showToast(R.string.enter_your_meal_name)
