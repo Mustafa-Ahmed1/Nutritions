@@ -2,7 +2,7 @@ package com.example.nutritionapp.data.dataManger
 
 import android.os.Parcel
 import android.os.Parcelable
-import com.example.nutritionapp.data.model.data.HealthAdvice
+import com.example.nutritionapp.data.model.HealthAdvice
 
 class HealthAdviceDataManger() : Parcelable {
     private val healthAdvices: MutableList<HealthAdvice> = mutableListOf()

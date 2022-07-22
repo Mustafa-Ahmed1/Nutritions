@@ -1,8 +1,9 @@
 package com.example.nutritionapp.util.parsers
 
-import com.example.nutritionapp.data.model.data.managers.MealDataManager
-import com.example.nutritionapp.data.model.data.Meal
+import com.example.nutritionapp.data.model.managers.MealDataManager
+import com.example.nutritionapp.data.model.Meal
 import com.example.nutritionapp.util.Constants
+import com.example.nutritionapp.util.extention.removeQuotations
 import com.example.nutritionapp.util.extention.toPureNumber
 import java.io.InputStreamReader
 
@@ -14,7 +15,7 @@ class CSVParser {
             with(Constants.ColumnIndex) {
                  mealDataManager.addMeal(
                     Meal(
-                        name = mealLineData[NAME],
+                        name = mealLineData[NAME].removeQuotations(),
                         calories = mealLineData[CALORIES].toDouble(),
                         totalFat = mealLineData[TOTAL_FAT].toPureNumber(),
                         sodium = mealLineData[SODIUM].toPureNumber(),

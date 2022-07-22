@@ -21,3 +21,11 @@ fun String.toPureNumber(): Double {
         else -> 0.0
     }
 }
+
+fun String.removeQuotations(): String {
+    return if (this.contains("\"")) {
+        this.replace("\"", "")
+    } else {
+        this
+    }
+}

@@ -1,7 +1,8 @@
 package com.example.nutritionapp.ui.fragment
 
 import android.graphics.Color
-import com.example.nutritionapp.data.model.data.Meal
+import com.example.nutritionapp.R
+import com.example.nutritionapp.data.model.Meal
 import com.example.nutritionapp.databinding.FragmentMealDetailsBinding
 import com.example.nutritionapp.ui.base.BaseFragment
 import com.example.nutritionapp.util.Constants
@@ -15,7 +16,8 @@ class MealDetailsFragment : BaseFragment<FragmentMealDetailsBinding>() {
 
     override var visibilityCustomActionBar: Boolean = true
     override var visibilityBackButton: Boolean = true
-    override fun getTitle(): String = (arguments?.getSerializable(Constants.KeyValues.MEAL) as Meal).name
+    override fun getTitle(): String = getString(R.string.meal_details)
+//    override fun getTitle(): String = (arguments?.getSerializable(Constants.KeyValues.MEAL) as Meal).name
 
     override var visibleBottomNavigationBar: Boolean = false
 
@@ -55,6 +57,7 @@ class MealDetailsFragment : BaseFragment<FragmentMealDetailsBinding>() {
 
     private fun bindMeal(meal: Meal) {
         binding.apply {
+            textMealName.text = meal.name
             caloriesValue.text = meal.calories.toInt().toString()
             fabricQuantity.text = meal.fiber.toString()
             sugarQuantity.text = meal.sugars.toString()

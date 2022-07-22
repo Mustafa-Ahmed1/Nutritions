@@ -7,8 +7,8 @@ import android.widget.Toast
 import androidx.core.content.ContextCompat
 import com.example.nutritionapp.Calculations
 import com.example.nutritionapp.R
-import com.example.nutritionapp.data.model.data.managers.MealDataManager
-import com.example.nutritionapp.data.model.data.Meal
+import com.example.nutritionapp.data.model.managers.MealDataManager
+import com.example.nutritionapp.data.model.Meal
 import com.example.nutritionapp.databinding.FragmentCounterCaloriesBinding
 import com.example.nutritionapp.ui.base.BaseFragment
 import com.example.nutritionapp.util.Constants
@@ -22,7 +22,7 @@ class CaloriesCounterFragment(): BaseFragment<FragmentCounterCaloriesBinding>() 
 
     override var visibilityCustomActionBar: Boolean = true
     override var visibilityBackButton: Boolean = false
-    override fun getTitle(): String = getString(R.string.total_calories)
+    override fun getTitle(): String = getString(R.string.calories_counter)
 
     override var visibleBottomNavigationBar: Boolean = true
 

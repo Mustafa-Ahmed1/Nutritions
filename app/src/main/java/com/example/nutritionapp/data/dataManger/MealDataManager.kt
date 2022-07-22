@@ -1,8 +1,8 @@
-package com.example.nutritionapp.data.model.data.managers
+package com.example.nutritionapp.data.model.managers
 
 import android.os.Parcel
 import android.os.Parcelable
-import com.example.nutritionapp.data.model.data.Meal
+import com.example.nutritionapp.data.model.Meal
 
 class MealDataManager() : Parcelable {
 

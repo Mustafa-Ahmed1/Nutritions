@@ -1,6 +1,6 @@
 package com.example.nutritionapp
 
-import com.example.nutritionapp.data.model.data.Meal
+import com.example.nutritionapp.data.model.Meal
 import junit.framework.TestCase.assertEquals
 import org.junit.Before
 import org.junit.Test
