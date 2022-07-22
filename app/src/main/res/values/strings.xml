@@ -90,6 +90,7 @@
     <string name="sodium">Sodium</string>
     <string name="meal_details">Meal Details</string>
     <string name="no_data_to_calculated">No data to calculated</string>
+    <string name="next_advice">Next Advice</string>
 
 
     <string name="title_calculate_requiredCcalories">Calculate required calories</string>

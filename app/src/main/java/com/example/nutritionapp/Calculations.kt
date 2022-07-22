@@ -1,5 +1,6 @@
 package com.example.nutritionapp
 
+import com.example.nutritionapp.data.model.HealthAdvice
 import com.example.nutritionapp.data.model.Meal
 import com.example.nutritionapp.util.Constants
 
@@ -59,7 +60,9 @@ class Calculations {
         return mealsList.take(top)
     }
 
+
     fun weightLossBestMeals(mealsList: MutableList<Meal>, top: Int): List<Meal>? {
+
         if (mealsList.isEmpty() || top <= 0 || top > mealsList.size) return null
         mealsList.sortByDescending {
             0.5 * it.protein + 0.2 * it.totalFat + 0.3 * it.carbohydrate
@@ -75,6 +78,11 @@ class Calculations {
         return mealsList.take(top)
     }
 
+    fun getRandomAdvice(healthAdviceList: MutableList<HealthAdvice>): HealthAdvice {
+        val randomIndex = (0 until healthAdviceList.size).random()
+        return healthAdviceList[randomIndex]
+    }
+
     fun sortCalories(mealsList: MutableList<Meal>) = mealsList.sortedByDescending { it.calories }
     fun sortTotalFat(mealsList: MutableList<Meal>) = mealsList.sortedByDescending { it.totalFat }
     fun sortFiber(mealsList: MutableList<Meal>) = mealsList.sortedByDescending { it.fiber }
@@ -82,15 +90,3 @@ class Calculations {
     fun sortProtein(mealsList: MutableList<Meal>) = mealsList.sortedByDescending { it.protein }
     fun sortSodium(mealsList: MutableList<Meal>) = mealsList.sortedByDescending { it.sodium }
 }
-
-//  var cal = calculation.calculateCustomGramsCalories(mealsList[0].calories, 250.0)
-
-//val bloodPressureList = calculation.bloodPressureBestFifeMeals(mealsList, 5)
-//Log.v("bloodPressure", "${bloodPressureList[0].name}")
-//
-//val diabeticsList = Calculation().diabeticsBestFifeMeals(mealsList, 5)
-//Log.v("diabetics", "${diabeticsList[0].name}")
-//val bodyBuildingList = Calculation().bodyBuildingBestFifeMeals(mealsList, 5)
-//Log.v("bodyBuilding", "${bodyBuildingList[0].name}")
-//val cuttingList = Calculation().cuttingBestFifeMeals(mealsList, 5)
-//Log.v("cutting", "${cuttingList[0].name}")
