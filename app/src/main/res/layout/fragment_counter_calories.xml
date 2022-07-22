@@ -80,7 +80,6 @@
             android:background="@null"
             android:drawablePadding="@dimen/spacing_medium"
             android:hint="@string/meal_name"
-
             android:inputType="text"
             android:paddingTop="@dimen/spacing_small"
             android:paddingBottom="@dimen/spacing_small"

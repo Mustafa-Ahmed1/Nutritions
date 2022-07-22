@@ -67,7 +67,12 @@ class Calculations {
         }
         return mealsList.take(top)
     }
-
+ fun sortCalories(mealsList: MutableList<Meal>)=mealsList.sortedByDescending { it.calories }
+ fun sortTotalFat(mealsList: MutableList<Meal>)=mealsList.sortedByDescending { it.totalFat }
+ fun sortFiber(mealsList: MutableList<Meal>)=mealsList.sortedByDescending { it.fiber }
+ fun sortSugars(mealsList: MutableList<Meal>)=mealsList.sortedByDescending { it.sugars }
+ fun sortProtein(mealsList: MutableList<Meal>)=mealsList.sortedByDescending { it.protein }
+ fun sortSodium(mealsList: MutableList<Meal>)=mealsList.sortedByDescending { it.sodium }
 }
 
 //  var cal = calculation.calculateCustomGramsCalories(mealsList[0].calories, 250.0)

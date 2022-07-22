@@ -32,6 +32,7 @@ class MealsSearchFragment : BaseFragment<FragmentSearchMealsBinding>(), MealInte
 
     override fun setUp() {
         onTextChange()
+        viewChips()
     }
 
     override fun onStart() {
@@ -55,6 +56,36 @@ class MealsSearchFragment : BaseFragment<FragmentSearchMealsBinding>(), MealInte
         bundle.putSerializable(Constants.KeyValues.MEAL,meal)
         mealDetailsFragment.arguments = bundle
         navigationTo(mealDetailsFragment)
+    }
+    private fun viewChips() {
+        binding.apply {
+            caloriesChip.setOnCheckedChangeListener { buttonView, isChecked ->
+                if (isChecked) baseViewChip(calculations.sortCalories(mealsList)) else mealList(mealsList)
+            }
+            totalFatChip.setOnCheckedChangeListener { buttonView, isChecked ->
+                if (isChecked) baseViewChip(calculations.sortTotalFat(mealsList)) else mealList(mealsList)
+            }
+            fabricChip.setOnCheckedChangeListener { buttonView, isChecked ->
+                if (isChecked) baseViewChip(calculations.sortFiber(mealsList)) else mealList(mealsList)
+            }
+            sugarChip.setOnCheckedChangeListener { buttonView, isChecked ->
+                if (isChecked) baseViewChip(calculations.sortSugars(mealsList)) else mealList(mealsList)
+            }
+            proteinChip.setOnCheckedChangeListener { buttonView, isChecked ->
+                if (isChecked) baseViewChip(calculations.sortProtein(mealsList)) else mealList(mealsList)
+            }
+
+        }
+    }
+   private fun baseViewChip(mealList:List<Meal>){
+        adapter = MealAdapter(mealList, this)
+        binding.recyclerMeal.adapter=adapter
+    }
+    private fun mealList(mealList:List<Meal>){
+        dataManager = requireNotNull(arguments?.getParcelable(Constants.KeyValues.DATA_MANAGER))
+        mealsList = (dataManager as DataManager).getMeals()
+        adapter = MealAdapter(mealList, this)
+        binding.recyclerMeal.adapter = adapter
     }
 }
 
