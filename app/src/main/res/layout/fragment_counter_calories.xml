@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background_color">
@@ -9,10 +10,11 @@
         android:id="@+id/image_total_calories_ring"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintDimensionRatio="1:1"
         android:layout_marginHorizontal="72dp"
         android:layout_marginTop="16dp"
+        android:contentDescription="@string/calories_shape"
         android:src="@drawable/ic_fire_calories_counter"
+        app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -23,6 +25,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
+        android:includeFontPadding="false"
         android:text="@string/_0"
         app:layout_constraintBottom_toTopOf="@+id/text_total_calories"
         app:layout_constraintEnd_toEndOf="@+id/image_total_calories_ring"
@@ -36,6 +39,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="2dp"
+        android:fontFamily="@font/poppins_medium"
         android:text="@string/total_calories"
         app:layout_constraintBottom_toBottomOf="@+id/image_total_calories_ring"
         app:layout_constraintEnd_toEndOf="@+id/image_total_calories_ring"
@@ -44,15 +48,15 @@
 
     <TextView
         android:id="@+id/label_error"
+        style="@style/PrimaryTextStyle.Red"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/error_label"
-        style="@style/PrimaryTextStyle.Red"
         android:layout_marginBottom="@dimen/spacing_medium"
+        android:text="@string/error_label"
         android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@id/textInputLayout0"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/textInputLayout0" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayout0"
@@ -78,11 +82,14 @@
             android:layout_height="match_parent"
             android:background="@null"
             android:drawablePadding="@dimen/spacing_medium"
+            android:fontFamily="@font/poppins_regular"
             android:hint="@string/meal_name"
             android:inputType="text"
             android:paddingTop="@dimen/spacing_small"
             android:paddingBottom="@dimen/spacing_small"
-            android:textCursorDrawable="@drawable/cursor" />
+            android:textColor="@color/normal_text"
+            android:textCursorDrawable="@drawable/cursor"
+            android:theme="@style/TextLabelSearch" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <EditText
@@ -92,9 +99,13 @@
         android:layout_height="@dimen/special_height"
         android:layout_margin="@dimen/spacing_medium"
         android:background="@drawable/rectangle_border"
+        android:fontFamily="@font/poppins_regular"
         android:hint="@string/grams"
+        android:importantForAutofill="no"
         android:inputType="number"
-        android:paddingStart="@dimen/spacing_medium"
+        android:paddingHorizontal="@dimen/spacing_medium"
+        android:textColor="@color/normal_text"
+        android:theme="@style/TextLabelSearch"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout0" />
@@ -110,18 +121,32 @@
         app:layout_constraintEnd_toEndOf="@+id/edit_text_grams"
         app:layout_constraintTop_toTopOf="@+id/edit_text_grams" />
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view_meal_with_grams"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/zero"
+        android:layout_marginHorizontal="@dimen/spacing_small_specific"
+        android:layout_marginTop="@dimen/spacing_medium"
+        android:overScrollMode="never"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_add"
+        app:spanCount="2"
+        tools:listitem="@layout/item_calories_counter" />
+
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/button_add"
         style="@style/PrimaryTextStyle.Regular.White"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/spacing_medium"
+        android:layout_margin="@dimen/spacing_medium"
         android:background="@drawable/rectangle1"
         android:paddingHorizontal="@dimen/spacing_large"
         android:paddingVertical="@dimen/spacing_small"
         android:text="@string/add"
         android:textAllCaps="false"
-        app:layout_constraintEnd_toEndOf="@+id/edit_text_grams"
+        android:textColor="@color/background_color"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edit_text_grams" />
 
     <androidx.appcompat.widget.AppCompatButton
@@ -129,12 +154,13 @@
         style="@style/PrimaryTextStyle.Regular.PrimaryColor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/spacing_medium"
         android:background="@drawable/border"
         android:paddingHorizontal="@dimen/spacing_large"
         android:paddingVertical="@dimen/spacing_small"
         android:text="@string/reset"
         android:textAllCaps="false"
-        app:layout_constraintStart_toStartOf="@+id/edit_text_grams"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/button_add" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

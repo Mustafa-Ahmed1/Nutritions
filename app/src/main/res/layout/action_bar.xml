@@ -22,7 +22,8 @@
             android:background="@drawable/ic_back_arrow"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            android:backgroundTint="@color/titles"/>
 
         <TextView
             android:id="@+id/app_action_title"
@@ -32,11 +33,12 @@
             android:layout_centerVertical="true"
             android:layout_marginStart="@dimen/spacing_medium"
             android:layout_toEndOf="@+id/button_back"
-            android:fontFamily="@font/poppins_medium"
+            android:fontFamily="@font/poppins_regular"
             android:includeFontPadding="false"
+            android:textColor="@color/titles"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/button_back"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

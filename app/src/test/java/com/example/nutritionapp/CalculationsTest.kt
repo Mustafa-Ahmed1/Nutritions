@@ -201,14 +201,14 @@ internal class CalculationsTest {
     }
 // endregion
 
-    // region test functions for cuttingBestMeals function
+    // region test functions for weightLossBestMeals function
     @Test
     fun should_ReturnNullValue_When_EnterListMealNullOfCutting() {
         // given top and isnull list
         val top =5
         val newMeal= mutableListOf<Meal>()
-        // when calculate cuttingBestMeals
-        val result = Calculations().cuttingBestMeals(newMeal,top)
+        // when calculate weightLossBestMeals
+        val result = Calculations().weightLossBestMeals(newMeal,top)
         // then should return null value
         assertEquals(null, result)
     }
@@ -217,8 +217,8 @@ internal class CalculationsTest {
         // given  top value negative and list meal
         val top =-1
         val newMeal= newList()
-        // when calculate cuttingBestMeals
-        val result = Calculations().cuttingBestMeals(newMeal,top)
+        // when calculate weightLossBestMeals
+        val result = Calculations().weightLossBestMeals(newMeal,top)
         // then should return null value
         assertEquals(null, result)
     }
@@ -227,8 +227,8 @@ internal class CalculationsTest {
         // given  top bigger listSize and list
         val top =6
         val newMeal= newList()
-        // when calculate cuttingBestMeals
-        val result = Calculations().cuttingBestMeals(newMeal,top)
+        // when calculate weightLossBestMeals
+        val result = Calculations().weightLossBestMeals(newMeal,top)
         // then should return null value
         assertEquals(null, result)
     }
@@ -238,8 +238,8 @@ internal class CalculationsTest {
         // given  top Zero
         val top =0
         val newMeal= newList()
-        // when calculate cuttingBestMeals
-        val result = Calculations().cuttingBestMeals(newMeal,top)
+        // when calculate weightLossBestMeals
+        val result = Calculations().weightLossBestMeals(newMeal,top)
         // then should return null value
         assertEquals(null, result)
     }
@@ -248,8 +248,8 @@ internal class CalculationsTest {
         // given correct top and list
         val top =5
         val newMeal= newList()
-        // when calculate cuttingBestMeals
-        val result = Calculations().cuttingBestMeals(newMeal,top)
+        // when calculate weightLossBestMeals
+        val result = Calculations().weightLossBestMeals(newMeal,top)
         // then should return correct cutting value meal list
         assertEquals(newMeal, result)
     }

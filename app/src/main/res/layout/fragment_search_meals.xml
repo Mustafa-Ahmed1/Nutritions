@@ -27,6 +27,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:background="@drawable/searchhhh"
             android:id="@+id/search_edit_text"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -39,6 +40,31 @@
             android:textCursorDrawable="@drawable/cursor"
             android:theme="@style/TextLabelSearch" />
     </com.google.android.material.textfield.TextInputLayout>
+
+    <ImageView
+        android:id="@+id/image_search"
+        android:layout_width="248dp"
+        android:layout_height="248dp"
+        android:visibility="gone"
+        android:src="@drawable/search_image"
+        app:layout_constraintBottom_toTopOf="@+id/text_no_meal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText"
+        app:layout_constraintVertical_chainStyle="packed"
+        android:contentDescription="@string/no_meal_to_show" />
+
+    <TextView
+        android:id="@+id/text_no_meal"
+        style="@style/PrimaryTextStyle.PrimaryColor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/no_meal_to_show"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/image_search"
+        app:layout_constraintStart_toStartOf="@+id/image_search"
+        app:layout_constraintTop_toBottomOf="@+id/image_search" />
 
     <com.google.android.material.chip.ChipGroup
         android:id="@+id/chip_group"
@@ -113,7 +139,7 @@
         android:id="@+id/recycler_meal"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="@dimen/spacing_medium"
+        android:layout_marginTop="8dp"
         android:orientation="vertical"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"

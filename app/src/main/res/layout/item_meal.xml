@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="@dimen/height_card_view"
     android:layout_marginHorizontal="@dimen/spacing_medium"
-    android:layout_marginBottom="@dimen/spacing_small"
+    android:layout_marginTop="@dimen/spacing_small"
     app:cardCornerRadius="@dimen/radius_large"
     app:cardElevation="3dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/card_background">
 
         <TextView
             android:id="@+id/text_meal_name"
@@ -22,7 +24,7 @@
             android:fontFamily="@font/poppins_regular"
             android:lines="1"
             android:text="@string/french_fries"
-            android:textColor="@color/black"
+            android:textColor="@color/normal_text"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/text_calories_number"
             app:layout_constraintStart_toStartOf="parent"
@@ -37,7 +39,9 @@
             android:text="@string/cal"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            android:includeFontPadding="false"
+            android:fontFamily="@font/poppins_regular"/>
 
         <TextView
             android:id="@+id/text_calories_number"
@@ -49,7 +53,8 @@
             android:textColor="@color/primary_color"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/text_cal"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            android:includeFontPadding="false"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
