@@ -55,9 +55,13 @@
     <string name="search_in_all_meals">Search in all meals</string>
     <string name="top_5_blood_pressure_meals">Top 5 Blood Pressure meals</string>
     <string name="top_5_diabetics_meals">Top 100 diabetes meals</string>
-    <string name="diabetics_meals_informations">The most important elements that directly affect diabetic patients: potassium, carbohydrates, sugar, fiber.</string>
+    <string name="diabetics_meals_information">The most important elements that directly affect diabetic patients: potassium, carbohydrates, sugar, fiber.</string>
     <string name="search_for_all_meals">Search for all meals</string>
     <string name="error_label">You’re out of normal daily range</string>
+    <string name="_350g">350g</string>
+    <string name="no_meal_to_show">No meal to show</string>
+    <string name="remove_item">Remove item</string>
+    <string name="calories_shape">Calories shape</string>
 
     <string name="blood">Blood\npressure</string>
     <string name="building">building</string>
@@ -85,6 +89,7 @@
     <string name="sort_by">Sort by</string>
     <string name="sodium">Sodium</string>
     <string name="meal_details">Meal Details</string>
+    <string name="no_data_to_calculated">No data to calculated</string>
 
 
 </resources>

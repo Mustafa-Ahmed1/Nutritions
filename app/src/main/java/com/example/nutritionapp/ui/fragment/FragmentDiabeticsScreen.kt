@@ -16,7 +16,7 @@ class FragmentDiabeticsScreen :BaseFragment<FragmentTopMealBinding>(){
     override var visibleBottomNavigationBar: Boolean = false
 
     override fun setUp() {
-        binding.textInfo.text = getString(R.string.diabetics_meals_informations)
+        binding.textInfo.text = getString(R.string.diabetics_meals_information)
     }
 
 

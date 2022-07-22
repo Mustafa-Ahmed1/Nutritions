@@ -28,6 +28,8 @@
     <dimen name="height_card_view">56dp</dimen>
     <dimen name="elevation_element">50dp</dimen>
     <dimen name="spacing_specific">24dp</dimen>
+    <dimen name="radius_normal">8dp</dimen>
+    <dimen name="spacing_small_specific">12dp</dimen>
 
 
 </resources>

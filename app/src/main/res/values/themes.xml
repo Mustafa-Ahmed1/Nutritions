@@ -28,6 +28,10 @@
         <item name="android:textColor">@color/black</item>
     </style>
 
+    <style name="PrimaryTextStyle.PrimaryColor">
+        <item name="android:textColor">@color/primary_color</item>
+    </style>
+
     <style name="PrimaryTextStyle.Gray">
         <item name="android:textColor">@color/gray</item>
     </style>
@@ -75,8 +79,16 @@
         <item name="android:textColor">@color/primary_color</item>
     </style>
 
-    <style name="CaptionTextStyle" parent="PrimaryTextStyle">
+    <style name="CaptionTextStyle" parent="DefaultTextStyle">
         <item name="android:textSize">@dimen/font_size_caption</item>
+    </style>
+
+    <style name="CaptionTextStyle.Medium">
+        <item name="fontFamily"> @font/poppins_medium </item>
+    </style>
+
+    <style name="CaptionTextStyle.Medium.PrimaryColor">
+        <item name="android:textColor"> @color/primary_color </item>
     </style>
 
     <style name="CaptionTextStyle.White">
