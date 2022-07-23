@@ -103,8 +103,8 @@
     <string name="gender">Gender</string>
     <string name="is_your_daily_required_calories">Is your daily required calories!</string>
     <string name="full_to_get_required_calories">Full to get required calories!</string>
-
-
+    <string name="vitamind">VitaminD</string>
+    <string name="carbohydrate">Carbohydrate</string>
 
 
     <string name="title_calculate_requiredCcalories">Calculate required calories</string>
