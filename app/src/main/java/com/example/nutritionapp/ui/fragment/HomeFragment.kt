@@ -36,9 +36,8 @@ class HomeFragment :BaseFragment<FragmentHomeBinding>() {
         buttonCardGym()
         buttonCardPressure()
         buttonCardWeightLoss()
-
+        buttonCalculateRequiredCaloriesFragment()
     }
-
 
     override fun onStart() {
         super.onStart()
@@ -78,6 +77,12 @@ class HomeFragment :BaseFragment<FragmentHomeBinding>() {
             bundle.putString(Constants.KeyValues.BEST_MEAL_TYPE, Constants.KeyValues.WEIGHT_LOSS)
             bestMealFragment.arguments = bundle
             navigationTo(bestMealFragment)
+        }
+    }
+
+    private fun buttonCalculateRequiredCaloriesFragment() {
+        binding.calculateRequiredCalories.setOnClickListener {
+            navigationTo(calculateRequiredCaloriesFragment)
         }
     }
 }

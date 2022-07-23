@@ -187,7 +187,8 @@
         <item name="android:textColor">@color/white</item>
         <item name="android:textSize">@dimen/font_size_primary</item>
         <item name="android:fontFamily">@font/poppins_medium</item>
-
+        <item name="borderWidth">2dp</item>
+        <item name="strokeColor">@color/primary_color</item>
 
     </style>
 
