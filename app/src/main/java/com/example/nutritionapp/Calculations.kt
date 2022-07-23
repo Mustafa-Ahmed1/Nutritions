@@ -88,5 +88,7 @@ class Calculations {
     fun sortFiber(mealsList: MutableList<Meal>) = mealsList.sortedByDescending { it.fiber }
     fun sortSugars(mealsList: MutableList<Meal>) = mealsList.sortedByDescending { it.sugars }
     fun sortProtein(mealsList: MutableList<Meal>) = mealsList.sortedByDescending { it.protein }
-    fun sortSodium(mealsList: MutableList<Meal>) = mealsList.sortedByDescending { it.sodium }
+    fun sortVitaminD(mealsList: MutableList<Meal>) = mealsList.sortedByDescending { it.vitaminD }
+    fun sortCarbohydrate(mealsList: MutableList<Meal>) = mealsList.sortedByDescending { it.carbohydrate }
+
 }

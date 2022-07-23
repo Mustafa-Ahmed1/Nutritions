@@ -82,7 +82,12 @@ class MealsSearchFragment() : BaseFragment<FragmentSearchMealsBinding>(),
             proteinChip.setOnCheckedChangeListener { _, isChecked ->
                 if (isChecked) baseViewChip(calculations.sortProtein(mealsList)) else mealList(mealsList)
             }
-
+            vitamindChip.setOnCheckedChangeListener { _, isChecked ->
+                if (isChecked) baseViewChip(calculations.sortVitaminD(mealsList)) else mealList(mealsList)
+            }
+            carbohydrateChip.setOnCheckedChangeListener { _, isChecked ->
+                if (isChecked) baseViewChip(calculations.sortCarbohydrate(mealsList)) else mealList(mealsList)
+            }
         }
     }
     private fun baseViewChip(mealList:List<Meal>){
