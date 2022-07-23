@@ -16,7 +16,7 @@
         android:clipChildren="false"
         android:focusable="false"
         app:cardCornerRadius="@dimen/radius_medium"
-        app:cardElevation="@dimen/card_elevation"
+        app:cardElevation="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -394,6 +394,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="12dp"
                     android:src="@drawable/ic_genderfemale"
+                    android:foreground="@color/white"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
