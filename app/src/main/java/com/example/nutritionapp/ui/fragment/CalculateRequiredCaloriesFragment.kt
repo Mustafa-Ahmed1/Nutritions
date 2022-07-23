@@ -2,6 +2,7 @@ package com.example.nutritionapp.ui.fragment
 
 import android.annotation.SuppressLint
 import android.widget.Toast
+import androidx.core.view.isGone
 import com.example.nutritionapp.Calculations
 import com.example.nutritionapp.R
 import com.example.nutritionapp.databinding.FragmentCalculateRequiredCaloriesBinding
@@ -20,7 +21,7 @@ class CalculateRequiredCaloriesFragment : BaseFragment<FragmentCalculateRequired
 
     override var visibilityCustomActionBar: Boolean = true
     override var visibilityBackButton: Boolean = true
-    override fun getTitle(): String = getString(R.string.title_calculate_requiredCcalories)
+    override fun getTitle(): String = getString(R.string.required_calories)
 
     override var visibleBottomNavigationBar: Boolean = false
 
@@ -91,13 +92,15 @@ class CalculateRequiredCaloriesFragment : BaseFragment<FragmentCalculateRequired
 
         binding.cardMale.setOnClickListener{
             gender = Constants.KeyValues.MALE
-
+            binding.imageMale.setBackgroundResource(R.drawable.ic_gender_male_selected)
 //            binding.cardMale.setCardBackgroundColor(requireContext().getColor(R.color.primary_color))
 //            binding.textMale.setTextColor(requireContext().getColor(R.color.white))
         }
 
         binding.cardFemale.setOnClickListener{
             gender = Constants.KeyValues.FEMALE
+            binding.imageFemale.setBackgroundResource(R.drawable.ic_gender_female_selected)
+            binding.imageFemale.isGone
         }
 
     }

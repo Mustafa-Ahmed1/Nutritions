@@ -67,6 +67,7 @@
     <string name="building">building</string>
     <string name="pressure">pressure</string>
     <string name="calculate_required_calories">Calculate required calories</string>
+
     <string name="get_your">get your required calories for your body easily, depending on your weight, age and gender.</string>
     <string name="home">Home</string>
     <string name="counter">Counter</string>
@@ -94,6 +95,7 @@
 
 
     <string name="title_calculate_requiredCcalories">Calculate required calories</string>
+    <string name="required_calories">Required Calories</string>
     <string name="weight_kg">Weight (kg)</string>
     <string name="height_cm">Height (cm)</string>
     <string name="age_y">Age (years)</string>

@@ -36,6 +36,7 @@
             android:fontFamily="@font/poppins_medium"
             android:hint="@string/search_your_meals"
             android:includeFontPadding="false"
+            android:textColorHint="@color/hint"
             android:paddingVertical="@dimen/spacing_medium"
             android:textCursorDrawable="@drawable/cursor"
             android:theme="@style/TextLabelSearch" />

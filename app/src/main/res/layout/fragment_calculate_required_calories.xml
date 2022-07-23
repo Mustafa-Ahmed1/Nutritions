@@ -402,11 +402,11 @@
                 android:layout_height="match_parent">
 
                 <ImageView
-                    android:id="@+id/imageView"
+                    android:id="@+id/image_male"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="12dp"
-                    android:src="@drawable/ic_genderfemale"
+                    android:src="@drawable/ic_gender_male"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -421,7 +421,8 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/imageView" />
+                    app:layout_constraintTop_toBottomOf="@+id/image_male"
+                    android:fontFamily="@font/poppins_medium"/>
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>
@@ -454,11 +455,11 @@
                 android:layout_height="match_parent">
 
                 <ImageView
-                    android:id="@+id/imageViewfrmail"
+                    android:id="@+id/image_female"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="12dp"
-                    android:src="@drawable/ic_gendermale"
+                    android:src="@drawable/ic_female"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -473,7 +474,8 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/imageViewfrmail" />
+                    app:layout_constraintTop_toBottomOf="@+id/image_female"
+                    android:fontFamily="@font/poppins_medium"/>
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>
