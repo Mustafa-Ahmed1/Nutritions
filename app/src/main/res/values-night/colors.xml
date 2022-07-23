@@ -22,13 +22,14 @@
     <color name="navigation_bar">#0C2723</color>
     <color name="titles">#DEFFFFFF</color>
     <color name="card_background">#264D49</color>
+    <color name="card_background_secondary">#397A74</color>
     <color name="text_on_card">#C2CDBE</color>
     <color name="dark">#10332E</color>
     <color name="input_background">#143F39</color>
+    <color name="hint">#A49B9B9B</color>
 
     <color name="home_card_background">#264D49</color>
     <color name="top_meals_card_text">#10332E</color>
-    <color name="home_card_title">#C2CDBE</color>
     <color name="home_card_details">#728B80</color>
     <color name="advices_details">#C2CDBE</color>
 

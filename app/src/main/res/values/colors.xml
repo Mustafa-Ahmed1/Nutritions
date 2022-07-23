@@ -19,13 +19,14 @@
     <color name="disable_bottom_navigation_bar">#9B9B9B</color>
     <color name="background_card">#EFFFF1</color>
 
-<!--  aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa  -->
     <color name="navigation_bar">#FFFFFF</color>
     <color name="titles">#000000</color>
     <color name="card_background">#FFFFFF</color>
+    <color name="card_background_secondary">#EFFFF1</color>
     <color name="text_on_card">#000000</color>
     <color name="dark">#000000</color>
     <color name="input_background">#FFFFFF</color>
+    <color name="hint">#5B7C7C7C</color>
 
     <color name="home_card_background">#EFFFF1</color>
     <color name="top_meals_card_text">#FFFFFF</color>

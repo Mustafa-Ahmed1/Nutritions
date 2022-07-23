@@ -46,7 +46,7 @@
             android:id="@+id/icon_close"
             android:layout_width="24dp"
             android:layout_height="24dp"
-            android:layout_margin="@dimen/spacing_small"
+            android:layout_marginEnd="@dimen/spacing_small"
             android:contentDescription="@string/remove_item"
             android:src="@drawable/ic_remove"
             app:layout_constraintEnd_toEndOf="parent"

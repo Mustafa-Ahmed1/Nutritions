@@ -73,9 +73,6 @@ class MealsSearchFragment() : BaseFragment<FragmentSearchMealsBinding>(),
             totalFatChip.setOnCheckedChangeListener { _, isChecked ->
                 if (isChecked) baseViewChip(calculations.sortTotalFat(mealsList)) else mealList(mealsList)
             }
-            fabricChip.setOnCheckedChangeListener { _, isChecked ->
-                if (isChecked) baseViewChip(calculations.sortFiber(mealsList)) else mealList(mealsList)
-            }
             sugarChip.setOnCheckedChangeListener { _, isChecked ->
                 if (isChecked) baseViewChip(calculations.sortSugars(mealsList)) else mealList(mealsList)
             }

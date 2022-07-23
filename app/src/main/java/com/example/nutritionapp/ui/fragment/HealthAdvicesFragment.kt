@@ -24,15 +24,18 @@ class HealthAdvicesFragment : BaseFragment<FragmentHealthAdvicesBinding>() {
     override var visibleBottomNavigationBar: Boolean = true
 
     override fun setUp() {
-        healthAdviceDataManger = requireNotNull(arguments?.getParcelable(Constants.KeyValues.HEALTH_ADVICE_DATA_MANAGER))
+        healthAdviceDataManger =
+            requireNotNull(arguments?.getParcelable(Constants.KeyValues.HEALTH_ADVICE_DATA_MANAGER))
         healthAdvicesList = (healthAdviceDataManger as HealthAdviceDataManger).getHealthAdvices()
         onButtonNextAdviceClick()
     }
+
     private fun onButtonNextAdviceClick() {
-        binding.buttonNextAdvice.setOnClickListener {
+        binding.changeArrows.setOnClickListener {
             val currentAdvice = calculations.getRandomAdvice(healthAdvicesList)
             binding.headerTitleHealthAdvices.text = currentAdvice.title
             binding.healthAdvicesTextInfo.text = currentAdvice.details
+            binding.changeArrows.playAnimation()
         }
     }
 }

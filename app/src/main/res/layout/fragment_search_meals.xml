@@ -125,20 +125,11 @@
             app:chipMinTouchTargetSize="0dp" />
 
         <com.google.android.material.chip.Chip
-            android:id="@+id/fabric_chip"
-            style="@style/CustomChipStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/fabric"
-            android:textAppearance="@style/chipText"
-            app:chipMinTouchTargetSize="0dp" />
-
-        <com.google.android.material.chip.Chip
             android:id="@+id/vitamindChip"
             style="@style/CustomChipStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/vitamind"
+            android:text="@string/vitamin_d"
             android:textAppearance="@style/chipText"
             app:chipMinTouchTargetSize="0dp" />
 

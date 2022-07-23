@@ -5,34 +5,34 @@
     android:viewportHeight="187">
   <path
       android:pathData="M85.25,11.19C56.37,6.49 60.98,29.63 22.33,46.68C-40.05,88.84 42.66,159.9 94.99,107.26C121.07,82.44 123.14,17.36 85.25,11.19Z"
-      android:fillColor="#EBF5FF"/>
+      android:fillColor="@color/card_background"/>
   <path
       android:pathData="M16.59,120.17C23.31,128.64 14.06,136.18 7.11,127.9C0.4,119.42 9.64,111.89 16.59,120.17Z"
-      android:fillColor="#E3E8FF"/>
+      android:fillColor="@color/card_background"/>
   <path
       android:pathData="M29.03,126.89C30.81,132.38 24.78,134.43 22.84,128.99C21.06,123.5 27.09,121.46 29.03,126.89Z"
-      android:fillColor="#E3E8FF"/>
+      android:fillColor="@color/card_background"/>
   <path
       android:pathData="M70.72,3.99C71.23,9.74 64.89,10.39 64.22,4.65C63.72,-1.1 70.05,-1.74 70.72,3.99Z"
-      android:fillColor="#E3E8FF"/>
+      android:fillColor="@color/card_background"/>
   <path
       android:pathData="M48.75,6.3C44.08,16.05 54.76,21.35 59.71,11.74C64.38,1.98 53.69,-3.32 48.75,6.3Z"
-      android:fillColor="#E3E8FF"/>
+      android:fillColor="@color/card_background"/>
   <path
       android:pathData="M182.52,104.91C170.41,88.3 194.54,81.61 190.67,46.81C186.05,5.16 235.86,-0.75 257.18,12.99C327.45,62.22 237.47,180.25 182.52,104.91Z"
-      android:fillColor="#EBF5FF"/>
+      android:fillColor="@color/card_background"/>
   <path
       android:pathData="M267.99,114.28C263.32,124.03 274,129.34 278.95,119.72C283.62,109.97 272.94,104.67 267.99,114.28Z"
-      android:fillColor="#E3E8FF"/>
+      android:fillColor="@color/card_background"/>
   <path
       android:pathData="M257.35,123.59C256.83,129.34 263.17,130 263.85,124.27C264.37,118.52 258.03,117.86 257.35,123.59Z"
-      android:fillColor="#E3E8FF"/>
+      android:fillColor="@color/card_background"/>
   <path
       android:pathData="M272.14,21.01C271.62,26.75 277.95,27.42 278.64,21.69C279.16,15.94 272.83,15.27 272.14,21.01Z"
-      android:fillColor="#E3E8FF"/>
+      android:fillColor="@color/card_background"/>
   <path
       android:pathData="M262.33,11.59C267.67,19.1 276.04,13.33 270.92,5.67C265.58,-1.83 257.21,3.93 262.33,11.59Z"
-      android:fillColor="#E3E8FF"/>
+      android:fillColor="@color/card_background"/>
   <path
       android:pathData="M142.09,46.02C142.6,49.88 136.88,50.74 136.23,46.9C135.72,43.04 141.45,42.18 142.09,46.02Z"
       android:fillColor="#EB5648"/>
