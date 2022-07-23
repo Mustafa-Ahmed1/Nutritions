@@ -26,9 +26,10 @@
     <color name="dark">#10332E</color>
     <color name="input_background">#143F39</color>
 
-    <color name="home_card_background">#EFFFF1</color>
+    <color name="home_card_background">#264D49</color>
     <color name="top_meals_card_text">#10332E</color>
     <color name="home_card_title">#C2CDBE</color>
     <color name="home_card_details">#728B80</color>
+    <color name="advices_details">#C2CDBE</color>
 
 </resources>

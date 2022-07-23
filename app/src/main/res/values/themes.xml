@@ -190,7 +190,6 @@
         <item name="borderWidth">2dp</item>
         <item name="strokeColor">@color/primary_color</item>
 
-
     </style>
 
 </resources>

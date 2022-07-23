@@ -217,7 +217,7 @@
         android:layout_height="108dp"
         android:layout_margin="16dp"
         android:background="@drawable/shape_card"
-        android:backgroundTint="@color/card_background"
+        android:backgroundTint="@color/home_card_background"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/header_title2" />

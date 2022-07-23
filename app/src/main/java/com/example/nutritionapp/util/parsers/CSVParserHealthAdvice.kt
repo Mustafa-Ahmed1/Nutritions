@@ -4,6 +4,7 @@ import android.util.Log
 import com.example.nutritionapp.data.dataManger.HealthAdviceDataManger
 import com.example.nutritionapp.data.model.HealthAdvice
 import com.example.nutritionapp.util.Constants
+import com.example.nutritionapp.util.extention.removeQuotations
 import java.io.InputStreamReader
 
 class CSVParserHealthAdvice {
@@ -16,7 +17,7 @@ class CSVParserHealthAdvice {
                 healthAdviceDataManger.addHealthAdvice(
                     HealthAdvice(
                         title = healthAdviceLineData[TITLE],
-                        details = healthAdviceLineData[DETAILS]
+                        details = healthAdviceLineData[DETAILS].removeQuotations()
                     )
                 )
             }

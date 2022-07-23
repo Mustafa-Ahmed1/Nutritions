@@ -39,7 +39,7 @@ class HomeFragment :BaseFragment<FragmentHomeBinding>() {
         buttonCalculateRequiredCaloriesFragment()
     }
 
- override fun onStart() {
+    override fun onStart() {
         super.onStart()
         mealDataManager = requireNotNull(arguments?.getParcelable(Constants.KeyValues.Meal_DATA_MANAGER))
         mealList = (mealDataManager as MealDataManager).getMeals()
