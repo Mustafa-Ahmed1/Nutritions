@@ -1,7 +1,9 @@
 package com.example.nutritionapp.ui.fragment
 
 import android.annotation.SuppressLint
+import android.os.Build
 import android.widget.Toast
+import androidx.annotation.RequiresApi
 import androidx.core.view.isGone
 import com.example.nutritionapp.Calculations
 import com.example.nutritionapp.R
@@ -93,17 +95,32 @@ class CalculateRequiredCaloriesFragment : BaseFragment<FragmentCalculateRequired
         binding.cardMale.setOnClickListener{
             gender = Constants.KeyValues.MALE
             binding.imageMale.setBackgroundResource(R.drawable.ic_gender_male_selected)
-//            binding.cardMale.setCardBackgroundColor(requireContext().getColor(R.color.primary_color))
-//            binding.textMale.setTextColor(requireContext().getColor(R.color.white))
+            genderSelectedColor(R.color.primary_color,R.color.white,R.color.white,R.color.primary_color)
+
         }
 
         binding.cardFemale.setOnClickListener{
             gender = Constants.KeyValues.FEMALE
             binding.imageFemale.setBackgroundResource(R.drawable.ic_gender_female_selected)
             binding.imageFemale.isGone
+            genderSelectedColor(R.color.white,R.color.primary_color,R.color.primary_color,R.color.white)
+
         }
 
     }
+    @RequiresApi(Build.VERSION_CODES.M)
+    private fun genderSelectedColor(onSelectedMaleCardColor:Int,onSelectedMaleTextColor:Int,onSelectedFeMaleCardColor:Int,onSelectedFeMaleTextColor:Int) {
+        binding.apply {
+            cardFemale.setCardBackgroundColor(requireContext().getColor(onSelectedFeMaleCardColor))
+            textFemale.setTextColor(requireContext().getColor(onSelectedFeMaleTextColor))
+            imageFemale.setColorFilter(requireContext().getColor(onSelectedFeMaleTextColor))
+            cardMale.setCardBackgroundColor(requireContext().getColor(onSelectedMaleCardColor))
+            textMale.setTextColor(requireContext().getColor(onSelectedMaleTextColor))
+            imageMale.setColorFilter(requireContext().getColor(onSelectedMaleTextColor))
+
+        }
+    }
+
 
     private fun setValueWeight(value: Int = 0){
         binding.textValueWeight.text = value.toString()
