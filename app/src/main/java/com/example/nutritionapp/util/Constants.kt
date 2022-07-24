@@ -29,11 +29,6 @@ object Constants {
         const val MEAL = "meal"
         const val Meal_DATA_MANAGER = "mealDataManger"
         const val HEALTH_ADVICE_DATA_MANAGER = "healthAdviceDataManger"
-        const val MEAL_NAME = "MN"
-        const val CAL_NUMBER = "CN"
-        const val FIBER_NUMBER = "FN"
-        const val SUGAR_NUMBER = "SN"
-        const val PROTEIN_NUMBER = "PN"
         const val MALE = 'M'
         const val FEMALE = 'F'
         const val BEST_MEAL_TYPE = "bestMealType"

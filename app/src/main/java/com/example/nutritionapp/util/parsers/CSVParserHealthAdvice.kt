@@ -1,7 +1,7 @@
 package com.example.nutritionapp.util.parsers
 
 import android.util.Log
-import com.example.nutritionapp.data.dataManger.HealthAdviceDataManger
+import com.example.nutritionapp.data.dataManager.HealthAdviceDataManger
 import com.example.nutritionapp.data.model.HealthAdvice
 import com.example.nutritionapp.util.Constants
 import com.example.nutritionapp.util.extention.removeQuotations

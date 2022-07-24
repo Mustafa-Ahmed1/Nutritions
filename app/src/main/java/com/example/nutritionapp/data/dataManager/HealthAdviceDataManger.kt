@@ -1,4 +1,4 @@
-package com.example.nutritionapp.data.dataManger
+package com.example.nutritionapp.data.dataManager
 
 import android.os.Parcel
 import android.os.Parcelable

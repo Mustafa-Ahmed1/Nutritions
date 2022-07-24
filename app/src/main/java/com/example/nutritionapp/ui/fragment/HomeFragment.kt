@@ -5,7 +5,7 @@ import android.os.Parcelable
 import com.example.nutritionapp.Calculations
 import com.example.nutritionapp.R
 import com.example.nutritionapp.data.model.Meal
-import com.example.nutritionapp.data.model.managers.MealDataManager
+import com.example.nutritionapp.data.dataManager.MealDataManager
 import com.example.nutritionapp.databinding.FragmentHomeBinding
 import com.example.nutritionapp.ui.base.BaseFragment
 import com.example.nutritionapp.util.Constants

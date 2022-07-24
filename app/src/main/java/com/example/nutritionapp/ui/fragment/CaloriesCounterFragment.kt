@@ -12,7 +12,7 @@ import com.example.nutritionapp.R
 import com.example.nutritionapp.`interface`.MealWithGramsInteractionListener
 import com.example.nutritionapp.data.MealWithGrams
 import com.example.nutritionapp.data.model.Meal
-import com.example.nutritionapp.data.model.managers.MealDataManager
+import com.example.nutritionapp.data.dataManager.MealDataManager
 import com.example.nutritionapp.databinding.FragmentCounterCaloriesBinding
 import com.example.nutritionapp.ui.CaloriesCounterAdapter
 import com.example.nutritionapp.ui.base.BaseFragment

@@ -1,6 +1,6 @@
 package com.example.nutritionapp.util.parsers
 
-import com.example.nutritionapp.data.model.managers.MealDataManager
+import com.example.nutritionapp.data.dataManager.MealDataManager
 import com.example.nutritionapp.data.model.Meal
 import com.example.nutritionapp.util.Constants
 import com.example.nutritionapp.util.extention.removeQuotations

@@ -6,7 +6,7 @@ import android.util.Log
 import androidx.fragment.app.Fragment
 import com.example.nutritionapp.util.parsers.CSVParser
 import com.example.nutritionapp.R
-import com.example.nutritionapp.data.model.managers.MealDataManager
+import com.example.nutritionapp.data.dataManager.MealDataManager
 import com.example.nutritionapp.data.model.Meal
 import com.example.nutritionapp.databinding.ActivityMainBinding
 import com.example.nutritionapp.ui.fragment.HomeFragment

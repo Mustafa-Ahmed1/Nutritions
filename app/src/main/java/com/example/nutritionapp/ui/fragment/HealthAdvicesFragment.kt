@@ -2,7 +2,7 @@ package com.example.nutritionapp.ui.fragment
 
 import com.example.nutritionapp.Calculations
 import com.example.nutritionapp.R
-import com.example.nutritionapp.data.dataManger.HealthAdviceDataManger
+import com.example.nutritionapp.data.dataManager.HealthAdviceDataManger
 import com.example.nutritionapp.data.model.HealthAdvice
 import com.example.nutritionapp.databinding.FragmentHealthAdvicesBinding
 import com.example.nutritionapp.ui.base.BaseFragment
@@ -26,7 +26,7 @@ class HealthAdvicesFragment : BaseFragment<FragmentHealthAdvicesBinding>() {
     override fun setUp() {
         healthAdviceDataManger =
             requireNotNull(arguments?.getParcelable(Constants.KeyValues.HEALTH_ADVICE_DATA_MANAGER))
-        healthAdvicesList = (healthAdviceDataManger as HealthAdviceDataManger).getHealthAdvices()
+        healthAdvicesList = (healthAdviceDataManger).getHealthAdvices()
         onButtonNextAdviceClick()
     }
 
