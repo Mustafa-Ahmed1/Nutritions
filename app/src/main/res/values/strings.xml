@@ -37,7 +37,7 @@
 
     <string name="head_text">Best meals</string>
 
-    <string name="diabetics_cards_title_1">Here are the best 100 meals for diabetics. it based on specific calculations, witch contains bla bla bla, [and then write some some text].</string>
+    <string name="diabetics_cards_title_1">Here are the best 100 meals for diabetics. it based on specific calculations, witch contains .</string>
     <string name="best_diabetes_meals_">Best diabetes meals</string>
     <string name="french_fries">French Fries</string>
     <string name="_100">100</string>
@@ -112,6 +112,24 @@
     <string name="reset_your_inputs">Reset your inputs</string>
 
 
+
+    <string name="action_app_title_total_calories">Total calories</string>
+
+    <string name="action_app_title_Top_5_blood_pressure_meals">Top 5 Blood Pressure meals</string>
+    <string name="info_Top_5_blood_pressure_meals">The most important elements that directly affect blood Pressure patients: sodium, total Fat, calcium, fiber.</string>
+
+
+    <string name="action_app_title_Top_5_bodybuilding_meals">Top 5 bodybuilding meals</string>
+    <string name="info_Top_5_bodybuilding_meals">The most important elements that directly affect body Building: protein, total Fat, carbohydrate.</string>
+
+
+    <string name="action_app_title_Top_5_diabetes_meals">Top 5 diabetes meals</string>
+    <string name="info_Top_5_diabetes_meals">The most important elements that directly affect diabetic patients: potassium, carbohydrates, sugar, fiber.</string>
+
+    <string name="action_app_title_Top_5_weight_losing_meals">Top 5 weight losing meals</string>
+    <string name="info_Top_5_weight_losing_meals">The most important elements that directly affect cutting: protein, total Fat, carbohydrate.</string>
+
+    <string name="action_app_title_search_for_all_meals">Search for all meals</string>
 
 
 </resources>
