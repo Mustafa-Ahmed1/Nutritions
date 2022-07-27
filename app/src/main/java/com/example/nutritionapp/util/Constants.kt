@@ -41,6 +41,7 @@ object Constants {
     object Data{
         object LocalStorage{
             const val NAME = "LocalStorage"
+            const val MY_DATA = "myData"
         }
 
     }
