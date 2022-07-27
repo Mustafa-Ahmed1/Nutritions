@@ -2,7 +2,6 @@ package com.example.nutritionapp.ui.fragment
 
 import android.os.Bundle
 import android.os.Parcelable
-import android.util.Log
 import com.example.nutritionapp.Calculations
 import com.example.nutritionapp.R
 import com.example.nutritionapp.`interface`.MealInteractionListener
@@ -24,10 +23,11 @@ class BestMealsFragment :BaseFragment<FragmentTopMealBinding>(), MealInteraction
     override fun bindingInflater(): FragmentTopMealBinding =
         FragmentTopMealBinding.inflate(layoutInflater)
 
-    var nameee = ""
+    private var titleFragment: String = ""
+
     override var visibilityCustomActionBar: Boolean= true
     override var visibilityBackButton: Boolean = true
-    override fun getTitle(): String = nameee
+    override fun getTitle(): String = titleFragment
 
     override var visibleBottomNavigationBar: Boolean = false
 
@@ -37,32 +37,34 @@ class BestMealsFragment :BaseFragment<FragmentTopMealBinding>(), MealInteraction
         val bestMealType =  requireNotNull(arguments?.getString(Constants.KeyValues.BEST_MEAL_TYPE))
         binding.textInfo.text = getString(R.string.diabetics_meals_information)
         var newMealList: MutableList<Meal> = mutableListOf()
-        Log.v("HHG", bestMealType)
+
         when (bestMealType){
             Constants.KeyValues.DIABETICS -> {
                 newMealList = calculations.diabeticsBestMeals(mealsList, 100) as MutableList<Meal>
-                nameee = "Diabetics top meals"
-                binding.textInfo.text = "Here are the top 100 meals for diabetics. it based on specific calculations, witch contains sugar, carbohydrate, potassium and fiber."
+                setTextBestMealsFragment(R.string.best_diabetes_meals,R.string.info_diabetes_meals)
             }
             Constants.KeyValues.GYM -> {
                 newMealList = calculations.bodyBuildingBestMeals(mealsList, 100) as MutableList<Meal>
-                nameee = "Bodybuilding top meals"
-                binding.textInfo.text = "Here are the top 100 meals for bodybuilders. it based on specific calculations, witch contains protein, total fat and carbohydrate."
+                setTextBestMealsFragment(R.string.best_bodybuilding_meals,R.string.info_bodybuilding_meals)
             }
             Constants.KeyValues.PRESSURE -> {
                 newMealList = calculations.bloodPressureBestMeals(mealsList, 100) as MutableList<Meal>
-                nameee = "Blood pressure top meals"
-                binding.textInfo.text = "Here are the top 100 meals for blood pressure. it based on specific calculations, witch contains calcium, fiber, sodium and total fat."
+                setTextBestMealsFragment(R.string.best_blood_pressure_meals,R.string.info_blood_pressure_meals)
             }
             Constants.KeyValues.WEIGHT_LOSS -> {
                 newMealList = calculations.weightLossBestMeals(mealsList, 100) as MutableList<Meal>
-                nameee = "Overweight top meals"
-                binding.textInfo.text = "Here are the top 100 meals for Weight losing. it based on specific calculations, witch contains protein, total fat and carbohydrate."
+                setTextBestMealsFragment(R.string.best_weight_losing_meals,R.string.info_weight_losing_meals)
             }
         }
 
         adapter = MealAdapter(newMealList, this)
         binding.recyclerMeal.adapter = adapter
+    }
+
+
+    private fun setTextBestMealsFragment(title: Int, Info: Int){
+        titleFragment = getString(title)
+        binding.textInfo.text = getString(Info)
     }
 
     override fun onClickItem(meal: Meal) {

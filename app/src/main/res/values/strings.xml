@@ -9,10 +9,6 @@
     <string name="show_all_meals_with_details">Show all meals with details</string>
     <string name="calories_counter">Calories Counter</string>
     <string name="do_it_easily">Do it easily</string>
-    <string name="best_diabetes_meals">Best diabetes meals</string>
-    <string name="best_bodybuilding_meals">Best bodybuilding meals</string>
-    <string name="best_weight_losing_meals">Best weight losing meals</string>
-    <string name="best_blood_pressure_meals">Best blood pressure meals</string>
 
     <string name="search_your_meals">Search your meals</string>
     <string name="all_meals">All meals</string>
@@ -115,21 +111,18 @@
 
     <string name="action_app_title_total_calories">Total calories</string>
 
-    <string name="action_app_title_Top_5_blood_pressure_meals">Top 5 Blood Pressure meals</string>
-    <string name="info_Top_5_blood_pressure_meals">The most important elements that directly affect blood Pressure patients: sodium, total Fat, calcium, fiber.</string>
+    <string name="best_diabetes_meals">Diabetics top meals</string>
+    <string name="info_diabetes_meals">Here are the top 100 meals for diabetics. it based on specific calculations, witch contains sugar, carbohydrate, potassium and fiber.</string>
+
+    <string name="best_bodybuilding_meals">Bodybuilding top meals</string>
+    <string name="info_bodybuilding_meals">Here are the top 100 meals for bodybuilders. it based on specific calculations, witch contains protein, total fat and carbohydrate.</string>
+
+    <string name="best_weight_losing_meals">Overweight top meals</string>
+    <string name="info_weight_losing_meals">Here are the top 100 meals for Weight losing. it based on specific calculations, witch contains protein, total fat and carbohydrate.</string>
 
 
-    <string name="action_app_title_Top_5_bodybuilding_meals">Top 5 bodybuilding meals</string>
-    <string name="info_Top_5_bodybuilding_meals">The most important elements that directly affect body Building: protein, total Fat, carbohydrate.</string>
-
-
-    <string name="action_app_title_Top_5_diabetes_meals">Top 5 diabetes meals</string>
-    <string name="info_Top_5_diabetes_meals">The most important elements that directly affect diabetic patients: potassium, carbohydrates, sugar, fiber.</string>
-
-    <string name="action_app_title_Top_5_weight_losing_meals">Top 5 weight losing meals</string>
-    <string name="info_Top_5_weight_losing_meals">The most important elements that directly affect cutting: protein, total Fat, carbohydrate.</string>
-
-    <string name="action_app_title_search_for_all_meals">Search for all meals</string>
+    <string name="best_blood_pressure_meals">Blood pressure top meals</string>
+    <string name="info_blood_pressure_meals">Here are the top 100 meals for blood pressure. it based on specific calculations, witch contains calcium, fiber, sodium and total fat.</string>
 
 
 </resources>
