@@ -9,7 +9,7 @@
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/card_image"
         android:layout_width="@dimen/zero"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/zero"
         android:layout_marginHorizontal="@dimen/spacing_medium"
         android:layout_marginTop="@dimen/spacing_small"
         android:clickable="false"
@@ -21,6 +21,7 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/card_Weight"
         app:rippleColor="@android:color/transparent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -30,13 +31,14 @@
 
             <ImageView
                 android:id="@+id/imageView7"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/zero"
                 android:layout_gravity="center"
                 android:layout_marginTop="@dimen/spacing_medium"
                 android:src="@drawable/ic_image_card"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/card_result"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <com.google.android.material.card.MaterialCardView
@@ -66,7 +68,7 @@
                         android:id="@+id/resultCalculateRequiredCalories"
                         style="@style/TitleTextStyle"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="@dimen/zero"
                         android:layout_margin="@dimen/zero"
                         android:gravity="center"
                         android:paddingVertical="@dimen/spacing_very_small"
@@ -203,6 +205,7 @@
         android:focusable="false"
         app:cardCornerRadius="@dimen/radius_medium"
         app:cardElevation="@dimen/card_elevation"
+        app:layout_constraintBottom_toBottomOf="@+id/card_Weight"
         app:layout_constraintEnd_toEndOf="@+id/card_image"
         app:layout_constraintStart_toEndOf="@+id/card_Weight"
         app:layout_constraintTop_toTopOf="@+id/card_Weight">
@@ -385,8 +388,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toTopOf="@+id/button_calculate_required_calories"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/button_calculate_required_calories"
+        app:layout_constraintStart_toStartOf="@+id/button_calculate_required_calories"
         app:layout_constraintTop_toBottomOf="@+id/card_age">
 
         <com.google.android.material.card.MaterialCardView
@@ -416,13 +419,13 @@
                     style="@style/CaptionTextStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_medium"
                     android:text="@string/male"
                     android:textColor="@color/primary_color"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/image_male"
-                    android:fontFamily="@font/poppins_medium"/>
+                    app:layout_constraintTop_toBottomOf="@+id/image_male" />
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>
@@ -469,14 +472,13 @@
                     style="@style/CaptionTextStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_medium"
                     android:text="@string/female"
                     android:textColor="@color/primary_color"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/image_female"
-                    android:fontFamily="@font/poppins_medium"/>
-
+                    app:layout_constraintTop_toBottomOf="@+id/image_female" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 

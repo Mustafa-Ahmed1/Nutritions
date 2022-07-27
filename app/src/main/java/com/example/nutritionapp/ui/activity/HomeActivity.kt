@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import com.example.nutritionapp.util.parsers.CSVParser
 import com.example.nutritionapp.R
 import com.example.nutritionapp.data.dataManager.MealDataManager
+import com.example.nutritionapp.data.local.LocalStorage
 import com.example.nutritionapp.data.model.Meal
 import com.example.nutritionapp.databinding.ActivityMainBinding
 import com.example.nutritionapp.ui.fragment.HomeFragment
@@ -51,6 +52,9 @@ class HomeActivity : BaseActivity<ActivityMainBinding>() {
 
     override fun setUp() {
         setTheme(R.style.Theme_NutritionApp)
+
+        var localStorage = LocalStorage(applicationContext)
+
         Log.v("ADD", openFile(Constants.FilePath.NUTRITION_CSV).toString())
         dataManager = maelParser.getMealsFromCSV(openFile(Constants.FilePath.NUTRITION_CSV))
         Log.v("BDD", openFile(Constants.FilePath.HEALTH_ADVICES_CSV).toString())

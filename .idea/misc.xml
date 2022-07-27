@@ -133,10 +133,11 @@
         <entry key="app/src/main/res/drawable/ic_disable_home.xml" value="0.1745" />
         <entry key="app/src/main/res/drawable/ic_home.xml" value="0.1745" />
         <entry key="app/src/main/res/drawable/splash_screen.xml" value="0.173" />
+        <entry key="app/src/main/res/layout-v23/fragment_calculate_required_calories.xml" value="0.16666666666666666" />
         <entry key="app/src/main/res/layout/action_bar.xml" value="0.43333333333333335" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.34" />
         <entry key="app/src/main/res/layout/card_input.xml" value="0.5" />
-        <entry key="app/src/main/res/layout/fragment_calculate_required_calories.xml" value="0.33114035087719296" />
+        <entry key="app/src/main/res/layout/fragment_calculate_required_calories.xml" value="0.14" />
         <entry key="app/src/main/res/layout/fragment_diabetics_screen.xml" value="0.10054347826086957" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.33" />
         <entry key="app/src/main/res/layout/layout.xml" value="0.1" />
@@ -149,12 +150,5 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
-  </component>
-  <component name="VisualizationToolProject">
-    <option name="state">
-      <ProjectState>
-        <option name="scale" value="0.16666666666666666" />
-      </ProjectState>
-    </option>
   </component>
 </project>

@@ -37,4 +37,11 @@ object Constants {
         const val PRESSURE = "Pressure"
         const val GYM = "Gym"
     }
+
+    object Data{
+        object LocalStorage{
+            const val NAME = "LocalStorage"
+        }
+
+    }
 }
