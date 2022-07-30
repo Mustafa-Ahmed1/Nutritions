@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import com.example.nutritionapp.util.parsers.CSVParser
 import com.example.nutritionapp.R
 import com.example.nutritionapp.data.dataManager.MealDataManager
+import com.example.nutritionapp.data.local.LocalStorage
 import com.example.nutritionapp.data.model.Meal
 import com.example.nutritionapp.databinding.ActivityMainBinding
 import com.example.nutritionapp.ui.fragment.HomeFragment
@@ -51,6 +52,10 @@ class HomeActivity : BaseActivity<ActivityMainBinding>() {
 
     override fun setUp() {
         setTheme(R.style.Theme_NutritionApp)
+
+        val localStorage = LocalStorage(applicationContext)
+        localStorage.put<String>(Constants.Data.LocalStorage.MY_DATA,"Hello from local storage")
+
         Log.v("ADD", openFile(Constants.FilePath.NUTRITION_CSV).toString())
         dataManager = maelParser.getMealsFromCSV(openFile(Constants.FilePath.NUTRITION_CSV))
         Log.v("BDD", openFile(Constants.FilePath.HEALTH_ADVICES_CSV).toString())
@@ -59,7 +64,8 @@ class HomeActivity : BaseActivity<ActivityMainBinding>() {
         bundle.putParcelable(Constants.KeyValues.Meal_DATA_MANAGER, dataManager)
         mealsList = (dataManager as MealDataManager).getMeals()
         setDefaultMainFragment()
-//        bottomNavigationBar()
+
+        localStorage.get<String>(Constants.Data.LocalStorage.MY_DATA)
     }
 
     override fun onStart() {

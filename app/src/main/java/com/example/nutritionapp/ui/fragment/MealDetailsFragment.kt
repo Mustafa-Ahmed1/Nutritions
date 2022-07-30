@@ -17,7 +17,6 @@ class MealDetailsFragment : BaseFragment<FragmentMealDetailsBinding>() {
     override var visibilityCustomActionBar: Boolean = true
     override var visibilityBackButton: Boolean = true
     override fun getTitle(): String = getString(R.string.meal_details)
-//    override fun getTitle(): String = (arguments?.getSerializable(Constants.KeyValues.MEAL) as Meal).name
 
     override var visibleBottomNavigationBar: Boolean = false
 
